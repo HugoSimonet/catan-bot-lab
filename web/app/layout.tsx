@@ -29,6 +29,7 @@ export const metadata: Metadata = {
       "Community Catan strategies as bots, millions of simulated games, and a reinforcement-learning agent trained to beat them.",
     type: "website",
   },
+  twitter: { card: "summary_large_image" },
 };
 
 const NAV = [

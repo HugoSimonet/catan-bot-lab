@@ -2,6 +2,9 @@
 
 **Can a self-taught AI beat the best Settlers of Catan strategies?**
 
+**Live site: [catan-bot-lab.vercel.app](https://catan-bot-lab.vercel.app)**: results, charts and an
+interactive replay viewer.
+
 I turned the Catan community's best-known strategies into bots, simulated millions of games to measure
 them, tuned them with parameter sweeps, and trained a neural network with reinforcement learning, a
 curriculum and a self-play league. The network was never shown a strategy: it was rewarded for victory points
@@ -15,7 +18,7 @@ early on, and after that only for winning.
 | **Strategies** | Ore-Wheat-Sheep, Road Builder, Dev-Card Rush, Port Master and Balanced, as one parameterised heuristic bot |
 | **Simulation** | Seat rotation + common random numbers + Wilson confidence intervals; **2,000,000-game** headline tournament |
 | **Learning** | PPO with action masking and a graph network over the board, per-seat GAE, curriculum then league with prioritised fictitious self-play (PyTorch, one GTX 1660 Ti) |
-| **Website** | Static Next.js site with an interactive replay viewer, built for Vercel (`web/`) |
+| **Website** | Static Next.js site with an interactive replay viewer, deployed on Vercel ([live](https://catan-bot-lab.vercel.app), source in `web/`) |
 
 ## Results
 
@@ -79,7 +82,7 @@ In the games it wins, its 10 points come on average from cities (4.8 VP), hidden
 Largest Army (1.5).
 <!-- RESULTS:END -->
 
-Full charts: the [website](web/) and the notebooks in [`notebooks/`](notebooks/).
+Full charts: the [website](https://catan-bot-lab.vercel.app/results/) and the notebooks in [`notebooks/`](notebooks/).
 
 ## How it works
 

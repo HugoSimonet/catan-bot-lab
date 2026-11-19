@@ -1,0 +1,56 @@
+﻿[balanced] start: 46.09%
+[balanced] diversity_weight: 1.5 -> 1.875  46.09% -> 46.68%
+[balanced] port_generic_weight: 1.0 -> 1.5  46.68% -> 47.29%
+[balanced] port_specific_weight: 0.15 -> 0.225  47.29% -> 47.96%
+[balanced] priority_city: 1.0 -> 0.6  47.96% -> 50.56%
+[balanced] priority_city: 0.6 -> 0.8  50.56% -> 51.12%
+[balanced] priority_road: 0.7 -> 0.875  51.12% -> 52.11%
+[balanced] discard_avoidance: 0.8 -> 1.0  52.11% -> 53.39%
+[balanced] done: 46.09% -> 53.39%
+[ows] start: 21.74%
+[ows] diversity_weight: 0.5 -> 0.75  21.74% -> 22.24%
+[ows] priority_settlement: 0.75 -> 0.938  22.24% -> 23.59%
+[ows] priority_settlement: 0.938 -> 1.125  23.59% -> 24.24%
+[ows] priority_road: 0.35 -> 0.438  24.24% -> 25.29%
+[ows] priority_road: 0.438 -> 0.525  25.29% -> 29.94%
+[ows] priority_dev: 1.1 -> 0.88  29.94% -> 30.39%
+[ows] largest_army_weight: 0.8 -> 1.0  30.39% -> 30.84%
+[ows] discard_avoidance: 0.8 -> 1.0  30.84% -> 33.09%
+[ows] diversity_weight: 0.75 -> 0.938  33.09% -> 33.95%
+[ows] diversity_weight: 0.938 -> 1.125  33.95% -> 34.67%
+[ows] port_specific_weight: 0.15 -> 0.225  34.67% -> 35.09%
+[ows] priority_city: 1.6 -> 1.4  35.09% -> 35.59%
+[ows] priority_settlement: 1.125 -> 1.406  35.59% -> 36.42%
+[ows] largest_army_weight: 1.0 -> 1.5  36.42% -> 37.71%
+[ows] done: 21.74% -> 37.71%
+[road_builder] start: 23.37%
+[road_builder] diversity_weight: 0.8 -> 1.0  23.37% -> 23.99%
+[road_builder] diversity_weight: 1.0 -> 1.2  23.99% -> 24.89%
+[road_builder] port_specific_weight: 0.15 -> 0.225  24.89% -> 25.46%
+[road_builder] priority_city: 0.6 -> 0.75  25.46% -> 26.06%
+[road_builder] priority_city: 0.75 -> 0.9  26.06% -> 27.01%
+[road_builder] priority_road: 1.1 -> 0.8  27.01% -> 28.04%
+[road_builder] longest_road_weight: 1.2 -> 0.9  28.04% -> 29.23%
+[road_builder] discard_avoidance: 0.8 -> 1.0  29.23% -> 30.97%
+[road_builder] diversity_weight: 1.2 -> 1.5  30.97% -> 32.40%
+[road_builder] diversity_weight: 1.5 -> 1.8  32.40% -> 33.27%
+[road_builder] port_specific_weight: 0.225 -> 0.338  33.27% -> 33.83%
+[road_builder] done: 23.37% -> 33.83%
+[dev_rush] start: 7.31%
+[dev_rush] priority_city: 0.8 -> 1.0  7.31% -> 9.73%
+[dev_rush] priority_city: 1.0 -> 1.2  9.73% -> 12.01%
+[dev_rush] priority_settlement: 0.8 -> 1.0  12.01% -> 13.16%
+[dev_rush] priority_settlement: 1.0 -> 1.2  13.16% -> 14.62%
+[dev_rush] priority_dev: 1.8 -> 1.5  14.62% -> 20.51%
+[dev_rush] largest_army_weight: 1.5 -> 1.0  20.51% -> 22.38%
+[dev_rush] knight_aggression: 1.0 -> 1.5  22.38% -> 23.63%
+[dev_rush] port_specific_weight: 0.15 -> 0.225  23.63% -> 24.21%
+[dev_rush] priority_city: 1.2 -> 1.5  24.21% -> 24.77%
+[dev_rush] priority_settlement: 1.2 -> 1.5  24.77% -> 25.83%
+[dev_rush] discard_avoidance: 0.8 -> 1.0  25.83% -> 26.77%
+[dev_rush] done: 7.31% -> 26.77%
+[port_master] start: 26.15%
+[port_master] diversity_weight: 0.2 -> 0.3  26.15% -> 26.80%
+[port_master] diversity_weight: 0.3 -> 0.45  26.80% -> 27.47%
+[port_master] done: 26.15% -> 27.47%
+wrote results/tuning.json (970s)

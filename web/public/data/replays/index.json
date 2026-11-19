@@ -1,0 +1,128 @@
+[
+ {
+  "id": "ai-win-1",
+  "title": "Learned agent wins (76 turns)",
+  "description": "Reinforcement-learning agent vs the three strongest strategy bots.",
+  "players": [
+   "learned",
+   "balanced",
+   "ows",
+   "road_builder"
+  ],
+  "winner": 0,
+  "turns": 76,
+  "featured": true
+ },
+ {
+  "id": "ai-win-2",
+  "title": "Learned agent wins (78 turns)",
+  "description": "Reinforcement-learning agent vs the three strongest strategy bots.",
+  "players": [
+   "ows",
+   "road_builder",
+   "learned",
+   "balanced"
+  ],
+  "winner": 2,
+  "turns": 78,
+  "featured": false
+ },
+ {
+  "id": "ai-win-3",
+  "title": "Learned agent wins (78 turns)",
+  "description": "Reinforcement-learning agent vs the three strongest strategy bots.",
+  "players": [
+   "ows",
+   "road_builder",
+   "learned",
+   "balanced"
+  ],
+  "winner": 2,
+  "turns": 78,
+  "featured": false
+ },
+ {
+  "id": "ai-loss-4",
+  "title": "Ore-Wheat-Sheep beats the learned agent (76 turns)",
+  "description": "Reinforcement-learning agent vs the three strongest strategy bots.",
+  "players": [
+   "ows",
+   "road_builder",
+   "learned",
+   "balanced"
+  ],
+  "winner": 0,
+  "turns": 76,
+  "featured": false
+ },
+ {
+  "id": "balanced-win",
+  "title": "A typical Balanced win",
+  "description": "Strategy bots only.",
+  "players": [
+   "dev_rush",
+   "balanced",
+   "port_master",
+   "road_builder"
+  ],
+  "winner": 1,
+  "turns": 77,
+  "featured": false
+ },
+ {
+  "id": "ows-win",
+  "title": "A typical Ore-Wheat-Sheep win",
+  "description": "Strategy bots only.",
+  "players": [
+   "port_master",
+   "ows",
+   "road_builder",
+   "balanced"
+  ],
+  "winner": 1,
+  "turns": 77,
+  "featured": false
+ },
+ {
+  "id": "road_builder-win",
+  "title": "A typical Road Builder win",
+  "description": "Strategy bots only.",
+  "players": [
+   "port_master",
+   "ows",
+   "dev_rush",
+   "road_builder"
+  ],
+  "winner": 3,
+  "turns": 79,
+  "featured": false
+ },
+ {
+  "id": "dev_rush-win",
+  "title": "A typical Dev-Card Rush win",
+  "description": "Strategy bots only.",
+  "players": [
+   "road_builder",
+   "dev_rush",
+   "port_master",
+   "balanced"
+  ],
+  "winner": 1,
+  "turns": 77,
+  "featured": false
+ },
+ {
+  "id": "port_master-win",
+  "title": "A typical Port Master win",
+  "description": "Strategy bots only.",
+  "players": [
+   "port_master",
+   "ows",
+   "balanced",
+   "road_builder"
+  ],
+  "winner": 0,
+  "turns": 80,
+  "featured": false
+ }
+]

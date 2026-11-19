@@ -1,0 +1,9087 @@
+{
+ "generated_at": "2026-11-19T22:58:53.934721+00:00",
+ "engine": {
+  "random_games_per_sec": 43087.539851031055,
+  "bot_games_per_sec": 9699.74874175753,
+  "threads": 12
+ },
+ "tournament": {
+  "games": 2000000,
+  "bots": [
+   {
+    "bot": "balanced",
+    "games": 1599932,
+    "wins": 602259,
+    "avg_vp": 7.950690404342184,
+    "settlements": 3.1632738141371006,
+    "cities": 1.8980750431893356,
+    "roads": 8.796728235950027,
+    "dev_bought": 1.7309173139858445,
+    "knights": 0.808094969036184,
+    "trades": 6.559162514406863,
+    "produced": 68.10427443166334,
+    "lr_in_wins": 0.5311568610846829,
+    "la_in_wins": 0.057631351295705006,
+    "turns_in_wins": 77.35334465736501,
+    "win_rate": 0.37642787318461035,
+    "ci_low": 0.3756774307581533,
+    "ci_high": 0.37717890902821594
+   },
+   {
+    "bot": "ows",
+    "games": 1599620,
+    "wins": 458435,
+    "avg_vp": 7.504429802077993,
+    "settlements": 0.5627592803290782,
+    "cities": 2.486471787049424,
+    "roads": 4.375959290331454,
+    "dev_bought": 5.938284092471962,
+    "knights": 2.4594828771833313,
+    "trades": 6.381954464185244,
+    "produced": 64.7572892311924,
+    "lr_in_wins": 0.036618059266853534,
+    "la_in_wins": 0.6798739188761765,
+    "turns_in_wins": 77.69555334998418,
+    "win_rate": 0.2865899401107763,
+    "ci_low": 0.28588972807018037,
+    "ci_high": 0.28729117718746483
+   },
+   {
+    "bot": "road_builder",
+    "games": 1600388,
+    "wins": 366959,
+    "avg_vp": 7.3772566402647355,
+    "settlements": 3.955308337728101,
+    "cities": 0.9125605790595781,
+    "roads": 9.62518464272414,
+    "dev_bought": 0.7776520443792381,
+    "knights": 0.30618824934953276,
+    "trades": 6.399953636243211,
+    "produced": 60.88565772800096,
+    "lr_in_wins": 0.9619385271924111,
+    "la_in_wins": 0.012903348875487452,
+    "turns_in_wins": 79.49802566499255,
+    "win_rate": 0.22929377126046935,
+    "ci_low": 0.22864311715573998,
+    "ci_high": 0.22994572497823257
+   },
+   {
+    "bot": "dev_rush",
+    "games": 1599420,
+    "wins": 324022,
+    "avg_vp": 6.988627752560303,
+    "settlements": 0.771921696615023,
+    "cities": 1.6880406647409687,
+    "roads": 3.207096947643521,
+    "dev_bought": 7.81213627439947,
+    "knights": 3.3968738667767067,
+    "trades": 6.487653649447925,
+    "produced": 58.64244351077266,
+    "lr_in_wins": 0.0068729901056101125,
+    "la_in_wins": 0.9443834060650202,
+    "turns_in_wins": 77.54026269821185,
+    "win_rate": 0.20258718785559765,
+    "ci_low": 0.20196499669916743,
+    "ci_high": 0.20321080770282193
+   },
+   {
+    "bot": "port_master",
+    "games": 1600640,
+    "wins": 248325,
+    "avg_vp": 6.569191073570572,
+    "settlements": 3.034597411035586,
+    "cities": 1.471938724510196,
+    "roads": 7.759122600959616,
+    "dev_bought": 0.9436744052379048,
+    "knights": 0.4058389144342263,
+    "trades": 9.127431527389044,
+    "produced": 59.938659536185526,
+    "lr_in_wins": 0.5603020235578375,
+    "la_in_wins": 0.030959428168730495,
+    "turns_in_wins": 80.80166314305849,
+    "win_rate": 0.15514106857257098,
+    "ci_low": 0.15458102305814975,
+    "ci_high": 0.15570276943346784
+   }
+  ],
+  "seat_win_rate": [
+   0.274963,
+   0.2604515,
+   0.2426395,
+   0.221946
+  ],
+  "ratings": [
+   {
+    "bot": "balanced",
+    "mu": 27.971793521846035,
+    "sigma": 1.62376565423027,
+    "ordinal": 23.100496559155225
+   },
+   {
+    "bot": "road_builder",
+    "mu": 24.52787283040555,
+    "sigma": 1.6094495473728452,
+    "ordinal": 19.699524188287015
+   },
+   {
+    "bot": "ows",
+    "mu": 24.07894956016413,
+    "sigma": 1.6254928039370755,
+    "ordinal": 19.202471148352902
+   },
+   {
+    "bot": "dev_rush",
+    "mu": 22.30580704121469,
+    "sigma": 1.6292408235783649,
+    "ordinal": 17.418084570479593
+   },
+   {
+    "bot": "port_master",
+    "mu": 19.95673304269564,
+    "sigma": 1.6557221668408564,
+    "ordinal": 14.989566542173069
+   }
+  ],
+  "resource_mix": [
+   {
+    "bot": "balanced",
+    "wood": 0.23299307591123705,
+    "brick": 0.189899978899106,
+    "sheep": 0.18123562620904304,
+    "wheat": 0.21352129721894034,
+    "ore": 0.18235002176167356
+   },
+   {
+    "bot": "dev_rush",
+    "wood": 0.07474937308554308,
+    "brick": 0.05527392683129479,
+    "sheep": 0.36729931372826957,
+    "wheat": 0.271750602280658,
+    "ore": 0.2309267840742346
+   },
+   {
+    "bot": "ows",
+    "wood": 0.09281692582147451,
+    "brick": 0.07033176104871405,
+    "sheep": 0.17534695816962845,
+    "wheat": 0.36125590210089475,
+    "ore": 0.30024845285928825
+   },
+   {
+    "bot": "port_master",
+    "wood": 0.2536231938439663,
+    "brick": 0.1727260547339189,
+    "sheep": 0.23099479992832203,
+    "wheat": 0.1963769187261367,
+    "ore": 0.14627903276765605
+   },
+   {
+    "bot": "road_builder",
+    "wood": 0.36951424680181816,
+    "brick": 0.28471117133875384,
+    "sheep": 0.15675893915185893,
+    "wheat": 0.13011644131040306,
+    "ore": 0.05889920139716601
+   }
+  ]
+ },
+ "tuning": [
+  {
+   "preset": "balanced",
+   "start_win_rate": 0.4609375,
+   "end_win_rate": 0.5339375,
+   "changes": [
+    {
+     "param": "diversity_weight",
+     "from": 1.5,
+     "to": 1.875
+    },
+    {
+     "param": "port_generic_weight",
+     "from": 1.0,
+     "to": 1.5
+    },
+    {
+     "param": "port_specific_weight",
+     "from": 0.15,
+     "to": 0.225
+    },
+    {
+     "param": "priority_city",
+     "from": 1.0,
+     "to": 0.8
+    },
+    {
+     "param": "priority_road",
+     "from": 0.7,
+     "to": 0.875
+    },
+    {
+     "param": "discard_avoidance",
+     "from": 0.8,
+     "to": 1.0
+    }
+   ]
+  },
+  {
+   "preset": "ows",
+   "start_win_rate": 0.217375,
+   "end_win_rate": 0.377125,
+   "changes": [
+    {
+     "param": "diversity_weight",
+     "from": 0.5,
+     "to": 1.125
+    },
+    {
+     "param": "port_specific_weight",
+     "from": 0.15,
+     "to": 0.225
+    },
+    {
+     "param": "priority_city",
+     "from": 1.6,
+     "to": 1.4
+    },
+    {
+     "param": "priority_settlement",
+     "from": 0.75,
+     "to": 1.406
+    },
+    {
+     "param": "priority_road",
+     "from": 0.35,
+     "to": 0.525
+    },
+    {
+     "param": "priority_dev",
+     "from": 1.1,
+     "to": 0.88
+    },
+    {
+     "param": "largest_army_weight",
+     "from": 0.8,
+     "to": 1.5
+    },
+    {
+     "param": "discard_avoidance",
+     "from": 0.8,
+     "to": 1.0
+    }
+   ]
+  },
+  {
+   "preset": "road_builder",
+   "start_win_rate": 0.2336875,
+   "end_win_rate": 0.3383125,
+   "changes": [
+    {
+     "param": "diversity_weight",
+     "from": 0.8,
+     "to": 1.8
+    },
+    {
+     "param": "port_specific_weight",
+     "from": 0.15,
+     "to": 0.338
+    },
+    {
+     "param": "priority_city",
+     "from": 0.6,
+     "to": 0.9
+    },
+    {
+     "param": "priority_road",
+     "from": 1.1,
+     "to": 0.8
+    },
+    {
+     "param": "longest_road_weight",
+     "from": 1.2,
+     "to": 0.9
+    },
+    {
+     "param": "discard_avoidance",
+     "from": 0.8,
+     "to": 1.0
+    }
+   ]
+  },
+  {
+   "preset": "dev_rush",
+   "start_win_rate": 0.073125,
+   "end_win_rate": 0.2676875,
+   "changes": [
+    {
+     "param": "port_specific_weight",
+     "from": 0.15,
+     "to": 0.225
+    },
+    {
+     "param": "priority_city",
+     "from": 0.8,
+     "to": 1.5
+    },
+    {
+     "param": "priority_settlement",
+     "from": 0.8,
+     "to": 1.5
+    },
+    {
+     "param": "priority_dev",
+     "from": 1.8,
+     "to": 1.5
+    },
+    {
+     "param": "largest_army_weight",
+     "from": 1.5,
+     "to": 1.0
+    },
+    {
+     "param": "knight_aggression",
+     "from": 1.0,
+     "to": 1.5
+    },
+    {
+     "param": "discard_avoidance",
+     "from": 0.8,
+     "to": 1.0
+    }
+   ]
+  },
+  {
+   "preset": "port_master",
+   "start_win_rate": 0.2615,
+   "end_win_rate": 0.27475,
+   "changes": [
+    {
+     "param": "diversity_weight",
+     "from": 0.2,
+     "to": 0.45
+    }
+   ]
+  }
+ ],
+ "sweeps": [
+  {
+   "preset": "ows",
+   "param": "priority_city",
+   "label": "Ore-Wheat-Sheep: how hard to rush cities",
+   "default": 1.4,
+   "points": [
+    {
+     "value": 0.0,
+     "win_rate": 0.1633125,
+     "ci_low": 0.15766564196452956,
+     "ci_high": 0.16912099656355986
+    },
+    {
+     "value": 0.35,
+     "win_rate": 0.1888125,
+     "ci_low": 0.18282328606112633,
+     "ci_high": 0.19495111030630582
+    },
+    {
+     "value": 0.7,
+     "win_rate": 0.2999375,
+     "ci_low": 0.29288586143587864,
+     "ci_high": 0.3070851855157482
+    },
+    {
+     "value": 1.05,
+     "win_rate": 0.3030625,
+     "ci_low": 0.2959891742003589,
+     "ci_high": 0.3102303724864815
+    },
+    {
+     "value": 1.4,
+     "win_rate": 0.289,
+     "ci_low": 0.28202738540981775,
+     "ci_high": 0.2960739124685615
+    },
+    {
+     "value": 1.75,
+     "win_rate": 0.277875,
+     "ci_low": 0.27098786839079203,
+     "ci_high": 0.28486877043022696
+    },
+    {
+     "value": 2.1,
+     "win_rate": 0.2689375,
+     "ci_low": 0.26212289674321,
+     "ci_high": 0.27586303283509817
+    },
+    {
+     "value": 2.8,
+     "win_rate": 0.2621875,
+     "ci_low": 0.25543001937106025,
+     "ci_high": 0.26905915077918663
+    }
+   ]
+  },
+  {
+   "preset": "ows",
+   "param": "resource_weights.4",
+   "label": "Ore-Wheat-Sheep: how much to value ore",
+   "default": 1.5,
+   "points": [
+    {
+     "value": 0.0,
+     "win_rate": 0.0799375,
+     "ci_low": 0.07583539546439597,
+     "ci_high": 0.08424127012819521
+    },
+    {
+     "value": 0.375,
+     "win_rate": 0.115,
+     "ci_low": 0.11014884952595544,
+     "ci_high": 0.12003598309573207
+    },
+    {
+     "value": 0.75,
+     "win_rate": 0.1758125,
+     "ci_low": 0.169992116785502,
+     "ci_high": 0.18178852068344173
+    },
+    {
+     "value": 1.125,
+     "win_rate": 0.2564375,
+     "ci_low": 0.24973031306206708,
+     "ci_high": 0.2632616175753868
+    },
+    {
+     "value": 1.5,
+     "win_rate": 0.289,
+     "ci_low": 0.28202738540981775,
+     "ci_high": 0.2960739124685615
+    },
+    {
+     "value": 1.875,
+     "win_rate": 0.2674375,
+     "ci_low": 0.2606354140509746,
+     "ci_high": 0.27435123565443104
+    },
+    {
+     "value": 2.25,
+     "win_rate": 0.2344375,
+     "ci_low": 0.22793725041592025,
+     "ci_high": 0.2410652420856301
+    },
+    {
+     "value": 3.0,
+     "win_rate": 0.1740625,
+     "ci_low": 0.1682657280778837,
+     "ci_high": 0.1800157495393404
+    }
+   ]
+  },
+  {
+   "preset": "road_builder",
+   "param": "longest_road_weight",
+   "label": "Road Builder: chasing Longest Road",
+   "default": 0.9,
+   "points": [
+    {
+     "value": 0.0,
+     "win_rate": 0.21375,
+     "ci_low": 0.20746682528965632,
+     "ci_high": 0.2201705989647802
+    },
+    {
+     "value": 0.225,
+     "win_rate": 0.241875,
+     "ci_low": 0.23530214638723032,
+     "ci_high": 0.24857177548412837
+    },
+    {
+     "value": 0.45,
+     "win_rate": 0.2429375,
+     "ci_low": 0.23635449908338702,
+     "ci_high": 0.24964391269794428
+    },
+    {
+     "value": 0.675,
+     "win_rate": 0.243,
+     "ci_low": 0.23641640391136398,
+     "ci_high": 0.24970697786467155
+    },
+    {
+     "value": 0.9,
+     "win_rate": 0.227375,
+     "ci_low": 0.2209463002296006,
+     "ci_high": 0.23393458287036706
+    },
+    {
+     "value": 1.125,
+     "win_rate": 0.222125,
+     "ci_low": 0.2157511827268191,
+     "ci_high": 0.22863222081798978
+    },
+    {
+     "value": 1.35,
+     "win_rate": 0.2105,
+     "ci_low": 0.20425305260785037,
+     "ci_high": 0.21688593192196398
+    },
+    {
+     "value": 1.8,
+     "win_rate": 0.1951875,
+     "ci_low": 0.18911954014049387,
+     "ci_high": 0.20140179568677402
+    }
+   ]
+  },
+  {
+   "preset": "road_builder",
+   "param": "priority_settlement",
+   "label": "Road Builder: settlement priority",
+   "default": 1.5,
+   "points": [
+    {
+     "value": 0.0,
+     "win_rate": 0.029375,
+     "ci_low": 0.026869406134324626,
+     "ci_high": 0.032106533742510934
+    },
+    {
+     "value": 0.375,
+     "win_rate": 0.0533125,
+     "ci_low": 0.049937411223288555,
+     "ci_high": 0.05690203662528298
+    },
+    {
+     "value": 0.75,
+     "win_rate": 0.1926875,
+     "ci_low": 0.18665011439112458,
+     "ci_high": 0.19887242164797245
+    },
+    {
+     "value": 1.125,
+     "win_rate": 0.2243125,
+     "ci_low": 0.21791563657331733,
+     "ci_high": 0.23084171678614104
+    },
+    {
+     "value": 1.5,
+     "win_rate": 0.227375,
+     "ci_low": 0.2209463002296006,
+     "ci_high": 0.23393458287036706
+    },
+    {
+     "value": 1.875,
+     "win_rate": 0.2265,
+     "ci_low": 0.2200803456938351,
+     "ci_high": 0.23305095748027277
+    },
+    {
+     "value": 2.25,
+     "win_rate": 0.2263125,
+     "ci_low": 0.21989478926118022,
+     "ci_high": 0.23286160392881483
+    },
+    {
+     "value": 3.0,
+     "win_rate": 0.2264375,
+     "ci_low": 0.22001849334329285,
+     "ci_high": 0.2329878398361108
+    }
+   ]
+  },
+  {
+   "preset": "dev_rush",
+   "param": "priority_dev",
+   "label": "Dev-Card Rush: how many dev cards to buy",
+   "default": 1.5,
+   "points": [
+    {
+     "value": 0.0,
+     "win_rate": 0.0964375,
+     "ci_low": 0.09195987432045893,
+     "ci_high": 0.10110886987405993
+    },
+    {
+     "value": 0.375,
+     "win_rate": 0.201625,
+     "ci_low": 0.19548008696739777,
+     "ci_high": 0.20791315831441004
+    },
+    {
+     "value": 0.75,
+     "win_rate": 0.2105,
+     "ci_low": 0.20425305260785037,
+     "ci_high": 0.21688593192196398
+    },
+    {
+     "value": 1.125,
+     "win_rate": 0.2086875,
+     "ci_low": 0.20246101784401266,
+     "ci_high": 0.21505383683937784
+    },
+    {
+     "value": 1.5,
+     "win_rate": 0.2148125,
+     "ci_low": 0.2085176109736009,
+     "ci_high": 0.22124430319080823
+    },
+    {
+     "value": 1.875,
+     "win_rate": 0.191625,
+     "ci_low": 0.18560072753739146,
+     "ci_high": 0.1977973185917329
+    },
+    {
+     "value": 2.25,
+     "win_rate": 0.153875,
+     "ci_low": 0.14836703688768613,
+     "ci_high": 0.15954913244005828
+    },
+    {
+     "value": 3.0,
+     "win_rate": 0.0838125,
+     "ci_low": 0.07961794745316592,
+     "ci_high": 0.08820685781109011
+    }
+   ]
+  },
+  {
+   "preset": "dev_rush",
+   "param": "knight_aggression",
+   "label": "Dev-Card Rush: when to play knights",
+   "default": 1.5,
+   "points": [
+    {
+     "value": 0.0,
+     "win_rate": 0.17725,
+     "ci_low": 0.17141038270908043,
+     "ci_high": 0.1832445646380615
+    },
+    {
+     "value": 0.375,
+     "win_rate": 0.17725,
+     "ci_low": 0.17141038270908043,
+     "ci_high": 0.1832445646380615
+    },
+    {
+     "value": 0.75,
+     "win_rate": 0.1813125,
+     "ci_low": 0.17541929773058804,
+     "ci_high": 0.18735869927233154
+    },
+    {
+     "value": 1.125,
+     "win_rate": 0.1989375,
+     "ci_low": 0.1928244057469803,
+     "ci_high": 0.20519512976254384
+    },
+    {
+     "value": 1.5,
+     "win_rate": 0.2148125,
+     "ci_low": 0.2085176109736009,
+     "ci_high": 0.22124430319080823
+    },
+    {
+     "value": 1.875,
+     "win_rate": 0.215375,
+     "ci_low": 0.20907393484326328,
+     "ci_high": 0.22181270927348432
+    },
+    {
+     "value": 2.25,
+     "win_rate": 0.215375,
+     "ci_low": 0.20907393484326328,
+     "ci_high": 0.22181270927348432
+    },
+    {
+     "value": 3.0,
+     "win_rate": 0.215375,
+     "ci_low": 0.20907393484326328,
+     "ci_high": 0.22181270927348432
+    }
+   ]
+  },
+  {
+   "preset": "port_master",
+   "param": "port_specific_weight",
+   "label": "Port Master: value of 2:1 harbours",
+   "default": 0.7,
+   "points": [
+    {
+     "value": 0.0,
+     "win_rate": 0.140125,
+     "ci_low": 0.13483270852078055,
+     "ci_high": 0.14559006197202412
+    },
+    {
+     "value": 0.175,
+     "win_rate": 0.1450625,
+     "ci_low": 0.13969085458474742,
+     "ci_high": 0.15060454548969474
+    },
+    {
+     "value": 0.35,
+     "win_rate": 0.1574375,
+     "ci_low": 0.15187627262713976,
+     "ci_high": 0.16316318639874816
+    },
+    {
+     "value": 0.525,
+     "win_rate": 0.160375,
+     "ci_low": 0.1547706192503016,
+     "ci_high": 0.166142429526687
+    },
+    {
+     "value": 0.7,
+     "win_rate": 0.1608125,
+     "ci_low": 0.15520175036133568,
+     "ci_high": 0.16658608837858288
+    },
+    {
+     "value": 0.875,
+     "win_rate": 0.1589375,
+     "ci_low": 0.15335415145011355,
+     "ci_high": 0.16468458744867687
+    },
+    {
+     "value": 1.05,
+     "win_rate": 0.15475,
+     "ci_low": 0.1492288586777409,
+     "ci_high": 0.16043689057586327
+    },
+    {
+     "value": 1.4,
+     "win_rate": 0.139125,
+     "ci_low": 0.13384905181016357,
+     "ci_high": 0.14457419876737274
+    }
+   ]
+  },
+  {
+   "preset": "port_master",
+   "param": "specialization_weight",
+   "label": "Port Master: concentrating on one resource",
+   "default": 0.8,
+   "points": [
+    {
+     "value": 0.0,
+     "win_rate": 0.2375,
+     "ci_low": 0.23096951867862636,
+     "ci_high": 0.24415650356343327
+    },
+    {
+     "value": 0.2,
+     "win_rate": 0.22025,
+     "ci_low": 0.21389614178520347,
+     "ci_high": 0.22673816191847726
+    },
+    {
+     "value": 0.4,
+     "win_rate": 0.2003125,
+     "ci_low": 0.1941830718738367,
+     "ci_high": 0.20658580351918143
+    },
+    {
+     "value": 0.6,
+     "win_rate": 0.17725,
+     "ci_low": 0.17141038270908043,
+     "ci_high": 0.1832445646380615
+    },
+    {
+     "value": 0.8,
+     "win_rate": 0.1608125,
+     "ci_low": 0.15520175036133568,
+     "ci_high": 0.16658608837858288
+    },
+    {
+     "value": 1.0,
+     "win_rate": 0.1448125,
+     "ci_low": 0.1394448197858681,
+     "ci_high": 0.15035070030975695
+    },
+    {
+     "value": 1.2,
+     "win_rate": 0.134375,
+     "ci_low": 0.12917797249927873,
+     "ci_high": 0.13974755848073298
+    },
+    {
+     "value": 1.6,
+     "win_rate": 0.1145625,
+     "ci_low": 0.10971964274603448,
+     "ci_high": 0.11959039991272312
+    }
+   ]
+  },
+  {
+   "preset": "balanced",
+   "param": "diversity_weight",
+   "label": "Balanced: resource diversity bonus",
+   "default": 1.875,
+   "points": [
+    {
+     "value": 0.0,
+     "win_rate": 0.3018125,
+     "ci_low": 0.2947478021564386,
+     "ci_high": 0.3089723446363164
+    },
+    {
+     "value": 0.469,
+     "win_rate": 0.3376875,
+     "ci_low": 0.3303992448123756,
+     "ci_high": 0.3450536789406312
+    },
+    {
+     "value": 0.938,
+     "win_rate": 0.3555,
+     "ci_low": 0.3481185112334872,
+     "ci_high": 0.36295086101023694
+    },
+    {
+     "value": 1.406,
+     "win_rate": 0.3643125,
+     "ci_low": 0.35688905244973246,
+     "ci_high": 0.37180108904729403
+    },
+    {
+     "value": 1.875,
+     "win_rate": 0.3731875,
+     "ci_low": 0.365724523372675,
+     "ci_high": 0.38071135737235806
+    },
+    {
+     "value": 2.344,
+     "win_rate": 0.373,
+     "ci_low": 0.36553783047735844,
+     "ci_high": 0.3805231402835618
+    },
+    {
+     "value": 2.812,
+     "win_rate": 0.373875,
+     "ci_low": 0.3664090742809626,
+     "ci_high": 0.38140147640581745
+    },
+    {
+     "value": 3.75,
+     "win_rate": 0.374125,
+     "ci_low": 0.36665800589145947,
+     "ci_high": 0.38165242477413763
+    }
+   ]
+  },
+  {
+   "preset": "balanced",
+   "param": "robber_leader_weight",
+   "label": "Balanced: aiming the robber at the leader",
+   "default": 1.0,
+   "points": [
+    {
+     "value": 0.0,
+     "win_rate": 0.365125,
+     "ci_low": 0.35769782041864445,
+     "ci_high": 0.37261693100953747
+    },
+    {
+     "value": 0.25,
+     "win_rate": 0.371375,
+     "ci_low": 0.363919875844472,
+     "ci_high": 0.3788918750541372
+    },
+    {
+     "value": 0.5,
+     "win_rate": 0.3714375,
+     "ci_low": 0.36398210319414065,
+     "ci_high": 0.37895461769917277
+    },
+    {
+     "value": 0.75,
+     "win_rate": 0.37175,
+     "ci_low": 0.3642932419534692,
+     "ci_high": 0.37926832891336565
+    },
+    {
+     "value": 1.0,
+     "win_rate": 0.3731875,
+     "ci_low": 0.365724523372675,
+     "ci_high": 0.38071135737235806
+    },
+    {
+     "value": 1.25,
+     "win_rate": 0.3730625,
+     "ci_low": 0.3656000613087411,
+     "ci_high": 0.3805858794468834
+    },
+    {
+     "value": 1.5,
+     "win_rate": 0.373625,
+     "ci_low": 0.36616014480728554,
+     "ci_high": 0.38115052590067733
+    },
+    {
+     "value": 2.0,
+     "win_rate": 0.3735625,
+     "ci_low": 0.36609791277284576,
+     "ci_high": 0.381087787940413
+    }
+   ]
+  },
+  {
+   "preset": "balanced",
+   "param": "trade_aggression",
+   "label": "Balanced: bank-trade aggression",
+   "default": 0.67,
+   "points": [
+    {
+     "value": 0.0,
+     "win_rate": 0.3123125,
+     "ci_low": 0.30517725035457305,
+     "ci_high": 0.3195378555484995
+    },
+    {
+     "value": 0.34,
+     "win_rate": 0.36075,
+     "ci_low": 0.35334318717675867,
+     "ci_high": 0.36822366462212436
+    },
+    {
+     "value": 0.67,
+     "win_rate": 0.3731875,
+     "ci_low": 0.365724523372675,
+     "ci_high": 0.38071135737235806
+    },
+    {
+     "value": 1.0,
+     "win_rate": 0.3735625,
+     "ci_low": 0.36609791277284576,
+     "ci_high": 0.381087787940413
+    }
+   ]
+  },
+  {
+   "preset": "balanced",
+   "param": "discard_avoidance",
+   "label": "Balanced: avoiding 7-card discards",
+   "default": 1.0,
+   "points": [
+    {
+     "value": 0.0,
+     "win_rate": 0.34525,
+     "ci_low": 0.3379207674072145,
+     "ci_high": 0.35265352570500913
+    },
+    {
+     "value": 0.25,
+     "win_rate": 0.3469375,
+     "ci_low": 0.3395994060353295,
+     "ci_high": 0.35434907693390955
+    },
+    {
+     "value": 0.5,
+     "win_rate": 0.3510625,
+     "ci_low": 0.34370317464353717,
+     "ci_high": 0.3584933279761837
+    },
+    {
+     "value": 0.75,
+     "win_rate": 0.356875,
+     "ci_low": 0.349486785067516,
+     "ci_high": 0.36433192705970213
+    },
+    {
+     "value": 1.0,
+     "win_rate": 0.3731875,
+     "ci_low": 0.365724523372675,
+     "ci_high": 0.38071135737235806
+    }
+   ]
+  }
+ ],
+ "training": {
+  "curve": [
+   {
+    "update": 10,
+    "decisions": 327680,
+    "games": 3461,
+    "stage": "warmup",
+    "win_rate": 0.438
+   },
+   {
+    "update": 20,
+    "decisions": 655360,
+    "games": 9558,
+    "stage": "ladder",
+    "win_rate": 0.049
+   },
+   {
+    "update": 30,
+    "decisions": 983040,
+    "games": 17484,
+    "stage": "ladder",
+    "win_rate": 0.068
+   },
+   {
+    "update": 40,
+    "decisions": 1310720,
+    "games": 24846,
+    "stage": "ladder",
+    "win_rate": 0.06
+   },
+   {
+    "update": 50,
+    "decisions": 1638400,
+    "games": 32117,
+    "stage": "ladder",
+    "win_rate": 0.097,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.029297,
+      "ci_low": 0.017833,
+      "ci_high": 0.047772
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.033203,
+      "ci_low": 0.020832,
+      "ci_high": 0.052527
+     }
+    }
+   },
+   {
+    "update": 60,
+    "decisions": 1966080,
+    "games": 39218,
+    "stage": "ladder",
+    "win_rate": 0.078
+   },
+   {
+    "update": 70,
+    "decisions": 2293760,
+    "games": 46262,
+    "stage": "ladder",
+    "win_rate": 0.081
+   },
+   {
+    "update": 80,
+    "decisions": 2621440,
+    "games": 53104,
+    "stage": "ladder",
+    "win_rate": 0.096
+   },
+   {
+    "update": 90,
+    "decisions": 2949120,
+    "games": 60090,
+    "stage": "ladder",
+    "win_rate": 0.122
+   },
+   {
+    "update": 100,
+    "decisions": 3276800,
+    "games": 66895,
+    "stage": "ladder",
+    "win_rate": 0.116,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.048828,
+      "ci_low": 0.033289,
+      "ci_high": 0.071087
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.039062,
+      "ci_low": 0.025427,
+      "ci_high": 0.059564
+     }
+    }
+   },
+   {
+    "update": 110,
+    "decisions": 3604480,
+    "games": 73528,
+    "stage": "ladder",
+    "win_rate": 0.113
+   },
+   {
+    "update": 120,
+    "decisions": 3932160,
+    "games": 80164,
+    "stage": "ladder",
+    "win_rate": 0.131
+   },
+   {
+    "update": 130,
+    "decisions": 4259840,
+    "games": 86661,
+    "stage": "ladder",
+    "win_rate": 0.146
+   },
+   {
+    "update": 140,
+    "decisions": 4587520,
+    "games": 92972,
+    "stage": "ladder",
+    "win_rate": 0.121
+   },
+   {
+    "update": 150,
+    "decisions": 4915200,
+    "games": 99120,
+    "stage": "ladder",
+    "win_rate": 0.134,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.054688,
+      "ci_low": 0.038104,
+      "ci_high": 0.077904
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.041016,
+      "ci_low": 0.026981,
+      "ci_high": 0.061887
+     }
+    }
+   },
+   {
+    "update": 160,
+    "decisions": 5242880,
+    "games": 105329,
+    "stage": "ladder",
+    "win_rate": 0.132
+   },
+   {
+    "update": 170,
+    "decisions": 5570560,
+    "games": 111531,
+    "stage": "ladder",
+    "win_rate": 0.126
+   },
+   {
+    "update": 180,
+    "decisions": 5898240,
+    "games": 117900,
+    "stage": "ladder",
+    "win_rate": 0.135
+   },
+   {
+    "update": 190,
+    "decisions": 6225920,
+    "games": 124359,
+    "stage": "ladder",
+    "win_rate": 0.144
+   },
+   {
+    "update": 200,
+    "decisions": 6553600,
+    "games": 130901,
+    "stage": "ladder",
+    "win_rate": 0.153,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.054688,
+      "ci_low": 0.038104,
+      "ci_high": 0.077904
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.068359,
+      "ci_low": 0.04956,
+      "ci_high": 0.093588
+     }
+    }
+   },
+   {
+    "update": 210,
+    "decisions": 6881280,
+    "games": 137333,
+    "stage": "ladder",
+    "win_rate": 0.161
+   },
+   {
+    "update": 220,
+    "decisions": 7208960,
+    "games": 143598,
+    "stage": "ladder",
+    "win_rate": 0.144
+   },
+   {
+    "update": 230,
+    "decisions": 7536640,
+    "games": 149776,
+    "stage": "ladder",
+    "win_rate": 0.183
+   },
+   {
+    "update": 240,
+    "decisions": 7864320,
+    "games": 155871,
+    "stage": "ladder",
+    "win_rate": 0.143
+   },
+   {
+    "update": 250,
+    "decisions": 8192000,
+    "games": 162060,
+    "stage": "ladder",
+    "win_rate": 0.141,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.070312,
+      "ci_low": 0.051218,
+      "ci_high": 0.095807
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.066406,
+      "ci_low": 0.047907,
+      "ci_high": 0.091364
+     }
+    }
+   },
+   {
+    "update": 260,
+    "decisions": 8519680,
+    "games": 168324,
+    "stage": "ladder",
+    "win_rate": 0.143
+   },
+   {
+    "update": 270,
+    "decisions": 8847360,
+    "games": 174648,
+    "stage": "ladder",
+    "win_rate": 0.154
+   },
+   {
+    "update": 280,
+    "decisions": 9175040,
+    "games": 181053,
+    "stage": "ladder",
+    "win_rate": 0.158
+   },
+   {
+    "update": 290,
+    "decisions": 9502720,
+    "games": 187395,
+    "stage": "ladder",
+    "win_rate": 0.161
+   },
+   {
+    "update": 300,
+    "decisions": 9830400,
+    "games": 193580,
+    "stage": "ladder",
+    "win_rate": 0.178,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.066406,
+      "ci_low": 0.047907,
+      "ci_high": 0.091364
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.076172,
+      "ci_low": 0.056219,
+      "ci_high": 0.10244
+     }
+    }
+   },
+   {
+    "update": 310,
+    "decisions": 10158080,
+    "games": 199817,
+    "stage": "ladder",
+    "win_rate": 0.174
+   },
+   {
+    "update": 320,
+    "decisions": 10485760,
+    "games": 206009,
+    "stage": "ladder",
+    "win_rate": 0.173
+   },
+   {
+    "update": 330,
+    "decisions": 10813440,
+    "games": 212359,
+    "stage": "ladder",
+    "win_rate": 0.173
+   },
+   {
+    "update": 340,
+    "decisions": 11141120,
+    "games": 218628,
+    "stage": "ladder",
+    "win_rate": 0.174
+   },
+   {
+    "update": 350,
+    "decisions": 11468800,
+    "games": 224842,
+    "stage": "ladder",
+    "win_rate": 0.168,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.068359,
+      "ci_low": 0.04956,
+      "ci_high": 0.093588
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.083984,
+      "ci_low": 0.062947,
+      "ci_high": 0.11122
+     }
+    }
+   },
+   {
+    "update": 360,
+    "decisions": 11796480,
+    "games": 231011,
+    "stage": "ladder",
+    "win_rate": 0.186
+   },
+   {
+    "update": 370,
+    "decisions": 12124160,
+    "games": 237278,
+    "stage": "ladder",
+    "win_rate": 0.174
+   },
+   {
+    "update": 380,
+    "decisions": 12451840,
+    "games": 243564,
+    "stage": "ladder",
+    "win_rate": 0.206
+   },
+   {
+    "update": 390,
+    "decisions": 12779520,
+    "games": 249793,
+    "stage": "ladder",
+    "win_rate": 0.191
+   },
+   {
+    "update": 400,
+    "decisions": 13107200,
+    "games": 255994,
+    "stage": "ladder",
+    "win_rate": 0.188,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.09375,
+      "ci_low": 0.07144,
+      "ci_high": 0.12211
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.082031,
+      "ci_low": 0.061259,
+      "ci_high": 0.10903
+     }
+    }
+   },
+   {
+    "update": 410,
+    "decisions": 13434880,
+    "games": 262072,
+    "stage": "ladder",
+    "win_rate": 0.218
+   },
+   {
+    "update": 420,
+    "decisions": 13762560,
+    "games": 267999,
+    "stage": "ladder",
+    "win_rate": 0.187
+   },
+   {
+    "update": 430,
+    "decisions": 14090240,
+    "games": 273832,
+    "stage": "ladder",
+    "win_rate": 0.185
+   },
+   {
+    "update": 440,
+    "decisions": 14417920,
+    "games": 279619,
+    "stage": "ladder",
+    "win_rate": 0.194
+   },
+   {
+    "update": 450,
+    "decisions": 14745600,
+    "games": 285445,
+    "stage": "ladder",
+    "win_rate": 0.196,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.082031,
+      "ci_low": 0.061259,
+      "ci_high": 0.10903
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.097656,
+      "ci_low": 0.074861,
+      "ci_high": 0.12644
+     }
+    }
+   },
+   {
+    "update": 460,
+    "decisions": 15073280,
+    "games": 291355,
+    "stage": "ladder",
+    "win_rate": 0.195
+   },
+   {
+    "update": 470,
+    "decisions": 15400960,
+    "games": 297204,
+    "stage": "ladder",
+    "win_rate": 0.175
+   },
+   {
+    "update": 480,
+    "decisions": 15728640,
+    "games": 302953,
+    "stage": "ladder",
+    "win_rate": 0.217
+   },
+   {
+    "update": 490,
+    "decisions": 16056320,
+    "games": 308830,
+    "stage": "ladder",
+    "win_rate": 0.204
+   },
+   {
+    "update": 500,
+    "decisions": 16384000,
+    "games": 314711,
+    "stage": "ladder",
+    "win_rate": 0.213,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.097656,
+      "ci_low": 0.074861,
+      "ci_high": 0.12644
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.10938,
+      "ci_low": 0.085193,
+      "ci_high": 0.13937
+     }
+    }
+   },
+   {
+    "update": 510,
+    "decisions": 16711680,
+    "games": 320597,
+    "stage": "ladder",
+    "win_rate": 0.224
+   },
+   {
+    "update": 520,
+    "decisions": 17039360,
+    "games": 326494,
+    "stage": "ladder",
+    "win_rate": 0.219
+   },
+   {
+    "update": 530,
+    "decisions": 17367040,
+    "games": 332523,
+    "stage": "ladder",
+    "win_rate": 0.209
+   },
+   {
+    "update": 540,
+    "decisions": 17694720,
+    "games": 338508,
+    "stage": "ladder",
+    "win_rate": 0.187
+   },
+   {
+    "update": 550,
+    "decisions": 18022400,
+    "games": 344401,
+    "stage": "ladder",
+    "win_rate": 0.218,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.095703,
+      "ci_low": 0.073149,
+      "ci_high": 0.12428
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.125,
+      "ci_low": 0.099116,
+      "ci_high": 0.15647
+     }
+    }
+   },
+   {
+    "update": 560,
+    "decisions": 18350080,
+    "games": 350296,
+    "stage": "ladder",
+    "win_rate": 0.248
+   },
+   {
+    "update": 570,
+    "decisions": 18677760,
+    "games": 356186,
+    "stage": "ladder",
+    "win_rate": 0.21
+   },
+   {
+    "update": 580,
+    "decisions": 19005440,
+    "games": 362066,
+    "stage": "ladder",
+    "win_rate": 0.227
+   },
+   {
+    "update": 590,
+    "decisions": 19333120,
+    "games": 367865,
+    "stage": "ladder",
+    "win_rate": 0.225
+   },
+   {
+    "update": 600,
+    "decisions": 19660800,
+    "games": 373641,
+    "stage": "ladder",
+    "win_rate": 0.193,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.11328,
+      "ci_low": 0.088659,
+      "ci_high": 0.14366
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.09375,
+      "ci_low": 0.07144,
+      "ci_high": 0.12211
+     }
+    }
+   },
+   {
+    "update": 610,
+    "decisions": 19988480,
+    "games": 379421,
+    "stage": "ladder",
+    "win_rate": 0.218
+   },
+   {
+    "update": 620,
+    "decisions": 20316160,
+    "games": 385571,
+    "stage": "strategies",
+    "win_rate": 0.101
+   },
+   {
+    "update": 630,
+    "decisions": 20643840,
+    "games": 392082,
+    "stage": "strategies",
+    "win_rate": 0.093
+   },
+   {
+    "update": 640,
+    "decisions": 20971520,
+    "games": 398726,
+    "stage": "strategies",
+    "win_rate": 0.093
+   },
+   {
+    "update": 650,
+    "decisions": 21299200,
+    "games": 405335,
+    "stage": "strategies",
+    "win_rate": 0.093,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.11914,
+      "ci_low": 0.093877,
+      "ci_high": 0.15008
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.13086,
+      "ci_low": 0.10438,
+      "ci_high": 0.16284
+     }
+    }
+   },
+   {
+    "update": 660,
+    "decisions": 21626880,
+    "games": 411851,
+    "stage": "strategies",
+    "win_rate": 0.106
+   },
+   {
+    "update": 670,
+    "decisions": 21954560,
+    "games": 418427,
+    "stage": "strategies",
+    "win_rate": 0.11
+   },
+   {
+    "update": 680,
+    "decisions": 22282240,
+    "games": 424981,
+    "stage": "strategies",
+    "win_rate": 0.098
+   },
+   {
+    "update": 690,
+    "decisions": 22609920,
+    "games": 431523,
+    "stage": "strategies",
+    "win_rate": 0.101
+   },
+   {
+    "update": 700,
+    "decisions": 22937600,
+    "games": 438156,
+    "stage": "strategies",
+    "win_rate": 0.099,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.10352,
+      "ci_low": 0.080014,
+      "ci_high": 0.13292
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.14258,
+      "ci_low": 0.11495,
+      "ci_high": 0.17553
+     }
+    }
+   },
+   {
+    "update": 710,
+    "decisions": 23265280,
+    "games": 444637,
+    "stage": "strategies",
+    "win_rate": 0.084
+   },
+   {
+    "update": 720,
+    "decisions": 23592960,
+    "games": 451091,
+    "stage": "strategies",
+    "win_rate": 0.103
+   },
+   {
+    "update": 730,
+    "decisions": 23920640,
+    "games": 457531,
+    "stage": "strategies",
+    "win_rate": 0.096
+   },
+   {
+    "update": 740,
+    "decisions": 24248320,
+    "games": 463910,
+    "stage": "strategies",
+    "win_rate": 0.102
+   },
+   {
+    "update": 750,
+    "decisions": 24576000,
+    "games": 470233,
+    "stage": "strategies",
+    "win_rate": 0.082,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.099609,
+      "ci_low": 0.076576,
+      "ci_high": 0.12861
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.099609,
+      "ci_low": 0.076576,
+      "ci_high": 0.12861
+     }
+    }
+   },
+   {
+    "update": 760,
+    "decisions": 24903680,
+    "games": 476695,
+    "stage": "strategies",
+    "win_rate": 0.103
+   },
+   {
+    "update": 770,
+    "decisions": 25231360,
+    "games": 483156,
+    "stage": "strategies",
+    "win_rate": 0.105
+   },
+   {
+    "update": 780,
+    "decisions": 25559040,
+    "games": 489506,
+    "stage": "strategies",
+    "win_rate": 0.103
+   },
+   {
+    "update": 790,
+    "decisions": 25886720,
+    "games": 495867,
+    "stage": "strategies",
+    "win_rate": 0.101
+   },
+   {
+    "update": 800,
+    "decisions": 26214400,
+    "games": 502132,
+    "stage": "strategies",
+    "win_rate": 0.107,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.10547,
+      "ci_low": 0.081738,
+      "ci_high": 0.13508
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.10156,
+      "ci_low": 0.078293,
+      "ci_high": 0.13077
+     }
+    }
+   },
+   {
+    "update": 810,
+    "decisions": 26542080,
+    "games": 508432,
+    "stage": "strategies",
+    "win_rate": 0.132
+   },
+   {
+    "update": 820,
+    "decisions": 26869760,
+    "games": 514793,
+    "stage": "strategies",
+    "win_rate": 0.111
+   },
+   {
+    "update": 830,
+    "decisions": 27197440,
+    "games": 521214,
+    "stage": "strategies",
+    "win_rate": 0.1
+   },
+   {
+    "update": 840,
+    "decisions": 27525120,
+    "games": 527684,
+    "stage": "strategies",
+    "win_rate": 0.109
+   },
+   {
+    "update": 850,
+    "decisions": 27852800,
+    "games": 534187,
+    "stage": "strategies",
+    "win_rate": 0.114,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.11523,
+      "ci_low": 0.090396,
+      "ci_high": 0.1458
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.091797,
+      "ci_low": 0.069735,
+      "ci_high": 0.11994
+     }
+    }
+   },
+   {
+    "update": 860,
+    "decisions": 28180480,
+    "games": 540595,
+    "stage": "strategies",
+    "win_rate": 0.09
+   },
+   {
+    "update": 870,
+    "decisions": 28508160,
+    "games": 546981,
+    "stage": "strategies",
+    "win_rate": 0.114
+   },
+   {
+    "update": 880,
+    "decisions": 28835840,
+    "games": 553390,
+    "stage": "strategies",
+    "win_rate": 0.13
+   },
+   {
+    "update": 890,
+    "decisions": 29163520,
+    "games": 559745,
+    "stage": "strategies",
+    "win_rate": 0.099
+   },
+   {
+    "update": 900,
+    "decisions": 29491200,
+    "games": 565974,
+    "stage": "strategies",
+    "win_rate": 0.095,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.11328,
+      "ci_low": 0.088659,
+      "ci_high": 0.14366
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.14648,
+      "ci_low": 0.11849,
+      "ci_high": 0.17974
+     }
+    }
+   },
+   {
+    "update": 910,
+    "decisions": 29818880,
+    "games": 572299,
+    "stage": "strategies",
+    "win_rate": 0.101
+   },
+   {
+    "update": 920,
+    "decisions": 30146560,
+    "games": 578667,
+    "stage": "strategies",
+    "win_rate": 0.105
+   },
+   {
+    "update": 930,
+    "decisions": 30474240,
+    "games": 584855,
+    "stage": "strategies",
+    "win_rate": 0.134
+   },
+   {
+    "update": 940,
+    "decisions": 30801920,
+    "games": 591098,
+    "stage": "strategies",
+    "win_rate": 0.138
+   },
+   {
+    "update": 950,
+    "decisions": 31129600,
+    "games": 597453,
+    "stage": "strategies",
+    "win_rate": 0.127,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.12305,
+      "ci_low": 0.097368,
+      "ci_high": 0.15434
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.14258,
+      "ci_low": 0.11495,
+      "ci_high": 0.17553
+     }
+    }
+   },
+   {
+    "update": 960,
+    "decisions": 31457280,
+    "games": 603693,
+    "stage": "strategies",
+    "win_rate": 0.13
+   },
+   {
+    "update": 970,
+    "decisions": 31784960,
+    "games": 609880,
+    "stage": "strategies",
+    "win_rate": 0.134
+   },
+   {
+    "update": 980,
+    "decisions": 32112640,
+    "games": 616069,
+    "stage": "strategies",
+    "win_rate": 0.109
+   },
+   {
+    "update": 990,
+    "decisions": 32440320,
+    "games": 622406,
+    "stage": "strategies",
+    "win_rate": 0.12
+   },
+   {
+    "update": 1000,
+    "decisions": 32768000,
+    "games": 628731,
+    "stage": "strategies",
+    "win_rate": 0.119,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.11523,
+      "ci_low": 0.090396,
+      "ci_high": 0.1458
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.13281,
+      "ci_low": 0.10613,
+      "ci_high": 0.16496
+     }
+    }
+   },
+   {
+    "update": 1010,
+    "decisions": 33095680,
+    "games": 634963,
+    "stage": "strategies",
+    "win_rate": 0.108
+   },
+   {
+    "update": 1020,
+    "decisions": 33423360,
+    "games": 641271,
+    "stage": "strategies",
+    "win_rate": 0.103
+   },
+   {
+    "update": 1030,
+    "decisions": 33751040,
+    "games": 647560,
+    "stage": "strategies",
+    "win_rate": 0.118
+   },
+   {
+    "update": 1040,
+    "decisions": 34078720,
+    "games": 653785,
+    "stage": "strategies",
+    "win_rate": 0.133
+   },
+   {
+    "update": 1050,
+    "decisions": 34406400,
+    "games": 659959,
+    "stage": "strategies",
+    "win_rate": 0.114,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.11719,
+      "ci_low": 0.092135,
+      "ci_high": 0.14794
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.13086,
+      "ci_low": 0.10438,
+      "ci_high": 0.16284
+     }
+    }
+   },
+   {
+    "update": 1060,
+    "decisions": 34734080,
+    "games": 666034,
+    "stage": "strategies",
+    "win_rate": 0.132
+   },
+   {
+    "update": 1070,
+    "decisions": 35061760,
+    "games": 672194,
+    "stage": "strategies",
+    "win_rate": 0.13
+   },
+   {
+    "update": 1080,
+    "decisions": 35389440,
+    "games": 678255,
+    "stage": "strategies",
+    "win_rate": 0.138
+   },
+   {
+    "update": 1090,
+    "decisions": 35717120,
+    "games": 684250,
+    "stage": "strategies",
+    "win_rate": 0.147
+   },
+   {
+    "update": 1100,
+    "decisions": 36044800,
+    "games": 690343,
+    "stage": "strategies",
+    "win_rate": 0.142,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.12891,
+      "ci_low": 0.10262,
+      "ci_high": 0.16072
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.16211,
+      "ci_low": 0.13272,
+      "ci_high": 0.19653
+     }
+    }
+   },
+   {
+    "update": 1110,
+    "decisions": 36372480,
+    "games": 696378,
+    "stage": "strategies",
+    "win_rate": 0.153
+   },
+   {
+    "update": 1120,
+    "decisions": 36700160,
+    "games": 702284,
+    "stage": "strategies",
+    "win_rate": 0.143
+   },
+   {
+    "update": 1130,
+    "decisions": 37027840,
+    "games": 708403,
+    "stage": "strategies",
+    "win_rate": 0.143
+   },
+   {
+    "update": 1140,
+    "decisions": 37355520,
+    "games": 714502,
+    "stage": "strategies",
+    "win_rate": 0.133
+   },
+   {
+    "update": 1150,
+    "decisions": 37683200,
+    "games": 720529,
+    "stage": "strategies",
+    "win_rate": 0.134,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.1582,
+      "ci_low": 0.12915,
+      "ci_high": 0.19234
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.13477,
+      "ci_low": 0.10789,
+      "ci_high": 0.16708
+     }
+    }
+   },
+   {
+    "update": 1160,
+    "decisions": 38010880,
+    "games": 726520,
+    "stage": "strategies",
+    "win_rate": 0.159
+   },
+   {
+    "update": 1170,
+    "decisions": 38338560,
+    "games": 732486,
+    "stage": "strategies",
+    "win_rate": 0.161
+   },
+   {
+    "update": 1180,
+    "decisions": 38666240,
+    "games": 738496,
+    "stage": "strategies",
+    "win_rate": 0.144
+   },
+   {
+    "update": 1190,
+    "decisions": 38993920,
+    "games": 744575,
+    "stage": "strategies",
+    "win_rate": 0.16
+   },
+   {
+    "update": 1200,
+    "decisions": 39321600,
+    "games": 750494,
+    "stage": "strategies",
+    "win_rate": 0.143,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.14648,
+      "ci_low": 0.11849,
+      "ci_high": 0.17974
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.15625,
+      "ci_low": 0.12737,
+      "ci_high": 0.19025
+     }
+    }
+   },
+   {
+    "update": 1210,
+    "decisions": 39649280,
+    "games": 756291,
+    "stage": "strategies",
+    "win_rate": 0.16
+   },
+   {
+    "update": 1220,
+    "decisions": 39976960,
+    "games": 762169,
+    "stage": "strategies",
+    "win_rate": 0.141
+   },
+   {
+    "update": 1230,
+    "decisions": 40304640,
+    "games": 768204,
+    "stage": "strategies",
+    "win_rate": 0.14
+   },
+   {
+    "update": 1240,
+    "decisions": 40632320,
+    "games": 774257,
+    "stage": "strategies",
+    "win_rate": 0.152
+   },
+   {
+    "update": 1250,
+    "decisions": 40960000,
+    "games": 780358,
+    "stage": "strategies",
+    "win_rate": 0.148,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.16211,
+      "ci_low": 0.13272,
+      "ci_high": 0.19653
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.19141,
+      "ci_low": 0.15968,
+      "ci_high": 0.22773
+     }
+    }
+   },
+   {
+    "update": 1260,
+    "decisions": 41287680,
+    "games": 786427,
+    "stage": "strategies",
+    "win_rate": 0.151
+   },
+   {
+    "update": 1270,
+    "decisions": 41615360,
+    "games": 792526,
+    "stage": "strategies",
+    "win_rate": 0.144
+   },
+   {
+    "update": 1280,
+    "decisions": 41943040,
+    "games": 798618,
+    "stage": "strategies",
+    "win_rate": 0.175
+   },
+   {
+    "update": 1290,
+    "decisions": 42270720,
+    "games": 804795,
+    "stage": "strategies",
+    "win_rate": 0.155
+   },
+   {
+    "update": 1300,
+    "decisions": 42598400,
+    "games": 811086,
+    "stage": "strategies",
+    "win_rate": 0.159,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.1543,
+      "ci_low": 0.12559,
+      "ci_high": 0.18815
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.17578,
+      "ci_low": 0.14526,
+      "ci_high": 0.21113
+     }
+    }
+   },
+   {
+    "update": 1310,
+    "decisions": 42926080,
+    "games": 817348,
+    "stage": "strategies",
+    "win_rate": 0.155
+   },
+   {
+    "update": 1320,
+    "decisions": 43253760,
+    "games": 823568,
+    "stage": "strategies",
+    "win_rate": 0.149
+   },
+   {
+    "update": 1330,
+    "decisions": 43581440,
+    "games": 829723,
+    "stage": "strategies",
+    "win_rate": 0.147
+   },
+   {
+    "update": 1340,
+    "decisions": 43909120,
+    "games": 835917,
+    "stage": "strategies",
+    "win_rate": 0.135
+   },
+   {
+    "update": 1350,
+    "decisions": 44236800,
+    "games": 842031,
+    "stage": "strategies",
+    "win_rate": 0.149,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.1543,
+      "ci_low": 0.12559,
+      "ci_high": 0.18815
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.17383,
+      "ci_low": 0.14346,
+      "ci_high": 0.20905
+     }
+    }
+   },
+   {
+    "update": 1360,
+    "decisions": 44564480,
+    "games": 848142,
+    "stage": "strategies",
+    "win_rate": 0.155
+   },
+   {
+    "update": 1370,
+    "decisions": 44892160,
+    "games": 854244,
+    "stage": "strategies",
+    "win_rate": 0.168
+   },
+   {
+    "update": 1380,
+    "decisions": 45219840,
+    "games": 860380,
+    "stage": "strategies",
+    "win_rate": 0.165
+   },
+   {
+    "update": 1390,
+    "decisions": 45547520,
+    "games": 866485,
+    "stage": "strategies",
+    "win_rate": 0.141
+   },
+   {
+    "update": 1400,
+    "decisions": 45875200,
+    "games": 872569,
+    "stage": "strategies",
+    "win_rate": 0.144,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.15234,
+      "ci_low": 0.12381,
+      "ci_high": 0.18605
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.15039,
+      "ci_low": 0.12204,
+      "ci_high": 0.18395
+     }
+    }
+   },
+   {
+    "update": 1410,
+    "decisions": 46202880,
+    "games": 878695,
+    "stage": "strategies",
+    "win_rate": 0.146
+   },
+   {
+    "update": 1420,
+    "decisions": 46530560,
+    "games": 884850,
+    "stage": "strategies",
+    "win_rate": 0.174
+   },
+   {
+    "update": 1430,
+    "decisions": 46858240,
+    "games": 890873,
+    "stage": "strategies",
+    "win_rate": 0.158
+   },
+   {
+    "update": 1440,
+    "decisions": 47185920,
+    "games": 896957,
+    "stage": "strategies",
+    "win_rate": 0.169
+   },
+   {
+    "update": 1450,
+    "decisions": 47513600,
+    "games": 902913,
+    "stage": "strategies",
+    "win_rate": 0.155,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.16211,
+      "ci_low": 0.13272,
+      "ci_high": 0.19653
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.15039,
+      "ci_low": 0.12204,
+      "ci_high": 0.18395
+     }
+    }
+   },
+   {
+    "update": 1460,
+    "decisions": 47841280,
+    "games": 908832,
+    "stage": "strategies",
+    "win_rate": 0.183
+   },
+   {
+    "update": 1470,
+    "decisions": 48168960,
+    "games": 914742,
+    "stage": "strategies",
+    "win_rate": 0.16
+   },
+   {
+    "update": 1480,
+    "decisions": 48496640,
+    "games": 920689,
+    "stage": "strategies",
+    "win_rate": 0.152
+   },
+   {
+    "update": 1490,
+    "decisions": 48824320,
+    "games": 926692,
+    "stage": "strategies",
+    "win_rate": 0.146
+   },
+   {
+    "update": 1500,
+    "decisions": 49152000,
+    "games": 932680,
+    "stage": "strategies",
+    "win_rate": 0.161,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.17773,
+      "ci_low": 0.14706,
+      "ci_high": 0.21321
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.16992,
+      "ci_low": 0.13988,
+      "ci_high": 0.20488
+     }
+    }
+   },
+   {
+    "update": 1510,
+    "decisions": 49479680,
+    "games": 938603,
+    "stage": "strategies",
+    "win_rate": 0.15
+   },
+   {
+    "update": 1520,
+    "decisions": 49807360,
+    "games": 944524,
+    "stage": "strategies",
+    "win_rate": 0.156
+   },
+   {
+    "update": 1530,
+    "decisions": 50135040,
+    "games": 950265,
+    "stage": "strategies",
+    "win_rate": 0.158
+   },
+   {
+    "update": 1540,
+    "decisions": 50462720,
+    "games": 955926,
+    "stage": "strategies",
+    "win_rate": 0.175
+   },
+   {
+    "update": 1550,
+    "decisions": 50790400,
+    "games": 961640,
+    "stage": "strategies",
+    "win_rate": 0.174,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.15039,
+      "ci_low": 0.12204,
+      "ci_high": 0.18395
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.16016,
+      "ci_low": 0.13094,
+      "ci_high": 0.19444
+     }
+    }
+   },
+   {
+    "update": 1560,
+    "decisions": 51118080,
+    "games": 967348,
+    "stage": "strategies",
+    "win_rate": 0.174
+   },
+   {
+    "update": 1570,
+    "decisions": 51445760,
+    "games": 973172,
+    "stage": "strategies",
+    "win_rate": 0.164
+   },
+   {
+    "update": 1580,
+    "decisions": 51773440,
+    "games": 978854,
+    "stage": "strategies",
+    "win_rate": 0.181
+   },
+   {
+    "update": 1590,
+    "decisions": 52101120,
+    "games": 984558,
+    "stage": "strategies",
+    "win_rate": 0.161
+   },
+   {
+    "update": 1600,
+    "decisions": 52428800,
+    "games": 990255,
+    "stage": "strategies",
+    "win_rate": 0.177,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.13086,
+      "ci_low": 0.10438,
+      "ci_high": 0.16284
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.16602,
+      "ci_low": 0.1363,
+      "ci_high": 0.20071
+     }
+    }
+   },
+   {
+    "update": 1610,
+    "decisions": 52756480,
+    "games": 996051,
+    "stage": "strategies",
+    "win_rate": 0.164
+   },
+   {
+    "update": 1620,
+    "decisions": 53084160,
+    "games": 1001826,
+    "stage": "strategies",
+    "win_rate": 0.157
+   },
+   {
+    "update": 1630,
+    "decisions": 53411840,
+    "games": 1007606,
+    "stage": "strategies",
+    "win_rate": 0.165
+   },
+   {
+    "update": 1640,
+    "decisions": 53739520,
+    "games": 1013375,
+    "stage": "strategies",
+    "win_rate": 0.166
+   },
+   {
+    "update": 1650,
+    "decisions": 54067200,
+    "games": 1019234,
+    "stage": "strategies",
+    "win_rate": 0.183,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.1582,
+      "ci_low": 0.12915,
+      "ci_high": 0.19234
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.14844,
+      "ci_low": 0.12026,
+      "ci_high": 0.18185
+     }
+    }
+   },
+   {
+    "update": 1660,
+    "decisions": 54394880,
+    "games": 1025075,
+    "stage": "strategies",
+    "win_rate": 0.151
+   },
+   {
+    "update": 1670,
+    "decisions": 54722560,
+    "games": 1031112,
+    "stage": "strategies",
+    "win_rate": 0.168
+   },
+   {
+    "update": 1680,
+    "decisions": 55050240,
+    "games": 1037177,
+    "stage": "strategies",
+    "win_rate": 0.149
+   },
+   {
+    "update": 1690,
+    "decisions": 55377920,
+    "games": 1043224,
+    "stage": "strategies",
+    "win_rate": 0.175
+   },
+   {
+    "update": 1700,
+    "decisions": 55705600,
+    "games": 1049254,
+    "stage": "strategies",
+    "win_rate": 0.17,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.14844,
+      "ci_low": 0.12026,
+      "ci_high": 0.18185
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.15625,
+      "ci_low": 0.12737,
+      "ci_high": 0.19025
+     }
+    }
+   },
+   {
+    "update": 1710,
+    "decisions": 56033280,
+    "games": 1055308,
+    "stage": "strategies",
+    "win_rate": 0.153
+   },
+   {
+    "update": 1720,
+    "decisions": 56360960,
+    "games": 1061389,
+    "stage": "strategies",
+    "win_rate": 0.169
+   },
+   {
+    "update": 1730,
+    "decisions": 56688640,
+    "games": 1067473,
+    "stage": "strategies",
+    "win_rate": 0.17
+   },
+   {
+    "update": 1740,
+    "decisions": 57016320,
+    "games": 1073521,
+    "stage": "strategies",
+    "win_rate": 0.175
+   },
+   {
+    "update": 1750,
+    "decisions": 57344000,
+    "games": 1079419,
+    "stage": "strategies",
+    "win_rate": 0.18,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.1582,
+      "ci_low": 0.12915,
+      "ci_high": 0.19234
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.17383,
+      "ci_low": 0.14346,
+      "ci_high": 0.20905
+     }
+    }
+   },
+   {
+    "update": 1760,
+    "decisions": 57671680,
+    "games": 1085330,
+    "stage": "strategies",
+    "win_rate": 0.193
+   },
+   {
+    "update": 1770,
+    "decisions": 57999360,
+    "games": 1091252,
+    "stage": "strategies",
+    "win_rate": 0.193
+   },
+   {
+    "update": 1780,
+    "decisions": 58327040,
+    "games": 1097079,
+    "stage": "strategies",
+    "win_rate": 0.195
+   },
+   {
+    "update": 1790,
+    "decisions": 58654720,
+    "games": 1102842,
+    "stage": "strategies",
+    "win_rate": 0.192
+   },
+   {
+    "update": 1800,
+    "decisions": 58982400,
+    "games": 1108593,
+    "stage": "strategies",
+    "win_rate": 0.186,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.16016,
+      "ci_low": 0.13094,
+      "ci_high": 0.19444
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.15039,
+      "ci_low": 0.12204,
+      "ci_high": 0.18395
+     }
+    }
+   },
+   {
+    "update": 1810,
+    "decisions": 59310080,
+    "games": 1114293,
+    "stage": "strategies",
+    "win_rate": 0.175
+   },
+   {
+    "update": 1820,
+    "decisions": 59637760,
+    "games": 1118206,
+    "stage": "league",
+    "win_rate": 0.175
+   },
+   {
+    "update": 1830,
+    "decisions": 59965440,
+    "games": 1120433,
+    "stage": "league",
+    "win_rate": 0.196
+   },
+   {
+    "update": 1840,
+    "decisions": 60293120,
+    "games": 1122672,
+    "stage": "league",
+    "win_rate": 0.179
+   },
+   {
+    "update": 1850,
+    "decisions": 60620800,
+    "games": 1124971,
+    "stage": "league",
+    "win_rate": 0.177,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.16992,
+      "ci_low": 0.13988,
+      "ci_high": 0.20488
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.15625,
+      "ci_low": 0.12737,
+      "ci_high": 0.19025
+     }
+    }
+   },
+   {
+    "update": 1860,
+    "decisions": 60948480,
+    "games": 1127245,
+    "stage": "league",
+    "win_rate": 0.185
+   },
+   {
+    "update": 1870,
+    "decisions": 61276160,
+    "games": 1129510,
+    "stage": "league",
+    "win_rate": 0.183
+   },
+   {
+    "update": 1880,
+    "decisions": 61603840,
+    "games": 1131760,
+    "stage": "league",
+    "win_rate": 0.173
+   },
+   {
+    "update": 1890,
+    "decisions": 61931520,
+    "games": 1134043,
+    "stage": "league",
+    "win_rate": 0.181
+   },
+   {
+    "update": 1900,
+    "decisions": 62259200,
+    "games": 1136384,
+    "stage": "league",
+    "win_rate": 0.195,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.16211,
+      "ci_low": 0.13272,
+      "ci_high": 0.19653
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.16211,
+      "ci_low": 0.13272,
+      "ci_high": 0.19653
+     }
+    }
+   },
+   {
+    "update": 1910,
+    "decisions": 62586880,
+    "games": 1138669,
+    "stage": "league",
+    "win_rate": 0.187
+   },
+   {
+    "update": 1920,
+    "decisions": 62914560,
+    "games": 1141006,
+    "stage": "league",
+    "win_rate": 0.19
+   },
+   {
+    "update": 1930,
+    "decisions": 63242240,
+    "games": 1143306,
+    "stage": "league",
+    "win_rate": 0.19
+   },
+   {
+    "update": 1940,
+    "decisions": 63569920,
+    "games": 1145566,
+    "stage": "league",
+    "win_rate": 0.182
+   },
+   {
+    "update": 1950,
+    "decisions": 63897600,
+    "games": 1147824,
+    "stage": "league",
+    "win_rate": 0.183,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.14258,
+      "ci_low": 0.11495,
+      "ci_high": 0.17553
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.16406,
+      "ci_low": 0.13451,
+      "ci_high": 0.19862
+     }
+    }
+   },
+   {
+    "update": 1960,
+    "decisions": 64225280,
+    "games": 1150150,
+    "stage": "league",
+    "win_rate": 0.151
+   },
+   {
+    "update": 1970,
+    "decisions": 64552960,
+    "games": 1152452,
+    "stage": "league",
+    "win_rate": 0.196
+   },
+   {
+    "update": 1980,
+    "decisions": 64880640,
+    "games": 1154739,
+    "stage": "league",
+    "win_rate": 0.182
+   },
+   {
+    "update": 1990,
+    "decisions": 65208320,
+    "games": 1157116,
+    "stage": "league",
+    "win_rate": 0.197
+   },
+   {
+    "update": 2000,
+    "decisions": 65536000,
+    "games": 1159491,
+    "stage": "league",
+    "win_rate": 0.19,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.16406,
+      "ci_low": 0.13451,
+      "ci_high": 0.19862
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.18555,
+      "ci_low": 0.15426,
+      "ci_high": 0.22152
+     }
+    }
+   },
+   {
+    "update": 2010,
+    "decisions": 65863680,
+    "games": 1161841,
+    "stage": "league",
+    "win_rate": 0.166
+   },
+   {
+    "update": 2020,
+    "decisions": 66191360,
+    "games": 1164240,
+    "stage": "league",
+    "win_rate": 0.206
+   },
+   {
+    "update": 2030,
+    "decisions": 66519040,
+    "games": 1166622,
+    "stage": "league",
+    "win_rate": 0.185
+   },
+   {
+    "update": 2040,
+    "decisions": 66846720,
+    "games": 1168996,
+    "stage": "league",
+    "win_rate": 0.203
+   },
+   {
+    "update": 2050,
+    "decisions": 67174400,
+    "games": 1171324,
+    "stage": "league",
+    "win_rate": 0.196,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.17383,
+      "ci_low": 0.14346,
+      "ci_high": 0.20905
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.17383,
+      "ci_low": 0.14346,
+      "ci_high": 0.20905
+     }
+    }
+   },
+   {
+    "update": 2060,
+    "decisions": 67502080,
+    "games": 1173682,
+    "stage": "league",
+    "win_rate": 0.186
+   },
+   {
+    "update": 2070,
+    "decisions": 67829760,
+    "games": 1176010,
+    "stage": "league",
+    "win_rate": 0.203
+   },
+   {
+    "update": 2080,
+    "decisions": 68157440,
+    "games": 1178317,
+    "stage": "league",
+    "win_rate": 0.172
+   },
+   {
+    "update": 2090,
+    "decisions": 68485120,
+    "games": 1180661,
+    "stage": "league",
+    "win_rate": 0.2
+   },
+   {
+    "update": 2100,
+    "decisions": 68812800,
+    "games": 1183022,
+    "stage": "league",
+    "win_rate": 0.194,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.15625,
+      "ci_low": 0.12737,
+      "ci_high": 0.19025
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.16406,
+      "ci_low": 0.13451,
+      "ci_high": 0.19862
+     }
+    }
+   },
+   {
+    "update": 2110,
+    "decisions": 69140480,
+    "games": 1185407,
+    "stage": "league",
+    "win_rate": 0.168
+   },
+   {
+    "update": 2120,
+    "decisions": 69468160,
+    "games": 1187774,
+    "stage": "league",
+    "win_rate": 0.174
+   },
+   {
+    "update": 2130,
+    "decisions": 69795840,
+    "games": 1190135,
+    "stage": "league",
+    "win_rate": 0.196
+   },
+   {
+    "update": 2140,
+    "decisions": 70123520,
+    "games": 1192463,
+    "stage": "league",
+    "win_rate": 0.198
+   },
+   {
+    "update": 2150,
+    "decisions": 70451200,
+    "games": 1194799,
+    "stage": "league",
+    "win_rate": 0.155,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.13867,
+      "ci_low": 0.11142,
+      "ci_high": 0.17131
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.14453,
+      "ci_low": 0.11672,
+      "ci_high": 0.17764
+     }
+    }
+   },
+   {
+    "update": 2160,
+    "decisions": 70778880,
+    "games": 1197118,
+    "stage": "league",
+    "win_rate": 0.194
+   },
+   {
+    "update": 2170,
+    "decisions": 71106560,
+    "games": 1199475,
+    "stage": "league",
+    "win_rate": 0.191
+   },
+   {
+    "update": 2180,
+    "decisions": 71434240,
+    "games": 1201839,
+    "stage": "league",
+    "win_rate": 0.161
+   },
+   {
+    "update": 2190,
+    "decisions": 71761920,
+    "games": 1204198,
+    "stage": "league",
+    "win_rate": 0.187
+   },
+   {
+    "update": 2200,
+    "decisions": 72089600,
+    "games": 1206529,
+    "stage": "league",
+    "win_rate": 0.196,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.16602,
+      "ci_low": 0.1363,
+      "ci_high": 0.20071
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.1875,
+      "ci_low": 0.15606,
+      "ci_high": 0.22359
+     }
+    }
+   },
+   {
+    "update": 2210,
+    "decisions": 72417280,
+    "games": 1208863,
+    "stage": "league",
+    "win_rate": 0.182
+   },
+   {
+    "update": 2220,
+    "decisions": 72744960,
+    "games": 1211233,
+    "stage": "league",
+    "win_rate": 0.177
+   },
+   {
+    "update": 2230,
+    "decisions": 73072640,
+    "games": 1213625,
+    "stage": "league",
+    "win_rate": 0.193
+   },
+   {
+    "update": 2240,
+    "decisions": 73400320,
+    "games": 1216025,
+    "stage": "league",
+    "win_rate": 0.172
+   },
+   {
+    "update": 2250,
+    "decisions": 73728000,
+    "games": 1218351,
+    "stage": "league",
+    "win_rate": 0.167,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.14648,
+      "ci_low": 0.11849,
+      "ci_high": 0.17974
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.1543,
+      "ci_low": 0.12559,
+      "ci_high": 0.18815
+     }
+    }
+   },
+   {
+    "update": 2260,
+    "decisions": 74055680,
+    "games": 1220709,
+    "stage": "league",
+    "win_rate": 0.18
+   },
+   {
+    "update": 2270,
+    "decisions": 74383360,
+    "games": 1223042,
+    "stage": "league",
+    "win_rate": 0.149
+   },
+   {
+    "update": 2280,
+    "decisions": 74711040,
+    "games": 1225399,
+    "stage": "league",
+    "win_rate": 0.166
+   },
+   {
+    "update": 2290,
+    "decisions": 75038720,
+    "games": 1227753,
+    "stage": "league",
+    "win_rate": 0.175
+   },
+   {
+    "update": 2300,
+    "decisions": 75366400,
+    "games": 1230093,
+    "stage": "league",
+    "win_rate": 0.169,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.1543,
+      "ci_low": 0.12559,
+      "ci_high": 0.18815
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.16211,
+      "ci_low": 0.13272,
+      "ci_high": 0.19653
+     }
+    }
+   },
+   {
+    "update": 2310,
+    "decisions": 75694080,
+    "games": 1232487,
+    "stage": "league",
+    "win_rate": 0.175
+   },
+   {
+    "update": 2320,
+    "decisions": 76021760,
+    "games": 1234843,
+    "stage": "league",
+    "win_rate": 0.181
+   },
+   {
+    "update": 2330,
+    "decisions": 76349440,
+    "games": 1237153,
+    "stage": "league",
+    "win_rate": 0.203
+   },
+   {
+    "update": 2340,
+    "decisions": 76677120,
+    "games": 1239497,
+    "stage": "league",
+    "win_rate": 0.194
+   },
+   {
+    "update": 2350,
+    "decisions": 77004800,
+    "games": 1241926,
+    "stage": "league",
+    "win_rate": 0.223,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.17773,
+      "ci_low": 0.14706,
+      "ci_high": 0.21321
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.18164,
+      "ci_low": 0.15066,
+      "ci_high": 0.21737
+     }
+    }
+   },
+   {
+    "update": 2360,
+    "decisions": 77332480,
+    "games": 1244297,
+    "stage": "league",
+    "win_rate": 0.19
+   },
+   {
+    "update": 2370,
+    "decisions": 77660160,
+    "games": 1246659,
+    "stage": "league",
+    "win_rate": 0.188
+   },
+   {
+    "update": 2380,
+    "decisions": 77987840,
+    "games": 1249027,
+    "stage": "league",
+    "win_rate": 0.192
+   },
+   {
+    "update": 2390,
+    "decisions": 78315520,
+    "games": 1251354,
+    "stage": "league",
+    "win_rate": 0.192
+   },
+   {
+    "update": 2400,
+    "decisions": 78643200,
+    "games": 1253736,
+    "stage": "league",
+    "win_rate": 0.183,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.16406,
+      "ci_low": 0.13451,
+      "ci_high": 0.19862
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.18945,
+      "ci_low": 0.15787,
+      "ci_high": 0.22566
+     }
+    }
+   },
+   {
+    "update": 2410,
+    "decisions": 78970880,
+    "games": 1256128,
+    "stage": "league",
+    "win_rate": 0.183
+   },
+   {
+    "update": 2420,
+    "decisions": 79298560,
+    "games": 1258488,
+    "stage": "league",
+    "win_rate": 0.168
+   },
+   {
+    "update": 2430,
+    "decisions": 79626240,
+    "games": 1260854,
+    "stage": "league",
+    "win_rate": 0.198
+   },
+   {
+    "update": 2440,
+    "decisions": 79953920,
+    "games": 1263186,
+    "stage": "league",
+    "win_rate": 0.2
+   },
+   {
+    "update": 2450,
+    "decisions": 80281600,
+    "games": 1265539,
+    "stage": "league",
+    "win_rate": 0.188,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.16602,
+      "ci_low": 0.1363,
+      "ci_high": 0.20071
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.16797,
+      "ci_low": 0.13809,
+      "ci_high": 0.2028
+     }
+    }
+   },
+   {
+    "update": 2460,
+    "decisions": 80609280,
+    "games": 1267871,
+    "stage": "league",
+    "win_rate": 0.196
+   },
+   {
+    "update": 2470,
+    "decisions": 80936960,
+    "games": 1270188,
+    "stage": "league",
+    "win_rate": 0.196
+   },
+   {
+    "update": 2480,
+    "decisions": 81264640,
+    "games": 1272474,
+    "stage": "league",
+    "win_rate": 0.196
+   },
+   {
+    "update": 2490,
+    "decisions": 81592320,
+    "games": 1274821,
+    "stage": "league",
+    "win_rate": 0.175
+   },
+   {
+    "update": 2500,
+    "decisions": 81920000,
+    "games": 1277106,
+    "stage": "league",
+    "win_rate": 0.183,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.16992,
+      "ci_low": 0.13988,
+      "ci_high": 0.20488
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.18359,
+      "ci_low": 0.15246,
+      "ci_high": 0.21944
+     }
+    }
+   },
+   {
+    "update": 2510,
+    "decisions": 82247680,
+    "games": 1279441,
+    "stage": "league",
+    "win_rate": 0.193
+   },
+   {
+    "update": 2520,
+    "decisions": 82575360,
+    "games": 1281746,
+    "stage": "league",
+    "win_rate": 0.187
+   },
+   {
+    "update": 2530,
+    "decisions": 82903040,
+    "games": 1284084,
+    "stage": "league",
+    "win_rate": 0.194
+   },
+   {
+    "update": 2540,
+    "decisions": 83230720,
+    "games": 1286430,
+    "stage": "league",
+    "win_rate": 0.176
+   },
+   {
+    "update": 2550,
+    "decisions": 83558400,
+    "games": 1288736,
+    "stage": "league",
+    "win_rate": 0.193,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.16406,
+      "ci_low": 0.13451,
+      "ci_high": 0.19862
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.18164,
+      "ci_low": 0.15066,
+      "ci_high": 0.21737
+     }
+    }
+   },
+   {
+    "update": 2560,
+    "decisions": 83886080,
+    "games": 1291129,
+    "stage": "league",
+    "win_rate": 0.189
+   },
+   {
+    "update": 2570,
+    "decisions": 84213760,
+    "games": 1293458,
+    "stage": "league",
+    "win_rate": 0.184
+   },
+   {
+    "update": 2580,
+    "decisions": 84541440,
+    "games": 1295759,
+    "stage": "league",
+    "win_rate": 0.183
+   },
+   {
+    "update": 2590,
+    "decisions": 84869120,
+    "games": 1298103,
+    "stage": "league",
+    "win_rate": 0.205
+   },
+   {
+    "update": 2600,
+    "decisions": 85196800,
+    "games": 1300444,
+    "stage": "league",
+    "win_rate": 0.184,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.14453,
+      "ci_low": 0.11672,
+      "ci_high": 0.17764
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.17969,
+      "ci_low": 0.14886,
+      "ci_high": 0.21529
+     }
+    }
+   },
+   {
+    "update": 2610,
+    "decisions": 85524480,
+    "games": 1302803,
+    "stage": "league",
+    "win_rate": 0.214
+   },
+   {
+    "update": 2620,
+    "decisions": 85852160,
+    "games": 1305111,
+    "stage": "league",
+    "win_rate": 0.216
+   },
+   {
+    "update": 2630,
+    "decisions": 86179840,
+    "games": 1307510,
+    "stage": "league",
+    "win_rate": 0.203
+   },
+   {
+    "update": 2640,
+    "decisions": 86507520,
+    "games": 1309862,
+    "stage": "league",
+    "win_rate": 0.216
+   },
+   {
+    "update": 2650,
+    "decisions": 86835200,
+    "games": 1312238,
+    "stage": "league",
+    "win_rate": 0.218,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.16016,
+      "ci_low": 0.13094,
+      "ci_high": 0.19444
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.17773,
+      "ci_low": 0.14706,
+      "ci_high": 0.21321
+     }
+    }
+   },
+   {
+    "update": 2660,
+    "decisions": 87162880,
+    "games": 1314669,
+    "stage": "league",
+    "win_rate": 0.175
+   },
+   {
+    "update": 2670,
+    "decisions": 87490560,
+    "games": 1317041,
+    "stage": "league",
+    "win_rate": 0.177
+   },
+   {
+    "update": 2680,
+    "decisions": 87818240,
+    "games": 1319413,
+    "stage": "league",
+    "win_rate": 0.206
+   },
+   {
+    "update": 2690,
+    "decisions": 88145920,
+    "games": 1321795,
+    "stage": "league",
+    "win_rate": 0.214
+   },
+   {
+    "update": 2700,
+    "decisions": 88473600,
+    "games": 1324135,
+    "stage": "league",
+    "win_rate": 0.21,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.16797,
+      "ci_low": 0.13809,
+      "ci_high": 0.2028
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.17578,
+      "ci_low": 0.14526,
+      "ci_high": 0.21113
+     }
+    }
+   },
+   {
+    "update": 2710,
+    "decisions": 88801280,
+    "games": 1326535,
+    "stage": "league",
+    "win_rate": 0.187
+   },
+   {
+    "update": 2720,
+    "decisions": 89128960,
+    "games": 1328926,
+    "stage": "league",
+    "win_rate": 0.199
+   },
+   {
+    "update": 2730,
+    "decisions": 89456640,
+    "games": 1331342,
+    "stage": "league",
+    "win_rate": 0.208
+   },
+   {
+    "update": 2740,
+    "decisions": 89784320,
+    "games": 1333754,
+    "stage": "league",
+    "win_rate": 0.178
+   },
+   {
+    "update": 2750,
+    "decisions": 90112000,
+    "games": 1336156,
+    "stage": "league",
+    "win_rate": 0.213,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.19922,
+      "ci_low": 0.16692,
+      "ci_high": 0.236
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.18164,
+      "ci_low": 0.15066,
+      "ci_high": 0.21737
+     }
+    }
+   },
+   {
+    "update": 2760,
+    "decisions": 90439680,
+    "games": 1338545,
+    "stage": "league",
+    "win_rate": 0.214
+   },
+   {
+    "update": 2770,
+    "decisions": 90767360,
+    "games": 1340908,
+    "stage": "league",
+    "win_rate": 0.223
+   },
+   {
+    "update": 2780,
+    "decisions": 91095040,
+    "games": 1343240,
+    "stage": "league",
+    "win_rate": 0.193
+   },
+   {
+    "update": 2790,
+    "decisions": 91422720,
+    "games": 1345570,
+    "stage": "league",
+    "win_rate": 0.243
+   },
+   {
+    "update": 2800,
+    "decisions": 91750400,
+    "games": 1347944,
+    "stage": "league",
+    "win_rate": 0.217,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.16992,
+      "ci_low": 0.13988,
+      "ci_high": 0.20488
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.19531,
+      "ci_low": 0.16329,
+      "ci_high": 0.23187
+     }
+    }
+   },
+   {
+    "update": 2810,
+    "decisions": 92078080,
+    "games": 1350289,
+    "stage": "league",
+    "win_rate": 0.179
+   },
+   {
+    "update": 2820,
+    "decisions": 92405760,
+    "games": 1352598,
+    "stage": "league",
+    "win_rate": 0.184
+   },
+   {
+    "update": 2830,
+    "decisions": 92733440,
+    "games": 1354938,
+    "stage": "league",
+    "win_rate": 0.214
+   },
+   {
+    "update": 2840,
+    "decisions": 93061120,
+    "games": 1357318,
+    "stage": "league",
+    "win_rate": 0.182
+   },
+   {
+    "update": 2850,
+    "decisions": 93388800,
+    "games": 1359697,
+    "stage": "league",
+    "win_rate": 0.188,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.20117,
+      "ci_low": 0.16873,
+      "ci_high": 0.23806
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.17773,
+      "ci_low": 0.14706,
+      "ci_high": 0.21321
+     }
+    }
+   },
+   {
+    "update": 2860,
+    "decisions": 93716480,
+    "games": 1362102,
+    "stage": "league",
+    "win_rate": 0.216
+   },
+   {
+    "update": 2870,
+    "decisions": 94044160,
+    "games": 1364463,
+    "stage": "league",
+    "win_rate": 0.179
+   },
+   {
+    "update": 2880,
+    "decisions": 94371840,
+    "games": 1366850,
+    "stage": "league",
+    "win_rate": 0.198
+   },
+   {
+    "update": 2890,
+    "decisions": 94699520,
+    "games": 1369225,
+    "stage": "league",
+    "win_rate": 0.196
+   },
+   {
+    "update": 2900,
+    "decisions": 95027200,
+    "games": 1371591,
+    "stage": "league",
+    "win_rate": 0.203,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.20898,
+      "ci_low": 0.176,
+      "ci_high": 0.24631
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.18359,
+      "ci_low": 0.15246,
+      "ci_high": 0.21944
+     }
+    }
+   },
+   {
+    "update": 2910,
+    "decisions": 95354880,
+    "games": 1373905,
+    "stage": "league",
+    "win_rate": 0.2
+   },
+   {
+    "update": 2920,
+    "decisions": 95682560,
+    "games": 1376186,
+    "stage": "league",
+    "win_rate": 0.216
+   },
+   {
+    "update": 2930,
+    "decisions": 96010240,
+    "games": 1378464,
+    "stage": "league",
+    "win_rate": 0.229
+   },
+   {
+    "update": 2940,
+    "decisions": 96337920,
+    "games": 1380749,
+    "stage": "league",
+    "win_rate": 0.204
+   },
+   {
+    "update": 2950,
+    "decisions": 96665600,
+    "games": 1383095,
+    "stage": "league",
+    "win_rate": 0.189,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.19141,
+      "ci_low": 0.15968,
+      "ci_high": 0.22773
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.19727,
+      "ci_low": 0.16511,
+      "ci_high": 0.23393
+     }
+    }
+   },
+   {
+    "update": 2960,
+    "decisions": 96993280,
+    "games": 1385425,
+    "stage": "league",
+    "win_rate": 0.221
+   },
+   {
+    "update": 2970,
+    "decisions": 97320960,
+    "games": 1387794,
+    "stage": "league",
+    "win_rate": 0.187
+   },
+   {
+    "update": 2980,
+    "decisions": 97648640,
+    "games": 1390163,
+    "stage": "league",
+    "win_rate": 0.192
+   },
+   {
+    "update": 2990,
+    "decisions": 97976320,
+    "games": 1392526,
+    "stage": "league",
+    "win_rate": 0.177
+   },
+   {
+    "update": 3000,
+    "decisions": 98304000,
+    "games": 1394886,
+    "stage": "league",
+    "win_rate": 0.199,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.17383,
+      "ci_low": 0.14346,
+      "ci_high": 0.20905
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.20898,
+      "ci_low": 0.176,
+      "ci_high": 0.24631
+     }
+    }
+   },
+   {
+    "update": 3010,
+    "decisions": 98631680,
+    "games": 1397239,
+    "stage": "league",
+    "win_rate": 0.201
+   },
+   {
+    "update": 3020,
+    "decisions": 98959360,
+    "games": 1399591,
+    "stage": "league",
+    "win_rate": 0.238
+   },
+   {
+    "update": 3030,
+    "decisions": 99287040,
+    "games": 1401927,
+    "stage": "league",
+    "win_rate": 0.206
+   },
+   {
+    "update": 3040,
+    "decisions": 99614720,
+    "games": 1404353,
+    "stage": "league",
+    "win_rate": 0.201
+   },
+   {
+    "update": 3050,
+    "decisions": 99942400,
+    "games": 1406728,
+    "stage": "league",
+    "win_rate": 0.184,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.16992,
+      "ci_low": 0.13988,
+      "ci_high": 0.20488
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.18945,
+      "ci_low": 0.15787,
+      "ci_high": 0.22566
+     }
+    }
+   },
+   {
+    "update": 3060,
+    "decisions": 100270080,
+    "games": 1409113,
+    "stage": "league",
+    "win_rate": 0.203
+   },
+   {
+    "update": 3070,
+    "decisions": 100597760,
+    "games": 1411502,
+    "stage": "league",
+    "win_rate": 0.246
+   },
+   {
+    "update": 3080,
+    "decisions": 100925440,
+    "games": 1413896,
+    "stage": "league",
+    "win_rate": 0.224
+   },
+   {
+    "update": 3090,
+    "decisions": 101253120,
+    "games": 1416250,
+    "stage": "league",
+    "win_rate": 0.229
+   },
+   {
+    "update": 3100,
+    "decisions": 101580800,
+    "games": 1418607,
+    "stage": "league",
+    "win_rate": 0.214,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.20312,
+      "ci_low": 0.17055,
+      "ci_high": 0.24013
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.20703,
+      "ci_low": 0.17418,
+      "ci_high": 0.24425
+     }
+    }
+   },
+   {
+    "update": 3110,
+    "decisions": 101908480,
+    "games": 1420966,
+    "stage": "league",
+    "win_rate": 0.205
+   },
+   {
+    "update": 3120,
+    "decisions": 102236160,
+    "games": 1423311,
+    "stage": "league",
+    "win_rate": 0.207
+   },
+   {
+    "update": 3130,
+    "decisions": 102563840,
+    "games": 1425706,
+    "stage": "league",
+    "win_rate": 0.194
+   },
+   {
+    "update": 3140,
+    "decisions": 102891520,
+    "games": 1428064,
+    "stage": "league",
+    "win_rate": 0.202
+   },
+   {
+    "update": 3150,
+    "decisions": 103219200,
+    "games": 1430458,
+    "stage": "league",
+    "win_rate": 0.213,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.16016,
+      "ci_low": 0.13094,
+      "ci_high": 0.19444
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.20312,
+      "ci_low": 0.17055,
+      "ci_high": 0.24013
+     }
+    }
+   },
+   {
+    "update": 3160,
+    "decisions": 103546880,
+    "games": 1432805,
+    "stage": "league",
+    "win_rate": 0.201
+   },
+   {
+    "update": 3170,
+    "decisions": 103874560,
+    "games": 1435255,
+    "stage": "league",
+    "win_rate": 0.2
+   },
+   {
+    "update": 3180,
+    "decisions": 104202240,
+    "games": 1437676,
+    "stage": "league",
+    "win_rate": 0.201
+   },
+   {
+    "update": 3190,
+    "decisions": 104529920,
+    "games": 1440088,
+    "stage": "league",
+    "win_rate": 0.205
+   },
+   {
+    "update": 3200,
+    "decisions": 104857600,
+    "games": 1442473,
+    "stage": "league",
+    "win_rate": 0.188,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.18555,
+      "ci_low": 0.15426,
+      "ci_high": 0.22152
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.20898,
+      "ci_low": 0.176,
+      "ci_high": 0.24631
+     }
+    }
+   },
+   {
+    "update": 3210,
+    "decisions": 105185280,
+    "games": 1444890,
+    "stage": "league",
+    "win_rate": 0.188
+   },
+   {
+    "update": 3220,
+    "decisions": 105512960,
+    "games": 1447332,
+    "stage": "league",
+    "win_rate": 0.203
+   },
+   {
+    "update": 3230,
+    "decisions": 105840640,
+    "games": 1449703,
+    "stage": "league",
+    "win_rate": 0.215
+   },
+   {
+    "update": 3240,
+    "decisions": 106168320,
+    "games": 1452036,
+    "stage": "league",
+    "win_rate": 0.191
+   },
+   {
+    "update": 3250,
+    "decisions": 106496000,
+    "games": 1454397,
+    "stage": "league",
+    "win_rate": 0.207,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.16211,
+      "ci_low": 0.13272,
+      "ci_high": 0.19653
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.1875,
+      "ci_low": 0.15606,
+      "ci_high": 0.22359
+     }
+    }
+   },
+   {
+    "update": 3260,
+    "decisions": 106823680,
+    "games": 1456767,
+    "stage": "league",
+    "win_rate": 0.192
+   },
+   {
+    "update": 3270,
+    "decisions": 107151360,
+    "games": 1459111,
+    "stage": "league",
+    "win_rate": 0.188
+   },
+   {
+    "update": 3280,
+    "decisions": 107479040,
+    "games": 1461465,
+    "stage": "league",
+    "win_rate": 0.199
+   },
+   {
+    "update": 3290,
+    "decisions": 107806720,
+    "games": 1463777,
+    "stage": "league",
+    "win_rate": 0.205
+   },
+   {
+    "update": 3300,
+    "decisions": 108134400,
+    "games": 1466126,
+    "stage": "league",
+    "win_rate": 0.208,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.18945,
+      "ci_low": 0.15787,
+      "ci_high": 0.22566
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.19922,
+      "ci_low": 0.16692,
+      "ci_high": 0.236
+     }
+    }
+   },
+   {
+    "update": 3310,
+    "decisions": 108462080,
+    "games": 1468413,
+    "stage": "league",
+    "win_rate": 0.185
+   },
+   {
+    "update": 3320,
+    "decisions": 108789760,
+    "games": 1470744,
+    "stage": "league",
+    "win_rate": 0.193
+   },
+   {
+    "update": 3330,
+    "decisions": 109117440,
+    "games": 1473090,
+    "stage": "league",
+    "win_rate": 0.2
+   },
+   {
+    "update": 3340,
+    "decisions": 109445120,
+    "games": 1475461,
+    "stage": "league",
+    "win_rate": 0.177
+   },
+   {
+    "update": 3350,
+    "decisions": 109772800,
+    "games": 1477778,
+    "stage": "league",
+    "win_rate": 0.176,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.17383,
+      "ci_low": 0.14346,
+      "ci_high": 0.20905
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.17383,
+      "ci_low": 0.14346,
+      "ci_high": 0.20905
+     }
+    }
+   },
+   {
+    "update": 3360,
+    "decisions": 110100480,
+    "games": 1480148,
+    "stage": "league",
+    "win_rate": 0.208
+   },
+   {
+    "update": 3370,
+    "decisions": 110428160,
+    "games": 1482515,
+    "stage": "league",
+    "win_rate": 0.202
+   },
+   {
+    "update": 3380,
+    "decisions": 110755840,
+    "games": 1484873,
+    "stage": "league",
+    "win_rate": 0.186
+   },
+   {
+    "update": 3390,
+    "decisions": 111083520,
+    "games": 1487223,
+    "stage": "league",
+    "win_rate": 0.207
+   },
+   {
+    "update": 3400,
+    "decisions": 111411200,
+    "games": 1489565,
+    "stage": "league",
+    "win_rate": 0.196,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.19336,
+      "ci_low": 0.16148,
+      "ci_high": 0.2298
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.17188,
+      "ci_low": 0.14167,
+      "ci_high": 0.20697
+     }
+    }
+   },
+   {
+    "update": 3410,
+    "decisions": 111738880,
+    "games": 1491927,
+    "stage": "league",
+    "win_rate": 0.214
+   },
+   {
+    "update": 3420,
+    "decisions": 112066560,
+    "games": 1494339,
+    "stage": "league",
+    "win_rate": 0.199
+   },
+   {
+    "update": 3430,
+    "decisions": 112394240,
+    "games": 1496707,
+    "stage": "league",
+    "win_rate": 0.18
+   },
+   {
+    "update": 3440,
+    "decisions": 112721920,
+    "games": 1499084,
+    "stage": "league",
+    "win_rate": 0.209
+   },
+   {
+    "update": 3450,
+    "decisions": 113049600,
+    "games": 1501445,
+    "stage": "league",
+    "win_rate": 0.191,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.17188,
+      "ci_low": 0.14167,
+      "ci_high": 0.20697
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.20508,
+      "ci_low": 0.17236,
+      "ci_high": 0.24219
+     }
+    }
+   },
+   {
+    "update": 3460,
+    "decisions": 113377280,
+    "games": 1503815,
+    "stage": "league",
+    "win_rate": 0.203
+   },
+   {
+    "update": 3470,
+    "decisions": 113704960,
+    "games": 1506097,
+    "stage": "league",
+    "win_rate": 0.181
+   },
+   {
+    "update": 3480,
+    "decisions": 114032640,
+    "games": 1508457,
+    "stage": "league",
+    "win_rate": 0.195
+   },
+   {
+    "update": 3490,
+    "decisions": 114360320,
+    "games": 1510801,
+    "stage": "league",
+    "win_rate": 0.185
+   },
+   {
+    "update": 3500,
+    "decisions": 114688000,
+    "games": 1513074,
+    "stage": "league",
+    "win_rate": 0.196,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.18555,
+      "ci_low": 0.15426,
+      "ci_high": 0.22152
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.20703,
+      "ci_low": 0.17418,
+      "ci_high": 0.24425
+     }
+    }
+   },
+   {
+    "update": 3510,
+    "decisions": 115015680,
+    "games": 1515394,
+    "stage": "league",
+    "win_rate": 0.2
+   },
+   {
+    "update": 3520,
+    "decisions": 115343360,
+    "games": 1517694,
+    "stage": "league",
+    "win_rate": 0.202
+   },
+   {
+    "update": 3530,
+    "decisions": 115671040,
+    "games": 1520002,
+    "stage": "league",
+    "win_rate": 0.198
+   },
+   {
+    "update": 3540,
+    "decisions": 115998720,
+    "games": 1522328,
+    "stage": "league",
+    "win_rate": 0.185
+   },
+   {
+    "update": 3550,
+    "decisions": 116326400,
+    "games": 1524689,
+    "stage": "league",
+    "win_rate": 0.191,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.15234,
+      "ci_low": 0.12381,
+      "ci_high": 0.18605
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.18164,
+      "ci_low": 0.15066,
+      "ci_high": 0.21737
+     }
+    }
+   },
+   {
+    "update": 3560,
+    "decisions": 116654080,
+    "games": 1526997,
+    "stage": "league",
+    "win_rate": 0.21
+   },
+   {
+    "update": 3570,
+    "decisions": 116981760,
+    "games": 1529360,
+    "stage": "league",
+    "win_rate": 0.207
+   },
+   {
+    "update": 3580,
+    "decisions": 117309440,
+    "games": 1531626,
+    "stage": "league",
+    "win_rate": 0.2
+   },
+   {
+    "update": 3590,
+    "decisions": 117637120,
+    "games": 1533982,
+    "stage": "league",
+    "win_rate": 0.221
+   },
+   {
+    "update": 3600,
+    "decisions": 117964800,
+    "games": 1536323,
+    "stage": "league",
+    "win_rate": 0.209,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.20508,
+      "ci_low": 0.17236,
+      "ci_high": 0.24219
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.20117,
+      "ci_low": 0.16873,
+      "ci_high": 0.23806
+     }
+    }
+   },
+   {
+    "update": 3610,
+    "decisions": 118292480,
+    "games": 1538651,
+    "stage": "league",
+    "win_rate": 0.186
+   },
+   {
+    "update": 3620,
+    "decisions": 118620160,
+    "games": 1540952,
+    "stage": "league",
+    "win_rate": 0.213
+   },
+   {
+    "update": 3630,
+    "decisions": 118947840,
+    "games": 1543273,
+    "stage": "league",
+    "win_rate": 0.205
+   },
+   {
+    "update": 3640,
+    "decisions": 119275520,
+    "games": 1545613,
+    "stage": "league",
+    "win_rate": 0.19
+   },
+   {
+    "update": 3650,
+    "decisions": 119603200,
+    "games": 1547947,
+    "stage": "league",
+    "win_rate": 0.202,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.19922,
+      "ci_low": 0.16692,
+      "ci_high": 0.236
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.18164,
+      "ci_low": 0.15066,
+      "ci_high": 0.21737
+     }
+    }
+   },
+   {
+    "update": 3660,
+    "decisions": 119930880,
+    "games": 1550273,
+    "stage": "league",
+    "win_rate": 0.227
+   },
+   {
+    "update": 3670,
+    "decisions": 120258560,
+    "games": 1552634,
+    "stage": "league",
+    "win_rate": 0.207
+   },
+   {
+    "update": 3680,
+    "decisions": 120586240,
+    "games": 1554970,
+    "stage": "league",
+    "win_rate": 0.212
+   },
+   {
+    "update": 3690,
+    "decisions": 120913920,
+    "games": 1557290,
+    "stage": "league",
+    "win_rate": 0.211
+   },
+   {
+    "update": 3700,
+    "decisions": 121241600,
+    "games": 1559622,
+    "stage": "league",
+    "win_rate": 0.203,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.19336,
+      "ci_low": 0.16148,
+      "ci_high": 0.2298
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.20117,
+      "ci_low": 0.16873,
+      "ci_high": 0.23806
+     }
+    }
+   },
+   {
+    "update": 3710,
+    "decisions": 121569280,
+    "games": 1561900,
+    "stage": "league",
+    "win_rate": 0.187
+   },
+   {
+    "update": 3720,
+    "decisions": 121896960,
+    "games": 1564229,
+    "stage": "league",
+    "win_rate": 0.21
+   },
+   {
+    "update": 3730,
+    "decisions": 122224640,
+    "games": 1566497,
+    "stage": "league",
+    "win_rate": 0.197
+   },
+   {
+    "update": 3740,
+    "decisions": 122552320,
+    "games": 1568777,
+    "stage": "league",
+    "win_rate": 0.19
+   },
+   {
+    "update": 3750,
+    "decisions": 122880000,
+    "games": 1571073,
+    "stage": "league",
+    "win_rate": 0.207,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.16211,
+      "ci_low": 0.13272,
+      "ci_high": 0.19653
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.20312,
+      "ci_low": 0.17055,
+      "ci_high": 0.24013
+     }
+    }
+   },
+   {
+    "update": 3760,
+    "decisions": 123207680,
+    "games": 1573365,
+    "stage": "league",
+    "win_rate": 0.195
+   },
+   {
+    "update": 3770,
+    "decisions": 123535360,
+    "games": 1575681,
+    "stage": "league",
+    "win_rate": 0.173
+   },
+   {
+    "update": 3780,
+    "decisions": 123863040,
+    "games": 1577982,
+    "stage": "league",
+    "win_rate": 0.193
+   },
+   {
+    "update": 3790,
+    "decisions": 124190720,
+    "games": 1580250,
+    "stage": "league",
+    "win_rate": 0.18
+   },
+   {
+    "update": 3800,
+    "decisions": 124518400,
+    "games": 1582521,
+    "stage": "league",
+    "win_rate": 0.211,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.19141,
+      "ci_low": 0.15968,
+      "ci_high": 0.22773
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.18164,
+      "ci_low": 0.15066,
+      "ci_high": 0.21737
+     }
+    }
+   },
+   {
+    "update": 3810,
+    "decisions": 124846080,
+    "games": 1584795,
+    "stage": "league",
+    "win_rate": 0.181
+   },
+   {
+    "update": 3820,
+    "decisions": 125173760,
+    "games": 1587050,
+    "stage": "league",
+    "win_rate": 0.208
+   },
+   {
+    "update": 3830,
+    "decisions": 125501440,
+    "games": 1589322,
+    "stage": "league",
+    "win_rate": 0.196
+   },
+   {
+    "update": 3840,
+    "decisions": 125829120,
+    "games": 1591535,
+    "stage": "league",
+    "win_rate": 0.203
+   },
+   {
+    "update": 3850,
+    "decisions": 126156800,
+    "games": 1593802,
+    "stage": "league",
+    "win_rate": 0.21,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.21094,
+      "ci_low": 0.17782,
+      "ci_high": 0.24836
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.17773,
+      "ci_low": 0.14706,
+      "ci_high": 0.21321
+     }
+    }
+   },
+   {
+    "update": 3860,
+    "decisions": 126484480,
+    "games": 1596104,
+    "stage": "league",
+    "win_rate": 0.212
+   },
+   {
+    "update": 3870,
+    "decisions": 126812160,
+    "games": 1598378,
+    "stage": "league",
+    "win_rate": 0.208
+   },
+   {
+    "update": 3880,
+    "decisions": 127139840,
+    "games": 1600639,
+    "stage": "league",
+    "win_rate": 0.201
+   },
+   {
+    "update": 3890,
+    "decisions": 127467520,
+    "games": 1602887,
+    "stage": "league",
+    "win_rate": 0.171
+   },
+   {
+    "update": 3900,
+    "decisions": 127795200,
+    "games": 1605111,
+    "stage": "league",
+    "win_rate": 0.212,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.17969,
+      "ci_low": 0.14886,
+      "ci_high": 0.21529
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.17383,
+      "ci_low": 0.14346,
+      "ci_high": 0.20905
+     }
+    }
+   },
+   {
+    "update": 3910,
+    "decisions": 128122880,
+    "games": 1607358,
+    "stage": "league",
+    "win_rate": 0.213
+   },
+   {
+    "update": 3920,
+    "decisions": 128450560,
+    "games": 1609678,
+    "stage": "league",
+    "win_rate": 0.16
+   },
+   {
+    "update": 3930,
+    "decisions": 128778240,
+    "games": 1611964,
+    "stage": "league",
+    "win_rate": 0.215
+   },
+   {
+    "update": 3940,
+    "decisions": 129105920,
+    "games": 1614238,
+    "stage": "league",
+    "win_rate": 0.215
+   },
+   {
+    "update": 3950,
+    "decisions": 129433600,
+    "games": 1616567,
+    "stage": "league",
+    "win_rate": 0.193,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.19141,
+      "ci_low": 0.15968,
+      "ci_high": 0.22773
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.21289,
+      "ci_low": 0.17964,
+      "ci_high": 0.25042
+     }
+    }
+   },
+   {
+    "update": 3960,
+    "decisions": 129761280,
+    "games": 1618909,
+    "stage": "league",
+    "win_rate": 0.202
+   },
+   {
+    "update": 3970,
+    "decisions": 130088960,
+    "games": 1621207,
+    "stage": "league",
+    "win_rate": 0.199
+   },
+   {
+    "update": 3980,
+    "decisions": 130416640,
+    "games": 1623498,
+    "stage": "league",
+    "win_rate": 0.216
+   },
+   {
+    "update": 3990,
+    "decisions": 130744320,
+    "games": 1625791,
+    "stage": "league",
+    "win_rate": 0.18
+   },
+   {
+    "update": 4000,
+    "decisions": 131072000,
+    "games": 1628051,
+    "stage": "league",
+    "win_rate": 0.176,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.18164,
+      "ci_low": 0.15066,
+      "ci_high": 0.21737
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.17578,
+      "ci_low": 0.14526,
+      "ci_high": 0.21113
+     }
+    }
+   },
+   {
+    "update": 4010,
+    "decisions": 131399680,
+    "games": 1630298,
+    "stage": "league",
+    "win_rate": 0.225
+   },
+   {
+    "update": 4020,
+    "decisions": 131727360,
+    "games": 1632569,
+    "stage": "league",
+    "win_rate": 0.203
+   },
+   {
+    "update": 4030,
+    "decisions": 132055040,
+    "games": 1634818,
+    "stage": "league",
+    "win_rate": 0.206
+   },
+   {
+    "update": 4040,
+    "decisions": 132382720,
+    "games": 1637095,
+    "stage": "league",
+    "win_rate": 0.208
+   },
+   {
+    "update": 4050,
+    "decisions": 132710400,
+    "games": 1639371,
+    "stage": "league",
+    "win_rate": 0.211,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.18164,
+      "ci_low": 0.15066,
+      "ci_high": 0.21737
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.19336,
+      "ci_low": 0.16148,
+      "ci_high": 0.2298
+     }
+    }
+   },
+   {
+    "update": 4060,
+    "decisions": 133038080,
+    "games": 1641663,
+    "stage": "league",
+    "win_rate": 0.201
+   },
+   {
+    "update": 4070,
+    "decisions": 133365760,
+    "games": 1643951,
+    "stage": "league",
+    "win_rate": 0.218
+   },
+   {
+    "update": 4080,
+    "decisions": 133693440,
+    "games": 1646250,
+    "stage": "league",
+    "win_rate": 0.214
+   },
+   {
+    "update": 4090,
+    "decisions": 134021120,
+    "games": 1648541,
+    "stage": "league",
+    "win_rate": 0.241
+   },
+   {
+    "update": 4100,
+    "decisions": 134348800,
+    "games": 1650790,
+    "stage": "league",
+    "win_rate": 0.208,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.21094,
+      "ci_low": 0.17782,
+      "ci_high": 0.24836
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.20312,
+      "ci_low": 0.17055,
+      "ci_high": 0.24013
+     }
+    }
+   },
+   {
+    "update": 4110,
+    "decisions": 134676480,
+    "games": 1653084,
+    "stage": "league",
+    "win_rate": 0.209
+   },
+   {
+    "update": 4120,
+    "decisions": 135004160,
+    "games": 1655383,
+    "stage": "league",
+    "win_rate": 0.207
+   },
+   {
+    "update": 4130,
+    "decisions": 135331840,
+    "games": 1657719,
+    "stage": "league",
+    "win_rate": 0.22
+   },
+   {
+    "update": 4140,
+    "decisions": 135659520,
+    "games": 1660031,
+    "stage": "league",
+    "win_rate": 0.207
+   },
+   {
+    "update": 4150,
+    "decisions": 135987200,
+    "games": 1662326,
+    "stage": "league",
+    "win_rate": 0.24,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.21094,
+      "ci_low": 0.17782,
+      "ci_high": 0.24836
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.1875,
+      "ci_low": 0.15606,
+      "ci_high": 0.22359
+     }
+    }
+   },
+   {
+    "update": 4160,
+    "decisions": 136314880,
+    "games": 1664600,
+    "stage": "league",
+    "win_rate": 0.224
+   },
+   {
+    "update": 4170,
+    "decisions": 136642560,
+    "games": 1666918,
+    "stage": "league",
+    "win_rate": 0.198
+   },
+   {
+    "update": 4180,
+    "decisions": 136970240,
+    "games": 1669200,
+    "stage": "league",
+    "win_rate": 0.176
+   },
+   {
+    "update": 4190,
+    "decisions": 137297920,
+    "games": 1671484,
+    "stage": "league",
+    "win_rate": 0.214
+   },
+   {
+    "update": 4200,
+    "decisions": 137625600,
+    "games": 1673759,
+    "stage": "league",
+    "win_rate": 0.194,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.22266,
+      "ci_low": 0.18876,
+      "ci_high": 0.26068
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.19922,
+      "ci_low": 0.16692,
+      "ci_high": 0.236
+     }
+    }
+   },
+   {
+    "update": 4210,
+    "decisions": 137953280,
+    "games": 1676018,
+    "stage": "league",
+    "win_rate": 0.212
+   },
+   {
+    "update": 4220,
+    "decisions": 138280960,
+    "games": 1678290,
+    "stage": "league",
+    "win_rate": 0.234
+   },
+   {
+    "update": 4230,
+    "decisions": 138608640,
+    "games": 1680569,
+    "stage": "league",
+    "win_rate": 0.231
+   },
+   {
+    "update": 4240,
+    "decisions": 138936320,
+    "games": 1682854,
+    "stage": "league",
+    "win_rate": 0.21
+   },
+   {
+    "update": 4250,
+    "decisions": 139264000,
+    "games": 1685150,
+    "stage": "league",
+    "win_rate": 0.206,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.19727,
+      "ci_low": 0.16511,
+      "ci_high": 0.23393
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.2168,
+      "ci_low": 0.18328,
+      "ci_high": 0.25453
+     }
+    }
+   },
+   {
+    "update": 4260,
+    "decisions": 139591680,
+    "games": 1687455,
+    "stage": "league",
+    "win_rate": 0.198
+   },
+   {
+    "update": 4270,
+    "decisions": 139919360,
+    "games": 1689780,
+    "stage": "league",
+    "win_rate": 0.203
+   },
+   {
+    "update": 4280,
+    "decisions": 140247040,
+    "games": 1692118,
+    "stage": "league",
+    "win_rate": 0.198
+   },
+   {
+    "update": 4290,
+    "decisions": 140574720,
+    "games": 1694431,
+    "stage": "league",
+    "win_rate": 0.186
+   },
+   {
+    "update": 4300,
+    "decisions": 140902400,
+    "games": 1696798,
+    "stage": "league",
+    "win_rate": 0.209,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.1582,
+      "ci_low": 0.12915,
+      "ci_high": 0.19234
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.1875,
+      "ci_low": 0.15606,
+      "ci_high": 0.22359
+     }
+    }
+   },
+   {
+    "update": 4310,
+    "decisions": 141230080,
+    "games": 1699090,
+    "stage": "league",
+    "win_rate": 0.211
+   },
+   {
+    "update": 4320,
+    "decisions": 141557760,
+    "games": 1701401,
+    "stage": "league",
+    "win_rate": 0.213
+   },
+   {
+    "update": 4330,
+    "decisions": 141885440,
+    "games": 1703686,
+    "stage": "league",
+    "win_rate": 0.205
+   },
+   {
+    "update": 4340,
+    "decisions": 142213120,
+    "games": 1705997,
+    "stage": "league",
+    "win_rate": 0.217
+   },
+   {
+    "update": 4350,
+    "decisions": 142540800,
+    "games": 1708299,
+    "stage": "league",
+    "win_rate": 0.199,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.18164,
+      "ci_low": 0.15066,
+      "ci_high": 0.21737
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.18555,
+      "ci_low": 0.15426,
+      "ci_high": 0.22152
+     }
+    }
+   },
+   {
+    "update": 4360,
+    "decisions": 142868480,
+    "games": 1710599,
+    "stage": "league",
+    "win_rate": 0.192
+   },
+   {
+    "update": 4370,
+    "decisions": 143196160,
+    "games": 1712877,
+    "stage": "league",
+    "win_rate": 0.211
+   },
+   {
+    "update": 4380,
+    "decisions": 143523840,
+    "games": 1715203,
+    "stage": "league",
+    "win_rate": 0.197
+   },
+   {
+    "update": 4390,
+    "decisions": 143851520,
+    "games": 1717484,
+    "stage": "league",
+    "win_rate": 0.177
+   },
+   {
+    "update": 4400,
+    "decisions": 144179200,
+    "games": 1719815,
+    "stage": "league",
+    "win_rate": 0.204,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.16992,
+      "ci_low": 0.13988,
+      "ci_high": 0.20488
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.19727,
+      "ci_low": 0.16511,
+      "ci_high": 0.23393
+     }
+    }
+   },
+   {
+    "update": 4410,
+    "decisions": 144506880,
+    "games": 1722109,
+    "stage": "league",
+    "win_rate": 0.205
+   },
+   {
+    "update": 4420,
+    "decisions": 144834560,
+    "games": 1724393,
+    "stage": "league",
+    "win_rate": 0.206
+   },
+   {
+    "update": 4430,
+    "decisions": 145162240,
+    "games": 1726687,
+    "stage": "league",
+    "win_rate": 0.224
+   },
+   {
+    "update": 4440,
+    "decisions": 145489920,
+    "games": 1729026,
+    "stage": "league",
+    "win_rate": 0.218
+   },
+   {
+    "update": 4450,
+    "decisions": 145817600,
+    "games": 1731297,
+    "stage": "league",
+    "win_rate": 0.204,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.20703,
+      "ci_low": 0.17418,
+      "ci_high": 0.24425
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.20312,
+      "ci_low": 0.17055,
+      "ci_high": 0.24013
+     }
+    }
+   },
+   {
+    "update": 4460,
+    "decisions": 146145280,
+    "games": 1733622,
+    "stage": "league",
+    "win_rate": 0.232
+   },
+   {
+    "update": 4470,
+    "decisions": 146472960,
+    "games": 1735941,
+    "stage": "league",
+    "win_rate": 0.203
+   },
+   {
+    "update": 4480,
+    "decisions": 146800640,
+    "games": 1738241,
+    "stage": "league",
+    "win_rate": 0.212
+   },
+   {
+    "update": 4490,
+    "decisions": 147128320,
+    "games": 1740582,
+    "stage": "league",
+    "win_rate": 0.211
+   },
+   {
+    "update": 4500,
+    "decisions": 147456000,
+    "games": 1742894,
+    "stage": "league",
+    "win_rate": 0.236,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.20508,
+      "ci_low": 0.17236,
+      "ci_high": 0.24219
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.18359,
+      "ci_low": 0.15246,
+      "ci_high": 0.21944
+     }
+    }
+   },
+   {
+    "update": 4510,
+    "decisions": 147783680,
+    "games": 1745256,
+    "stage": "league",
+    "win_rate": 0.207
+   },
+   {
+    "update": 4520,
+    "decisions": 148111360,
+    "games": 1747617,
+    "stage": "league",
+    "win_rate": 0.217
+   },
+   {
+    "update": 4530,
+    "decisions": 148439040,
+    "games": 1750002,
+    "stage": "league",
+    "win_rate": 0.196
+   },
+   {
+    "update": 4540,
+    "decisions": 148766720,
+    "games": 1752250,
+    "stage": "league",
+    "win_rate": 0.194
+   },
+   {
+    "update": 4550,
+    "decisions": 149094400,
+    "games": 1754592,
+    "stage": "league",
+    "win_rate": 0.196,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.21484,
+      "ci_low": 0.18146,
+      "ci_high": 0.25247
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.2207,
+      "ci_low": 0.18693,
+      "ci_high": 0.25863
+     }
+    }
+   },
+   {
+    "update": 4560,
+    "decisions": 149422080,
+    "games": 1756855,
+    "stage": "league",
+    "win_rate": 0.212
+   },
+   {
+    "update": 4570,
+    "decisions": 149749760,
+    "games": 1759085,
+    "stage": "league",
+    "win_rate": 0.223
+   },
+   {
+    "update": 4580,
+    "decisions": 150077440,
+    "games": 1761389,
+    "stage": "league",
+    "win_rate": 0.23
+   },
+   {
+    "update": 4590,
+    "decisions": 150405120,
+    "games": 1763742,
+    "stage": "league",
+    "win_rate": 0.212
+   },
+   {
+    "update": 4600,
+    "decisions": 150732800,
+    "games": 1766034,
+    "stage": "league",
+    "win_rate": 0.23,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.1875,
+      "ci_low": 0.15606,
+      "ci_high": 0.22359
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.22461,
+      "ci_low": 0.19059,
+      "ci_high": 0.26273
+     }
+    }
+   },
+   {
+    "update": 4610,
+    "decisions": 151060480,
+    "games": 1768362,
+    "stage": "league",
+    "win_rate": 0.218
+   },
+   {
+    "update": 4620,
+    "decisions": 151388160,
+    "games": 1770647,
+    "stage": "league",
+    "win_rate": 0.252
+   },
+   {
+    "update": 4630,
+    "decisions": 151715840,
+    "games": 1772943,
+    "stage": "league",
+    "win_rate": 0.224
+   },
+   {
+    "update": 4640,
+    "decisions": 152043520,
+    "games": 1775244,
+    "stage": "league",
+    "win_rate": 0.212
+   },
+   {
+    "update": 4650,
+    "decisions": 152371200,
+    "games": 1777573,
+    "stage": "league",
+    "win_rate": 0.21,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.18359,
+      "ci_low": 0.15246,
+      "ci_high": 0.21944
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.23242,
+      "ci_low": 0.19791,
+      "ci_high": 0.27092
+     }
+    }
+   },
+   {
+    "update": 4660,
+    "decisions": 152698880,
+    "games": 1779869,
+    "stage": "league",
+    "win_rate": 0.211
+   },
+   {
+    "update": 4670,
+    "decisions": 153026560,
+    "games": 1782148,
+    "stage": "league",
+    "win_rate": 0.222
+   },
+   {
+    "update": 4680,
+    "decisions": 153354240,
+    "games": 1784448,
+    "stage": "league",
+    "win_rate": 0.204
+   },
+   {
+    "update": 4690,
+    "decisions": 153681920,
+    "games": 1786733,
+    "stage": "league",
+    "win_rate": 0.221
+   },
+   {
+    "update": 4700,
+    "decisions": 154009600,
+    "games": 1789040,
+    "stage": "league",
+    "win_rate": 0.227,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.20508,
+      "ci_low": 0.17236,
+      "ci_high": 0.24219
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.18359,
+      "ci_low": 0.15246,
+      "ci_high": 0.21944
+     }
+    }
+   },
+   {
+    "update": 4710,
+    "decisions": 154337280,
+    "games": 1791365,
+    "stage": "league",
+    "win_rate": 0.214
+   },
+   {
+    "update": 4720,
+    "decisions": 154664960,
+    "games": 1793609,
+    "stage": "league",
+    "win_rate": 0.201
+   },
+   {
+    "update": 4730,
+    "decisions": 154992640,
+    "games": 1795869,
+    "stage": "league",
+    "win_rate": 0.229
+   },
+   {
+    "update": 4740,
+    "decisions": 155320320,
+    "games": 1798120,
+    "stage": "league",
+    "win_rate": 0.208
+   },
+   {
+    "update": 4750,
+    "decisions": 155648000,
+    "games": 1800440,
+    "stage": "league",
+    "win_rate": 0.225,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.22461,
+      "ci_low": 0.19059,
+      "ci_high": 0.26273
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.17969,
+      "ci_low": 0.14886,
+      "ci_high": 0.21529
+     }
+    }
+   },
+   {
+    "update": 4760,
+    "decisions": 155975680,
+    "games": 1802690,
+    "stage": "league",
+    "win_rate": 0.218
+   },
+   {
+    "update": 4770,
+    "decisions": 156303360,
+    "games": 1804965,
+    "stage": "league",
+    "win_rate": 0.212
+   },
+   {
+    "update": 4780,
+    "decisions": 156631040,
+    "games": 1807199,
+    "stage": "league",
+    "win_rate": 0.214
+   },
+   {
+    "update": 4790,
+    "decisions": 156958720,
+    "games": 1809478,
+    "stage": "league",
+    "win_rate": 0.217
+   },
+   {
+    "update": 4800,
+    "decisions": 157286400,
+    "games": 1811778,
+    "stage": "league",
+    "win_rate": 0.208,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.19531,
+      "ci_low": 0.16329,
+      "ci_high": 0.23187
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.21289,
+      "ci_low": 0.17964,
+      "ci_high": 0.25042
+     }
+    }
+   },
+   {
+    "update": 4810,
+    "decisions": 157614080,
+    "games": 1814047,
+    "stage": "league",
+    "win_rate": 0.2
+   },
+   {
+    "update": 4820,
+    "decisions": 157941760,
+    "games": 1816321,
+    "stage": "league",
+    "win_rate": 0.23
+   },
+   {
+    "update": 4830,
+    "decisions": 158269440,
+    "games": 1818608,
+    "stage": "league",
+    "win_rate": 0.222
+   },
+   {
+    "update": 4840,
+    "decisions": 158597120,
+    "games": 1820900,
+    "stage": "league",
+    "win_rate": 0.203
+   },
+   {
+    "update": 4850,
+    "decisions": 158924800,
+    "games": 1823227,
+    "stage": "league",
+    "win_rate": 0.228,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.18945,
+      "ci_low": 0.15787,
+      "ci_high": 0.22566
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.21094,
+      "ci_low": 0.17782,
+      "ci_high": 0.24836
+     }
+    }
+   },
+   {
+    "update": 4860,
+    "decisions": 159252480,
+    "games": 1825520,
+    "stage": "league",
+    "win_rate": 0.221
+   },
+   {
+    "update": 4870,
+    "decisions": 159580160,
+    "games": 1827830,
+    "stage": "league",
+    "win_rate": 0.216
+   },
+   {
+    "update": 4880,
+    "decisions": 159907840,
+    "games": 1830151,
+    "stage": "league",
+    "win_rate": 0.226
+   },
+   {
+    "update": 4890,
+    "decisions": 160235520,
+    "games": 1832452,
+    "stage": "league",
+    "win_rate": 0.202
+   },
+   {
+    "update": 4900,
+    "decisions": 160563200,
+    "games": 1834764,
+    "stage": "league",
+    "win_rate": 0.198,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.19922,
+      "ci_low": 0.16692,
+      "ci_high": 0.236
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.20508,
+      "ci_low": 0.17236,
+      "ci_high": 0.24219
+     }
+    }
+   },
+   {
+    "update": 4910,
+    "decisions": 160890880,
+    "games": 1837051,
+    "stage": "league",
+    "win_rate": 0.216
+   },
+   {
+    "update": 4920,
+    "decisions": 161218560,
+    "games": 1839387,
+    "stage": "league",
+    "win_rate": 0.226
+   },
+   {
+    "update": 4930,
+    "decisions": 161546240,
+    "games": 1841700,
+    "stage": "league",
+    "win_rate": 0.244
+   },
+   {
+    "update": 4940,
+    "decisions": 161873920,
+    "games": 1844027,
+    "stage": "league",
+    "win_rate": 0.206
+   },
+   {
+    "update": 4950,
+    "decisions": 162201600,
+    "games": 1846327,
+    "stage": "league",
+    "win_rate": 0.203,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.20703,
+      "ci_low": 0.17418,
+      "ci_high": 0.24425
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.23438,
+      "ci_low": 0.19974,
+      "ci_high": 0.27296
+     }
+    }
+   },
+   {
+    "update": 4960,
+    "decisions": 162529280,
+    "games": 1848689,
+    "stage": "league",
+    "win_rate": 0.228
+   },
+   {
+    "update": 4970,
+    "decisions": 162856960,
+    "games": 1851027,
+    "stage": "league",
+    "win_rate": 0.233
+   },
+   {
+    "update": 4980,
+    "decisions": 163184640,
+    "games": 1853313,
+    "stage": "league",
+    "win_rate": 0.225
+   },
+   {
+    "update": 4990,
+    "decisions": 163512320,
+    "games": 1855642,
+    "stage": "league",
+    "win_rate": 0.209
+   },
+   {
+    "update": 5000,
+    "decisions": 163840000,
+    "games": 1858019,
+    "stage": "league",
+    "win_rate": 0.22,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.20898,
+      "ci_low": 0.176,
+      "ci_high": 0.24631
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.21875,
+      "ci_low": 0.18511,
+      "ci_high": 0.25658
+     }
+    }
+   },
+   {
+    "update": 5010,
+    "decisions": 164167680,
+    "games": 1860374,
+    "stage": "league",
+    "win_rate": 0.229
+   },
+   {
+    "update": 5020,
+    "decisions": 164495360,
+    "games": 1862695,
+    "stage": "league",
+    "win_rate": 0.211
+   },
+   {
+    "update": 5030,
+    "decisions": 164823040,
+    "games": 1865024,
+    "stage": "league",
+    "win_rate": 0.182
+   },
+   {
+    "update": 5040,
+    "decisions": 165150720,
+    "games": 1867350,
+    "stage": "league",
+    "win_rate": 0.22
+   },
+   {
+    "update": 5050,
+    "decisions": 165478400,
+    "games": 1869732,
+    "stage": "league",
+    "win_rate": 0.217,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.24219,
+      "ci_low": 0.20709,
+      "ci_high": 0.28113
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.19922,
+      "ci_low": 0.16692,
+      "ci_high": 0.236
+     }
+    }
+   },
+   {
+    "update": 5060,
+    "decisions": 165806080,
+    "games": 1872120,
+    "stage": "league",
+    "win_rate": 0.214
+   },
+   {
+    "update": 5070,
+    "decisions": 166133760,
+    "games": 1874486,
+    "stage": "league",
+    "win_rate": 0.238
+   },
+   {
+    "update": 5080,
+    "decisions": 166461440,
+    "games": 1876859,
+    "stage": "league",
+    "win_rate": 0.217
+   },
+   {
+    "update": 5090,
+    "decisions": 166789120,
+    "games": 1879252,
+    "stage": "league",
+    "win_rate": 0.226
+   },
+   {
+    "update": 5100,
+    "decisions": 167116800,
+    "games": 1881603,
+    "stage": "league",
+    "win_rate": 0.217,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.20703,
+      "ci_low": 0.17418,
+      "ci_high": 0.24425
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.20508,
+      "ci_low": 0.17236,
+      "ci_high": 0.24219
+     }
+    }
+   },
+   {
+    "update": 5110,
+    "decisions": 167444480,
+    "games": 1883984,
+    "stage": "league",
+    "win_rate": 0.223
+   },
+   {
+    "update": 5120,
+    "decisions": 167772160,
+    "games": 1886352,
+    "stage": "league",
+    "win_rate": 0.183
+   },
+   {
+    "update": 5130,
+    "decisions": 168099840,
+    "games": 1888735,
+    "stage": "league",
+    "win_rate": 0.212
+   },
+   {
+    "update": 5140,
+    "decisions": 168427520,
+    "games": 1891181,
+    "stage": "league",
+    "win_rate": 0.191
+   },
+   {
+    "update": 5150,
+    "decisions": 168755200,
+    "games": 1893584,
+    "stage": "league",
+    "win_rate": 0.205,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.18164,
+      "ci_low": 0.15066,
+      "ci_high": 0.21737
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.21094,
+      "ci_low": 0.17782,
+      "ci_high": 0.24836
+     }
+    }
+   },
+   {
+    "update": 5160,
+    "decisions": 169082880,
+    "games": 1895972,
+    "stage": "league",
+    "win_rate": 0.216
+   },
+   {
+    "update": 5170,
+    "decisions": 169410560,
+    "games": 1898388,
+    "stage": "league",
+    "win_rate": 0.22
+   },
+   {
+    "update": 5180,
+    "decisions": 169738240,
+    "games": 1900768,
+    "stage": "league",
+    "win_rate": 0.212
+   },
+   {
+    "update": 5190,
+    "decisions": 170065920,
+    "games": 1903133,
+    "stage": "league",
+    "win_rate": 0.229
+   },
+   {
+    "update": 5200,
+    "decisions": 170393600,
+    "games": 1905482,
+    "stage": "league",
+    "win_rate": 0.236,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.20312,
+      "ci_low": 0.17055,
+      "ci_high": 0.24013
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.2168,
+      "ci_low": 0.18328,
+      "ci_high": 0.25453
+     }
+    }
+   },
+   {
+    "update": 5210,
+    "decisions": 170721280,
+    "games": 1907830,
+    "stage": "league",
+    "win_rate": 0.217
+   },
+   {
+    "update": 5220,
+    "decisions": 171048960,
+    "games": 1910195,
+    "stage": "league",
+    "win_rate": 0.225
+   },
+   {
+    "update": 5230,
+    "decisions": 171376640,
+    "games": 1912585,
+    "stage": "league",
+    "win_rate": 0.206
+   },
+   {
+    "update": 5240,
+    "decisions": 171704320,
+    "games": 1914952,
+    "stage": "league",
+    "win_rate": 0.225
+   },
+   {
+    "update": 5250,
+    "decisions": 172032000,
+    "games": 1917322,
+    "stage": "league",
+    "win_rate": 0.252,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.2168,
+      "ci_low": 0.18328,
+      "ci_high": 0.25453
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.18945,
+      "ci_low": 0.15787,
+      "ci_high": 0.22566
+     }
+    }
+   },
+   {
+    "update": 5260,
+    "decisions": 172359680,
+    "games": 1919664,
+    "stage": "league",
+    "win_rate": 0.233
+   },
+   {
+    "update": 5270,
+    "decisions": 172687360,
+    "games": 1922027,
+    "stage": "league",
+    "win_rate": 0.199
+   },
+   {
+    "update": 5280,
+    "decisions": 173015040,
+    "games": 1924342,
+    "stage": "league",
+    "win_rate": 0.204
+   },
+   {
+    "update": 5290,
+    "decisions": 173342720,
+    "games": 1926730,
+    "stage": "league",
+    "win_rate": 0.231
+   },
+   {
+    "update": 5300,
+    "decisions": 173670400,
+    "games": 1929052,
+    "stage": "league",
+    "win_rate": 0.213,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.23047,
+      "ci_low": 0.19608,
+      "ci_high": 0.26887
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.22461,
+      "ci_low": 0.19059,
+      "ci_high": 0.26273
+     }
+    }
+   },
+   {
+    "update": 5310,
+    "decisions": 173998080,
+    "games": 1931439,
+    "stage": "league",
+    "win_rate": 0.202
+   },
+   {
+    "update": 5320,
+    "decisions": 174325760,
+    "games": 1933791,
+    "stage": "league",
+    "win_rate": 0.209
+   },
+   {
+    "update": 5330,
+    "decisions": 174653440,
+    "games": 1936122,
+    "stage": "league",
+    "win_rate": 0.205
+   },
+   {
+    "update": 5340,
+    "decisions": 174981120,
+    "games": 1938497,
+    "stage": "league",
+    "win_rate": 0.212
+   },
+   {
+    "update": 5350,
+    "decisions": 175308800,
+    "games": 1940859,
+    "stage": "league",
+    "win_rate": 0.209,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.22266,
+      "ci_low": 0.18876,
+      "ci_high": 0.26068
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.24609,
+      "ci_low": 0.21077,
+      "ci_high": 0.2852
+     }
+    }
+   },
+   {
+    "update": 5360,
+    "decisions": 175636480,
+    "games": 1943248,
+    "stage": "league",
+    "win_rate": 0.197
+   },
+   {
+    "update": 5370,
+    "decisions": 175964160,
+    "games": 1945657,
+    "stage": "league",
+    "win_rate": 0.213
+   },
+   {
+    "update": 5380,
+    "decisions": 176291840,
+    "games": 1948028,
+    "stage": "league",
+    "win_rate": 0.192
+   },
+   {
+    "update": 5390,
+    "decisions": 176619520,
+    "games": 1950403,
+    "stage": "league",
+    "win_rate": 0.201
+   },
+   {
+    "update": 5400,
+    "decisions": 176947200,
+    "games": 1952729,
+    "stage": "league",
+    "win_rate": 0.211,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.19531,
+      "ci_low": 0.16329,
+      "ci_high": 0.23187
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.19336,
+      "ci_low": 0.16148,
+      "ci_high": 0.2298
+     }
+    }
+   },
+   {
+    "update": 5410,
+    "decisions": 177274880,
+    "games": 1955095,
+    "stage": "league",
+    "win_rate": 0.207
+   },
+   {
+    "update": 5420,
+    "decisions": 177602560,
+    "games": 1957457,
+    "stage": "league",
+    "win_rate": 0.211
+   },
+   {
+    "update": 5430,
+    "decisions": 177930240,
+    "games": 1959833,
+    "stage": "league",
+    "win_rate": 0.222
+   },
+   {
+    "update": 5440,
+    "decisions": 178257920,
+    "games": 1962193,
+    "stage": "league",
+    "win_rate": 0.186
+   },
+   {
+    "update": 5450,
+    "decisions": 178585600,
+    "games": 1964527,
+    "stage": "league",
+    "win_rate": 0.214,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.19336,
+      "ci_low": 0.16148,
+      "ci_high": 0.2298
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.20117,
+      "ci_low": 0.16873,
+      "ci_high": 0.23806
+     }
+    }
+   },
+   {
+    "update": 5460,
+    "decisions": 178913280,
+    "games": 1966907,
+    "stage": "league",
+    "win_rate": 0.222
+   },
+   {
+    "update": 5470,
+    "decisions": 179240960,
+    "games": 1969255,
+    "stage": "league",
+    "win_rate": 0.21
+   },
+   {
+    "update": 5480,
+    "decisions": 179568640,
+    "games": 1971609,
+    "stage": "league",
+    "win_rate": 0.226
+   },
+   {
+    "update": 5490,
+    "decisions": 179896320,
+    "games": 1973936,
+    "stage": "league",
+    "win_rate": 0.241
+   },
+   {
+    "update": 5500,
+    "decisions": 180224000,
+    "games": 1976305,
+    "stage": "league",
+    "win_rate": 0.202,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.16992,
+      "ci_low": 0.13988,
+      "ci_high": 0.20488
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.18164,
+      "ci_low": 0.15066,
+      "ci_high": 0.21737
+     }
+    }
+   },
+   {
+    "update": 5510,
+    "decisions": 180551680,
+    "games": 1978621,
+    "stage": "league",
+    "win_rate": 0.207
+   },
+   {
+    "update": 5520,
+    "decisions": 180879360,
+    "games": 1981009,
+    "stage": "league",
+    "win_rate": 0.199
+   },
+   {
+    "update": 5530,
+    "decisions": 181207040,
+    "games": 1983316,
+    "stage": "league",
+    "win_rate": 0.219
+   },
+   {
+    "update": 5540,
+    "decisions": 181534720,
+    "games": 1985685,
+    "stage": "league",
+    "win_rate": 0.227
+   },
+   {
+    "update": 5550,
+    "decisions": 181862400,
+    "games": 1988058,
+    "stage": "league",
+    "win_rate": 0.225,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.22852,
+      "ci_low": 0.19425,
+      "ci_high": 0.26683
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.20117,
+      "ci_low": 0.16873,
+      "ci_high": 0.23806
+     }
+    }
+   },
+   {
+    "update": 5560,
+    "decisions": 182190080,
+    "games": 1990449,
+    "stage": "league",
+    "win_rate": 0.205
+   },
+   {
+    "update": 5570,
+    "decisions": 182517760,
+    "games": 1992821,
+    "stage": "league",
+    "win_rate": 0.219
+   },
+   {
+    "update": 5580,
+    "decisions": 182845440,
+    "games": 1995224,
+    "stage": "league",
+    "win_rate": 0.228
+   },
+   {
+    "update": 5590,
+    "decisions": 183173120,
+    "games": 1997679,
+    "stage": "league",
+    "win_rate": 0.239
+   },
+   {
+    "update": 5600,
+    "decisions": 183500800,
+    "games": 2000112,
+    "stage": "league",
+    "win_rate": 0.205,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.20117,
+      "ci_low": 0.16873,
+      "ci_high": 0.23806
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.23438,
+      "ci_low": 0.19974,
+      "ci_high": 0.27296
+     }
+    }
+   },
+   {
+    "update": 5610,
+    "decisions": 183828480,
+    "games": 2002551,
+    "stage": "league",
+    "win_rate": 0.229
+   },
+   {
+    "update": 5620,
+    "decisions": 184156160,
+    "games": 2004930,
+    "stage": "league",
+    "win_rate": 0.21
+   },
+   {
+    "update": 5630,
+    "decisions": 184483840,
+    "games": 2007322,
+    "stage": "league",
+    "win_rate": 0.238
+   },
+   {
+    "update": 5640,
+    "decisions": 184811520,
+    "games": 2009749,
+    "stage": "league",
+    "win_rate": 0.216
+   },
+   {
+    "update": 5650,
+    "decisions": 185139200,
+    "games": 2012142,
+    "stage": "league",
+    "win_rate": 0.212,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.22656,
+      "ci_low": 0.19242,
+      "ci_high": 0.26478
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.19531,
+      "ci_low": 0.16329,
+      "ci_high": 0.23187
+     }
+    }
+   },
+   {
+    "update": 5660,
+    "decisions": 185466880,
+    "games": 2014515,
+    "stage": "league",
+    "win_rate": 0.224
+   },
+   {
+    "update": 5670,
+    "decisions": 185794560,
+    "games": 2016882,
+    "stage": "league",
+    "win_rate": 0.221
+   },
+   {
+    "update": 5680,
+    "decisions": 186122240,
+    "games": 2019242,
+    "stage": "league",
+    "win_rate": 0.218
+   },
+   {
+    "update": 5690,
+    "decisions": 186449920,
+    "games": 2021642,
+    "stage": "league",
+    "win_rate": 0.214
+   },
+   {
+    "update": 5700,
+    "decisions": 186777600,
+    "games": 2023997,
+    "stage": "league",
+    "win_rate": 0.199,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.21875,
+      "ci_low": 0.18511,
+      "ci_high": 0.25658
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.23242,
+      "ci_low": 0.19791,
+      "ci_high": 0.27092
+     }
+    }
+   },
+   {
+    "update": 5710,
+    "decisions": 187105280,
+    "games": 2026388,
+    "stage": "league",
+    "win_rate": 0.241
+   },
+   {
+    "update": 5720,
+    "decisions": 187432960,
+    "games": 2028761,
+    "stage": "league",
+    "win_rate": 0.209
+   },
+   {
+    "update": 5730,
+    "decisions": 187760640,
+    "games": 2031154,
+    "stage": "league",
+    "win_rate": 0.211
+   },
+   {
+    "update": 5740,
+    "decisions": 188088320,
+    "games": 2033558,
+    "stage": "league",
+    "win_rate": 0.206
+   },
+   {
+    "update": 5750,
+    "decisions": 188416000,
+    "games": 2035878,
+    "stage": "league",
+    "win_rate": 0.188,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.21484,
+      "ci_low": 0.18146,
+      "ci_high": 0.25247
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.19531,
+      "ci_low": 0.16329,
+      "ci_high": 0.23187
+     }
+    }
+   },
+   {
+    "update": 5760,
+    "decisions": 188743680,
+    "games": 2038244,
+    "stage": "league",
+    "win_rate": 0.204
+   },
+   {
+    "update": 5770,
+    "decisions": 189071360,
+    "games": 2040624,
+    "stage": "league",
+    "win_rate": 0.205
+   },
+   {
+    "update": 5780,
+    "decisions": 189399040,
+    "games": 2042974,
+    "stage": "league",
+    "win_rate": 0.21
+   },
+   {
+    "update": 5790,
+    "decisions": 189726720,
+    "games": 2045363,
+    "stage": "league",
+    "win_rate": 0.227
+   },
+   {
+    "update": 5800,
+    "decisions": 190054400,
+    "games": 2047727,
+    "stage": "league",
+    "win_rate": 0.24,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.21094,
+      "ci_low": 0.17782,
+      "ci_high": 0.24836
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.20508,
+      "ci_low": 0.17236,
+      "ci_high": 0.24219
+     }
+    }
+   },
+   {
+    "update": 5810,
+    "decisions": 190382080,
+    "games": 2050099,
+    "stage": "league",
+    "win_rate": 0.222
+   },
+   {
+    "update": 5820,
+    "decisions": 190709760,
+    "games": 2052435,
+    "stage": "league",
+    "win_rate": 0.21
+   },
+   {
+    "update": 5830,
+    "decisions": 191037440,
+    "games": 2054797,
+    "stage": "league",
+    "win_rate": 0.212
+   },
+   {
+    "update": 5840,
+    "decisions": 191365120,
+    "games": 2057130,
+    "stage": "league",
+    "win_rate": 0.22
+   },
+   {
+    "update": 5850,
+    "decisions": 191692800,
+    "games": 2059488,
+    "stage": "league",
+    "win_rate": 0.2,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.19531,
+      "ci_low": 0.16329,
+      "ci_high": 0.23187
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.23047,
+      "ci_low": 0.19608,
+      "ci_high": 0.26887
+     }
+    }
+   },
+   {
+    "update": 5860,
+    "decisions": 192020480,
+    "games": 2061848,
+    "stage": "league",
+    "win_rate": 0.208
+   },
+   {
+    "update": 5870,
+    "decisions": 192348160,
+    "games": 2064193,
+    "stage": "league",
+    "win_rate": 0.229
+   },
+   {
+    "update": 5880,
+    "decisions": 192675840,
+    "games": 2066539,
+    "stage": "league",
+    "win_rate": 0.22
+   },
+   {
+    "update": 5890,
+    "decisions": 193003520,
+    "games": 2068895,
+    "stage": "league",
+    "win_rate": 0.201
+   },
+   {
+    "update": 5900,
+    "decisions": 193331200,
+    "games": 2071294,
+    "stage": "league",
+    "win_rate": 0.189,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.19727,
+      "ci_low": 0.16511,
+      "ci_high": 0.23393
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.24023,
+      "ci_low": 0.20525,
+      "ci_high": 0.27909
+     }
+    }
+   },
+   {
+    "update": 5910,
+    "decisions": 193658880,
+    "games": 2073610,
+    "stage": "league",
+    "win_rate": 0.206
+   },
+   {
+    "update": 5920,
+    "decisions": 193986560,
+    "games": 2075933,
+    "stage": "league",
+    "win_rate": 0.235
+   },
+   {
+    "update": 5930,
+    "decisions": 194314240,
+    "games": 2078290,
+    "stage": "league",
+    "win_rate": 0.203
+   },
+   {
+    "update": 5940,
+    "decisions": 194641920,
+    "games": 2080631,
+    "stage": "league",
+    "win_rate": 0.227
+   },
+   {
+    "update": 5950,
+    "decisions": 194969600,
+    "games": 2082941,
+    "stage": "league",
+    "win_rate": 0.219,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.18555,
+      "ci_low": 0.15426,
+      "ci_high": 0.22152
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.20898,
+      "ci_low": 0.176,
+      "ci_high": 0.24631
+     }
+    }
+   },
+   {
+    "update": 5960,
+    "decisions": 195297280,
+    "games": 2085308,
+    "stage": "league",
+    "win_rate": 0.228
+   },
+   {
+    "update": 5970,
+    "decisions": 195624960,
+    "games": 2087611,
+    "stage": "league",
+    "win_rate": 0.215
+   },
+   {
+    "update": 5980,
+    "decisions": 195952640,
+    "games": 2090013,
+    "stage": "league",
+    "win_rate": 0.205
+   },
+   {
+    "update": 5990,
+    "decisions": 196280320,
+    "games": 2092394,
+    "stage": "league",
+    "win_rate": 0.201
+   },
+   {
+    "update": 6000,
+    "decisions": 196608000,
+    "games": 2094724,
+    "stage": "league",
+    "win_rate": 0.207,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.21094,
+      "ci_low": 0.17782,
+      "ci_high": 0.24836
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.19336,
+      "ci_low": 0.16148,
+      "ci_high": 0.2298
+     }
+    }
+   },
+   {
+    "update": 6010,
+    "decisions": 196935680,
+    "games": 2097096,
+    "stage": "league",
+    "win_rate": 0.216
+   },
+   {
+    "update": 6020,
+    "decisions": 197263360,
+    "games": 2099508,
+    "stage": "league",
+    "win_rate": 0.186
+   },
+   {
+    "update": 6030,
+    "decisions": 197591040,
+    "games": 2101870,
+    "stage": "league",
+    "win_rate": 0.224
+   },
+   {
+    "update": 6040,
+    "decisions": 197918720,
+    "games": 2104275,
+    "stage": "league",
+    "win_rate": 0.203
+   },
+   {
+    "update": 6050,
+    "decisions": 198246400,
+    "games": 2106622,
+    "stage": "league",
+    "win_rate": 0.196,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.1875,
+      "ci_low": 0.15606,
+      "ci_high": 0.22359
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.21875,
+      "ci_low": 0.18511,
+      "ci_high": 0.25658
+     }
+    }
+   },
+   {
+    "update": 6060,
+    "decisions": 198574080,
+    "games": 2108964,
+    "stage": "league",
+    "win_rate": 0.218
+   },
+   {
+    "update": 6070,
+    "decisions": 198901760,
+    "games": 2111323,
+    "stage": "league",
+    "win_rate": 0.207
+   },
+   {
+    "update": 6080,
+    "decisions": 199229440,
+    "games": 2113691,
+    "stage": "league",
+    "win_rate": 0.212
+   },
+   {
+    "update": 6090,
+    "decisions": 199557120,
+    "games": 2116117,
+    "stage": "league",
+    "win_rate": 0.23
+   },
+   {
+    "update": 6100,
+    "decisions": 199884800,
+    "games": 2118492,
+    "stage": "league",
+    "win_rate": 0.196,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.19531,
+      "ci_low": 0.16329,
+      "ci_high": 0.23187
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.20508,
+      "ci_low": 0.17236,
+      "ci_high": 0.24219
+     }
+    }
+   },
+   {
+    "update": 6110,
+    "decisions": 200212480,
+    "games": 2120889,
+    "stage": "league",
+    "win_rate": 0.211
+   },
+   {
+    "update": 6120,
+    "decisions": 200540160,
+    "games": 2123300,
+    "stage": "league",
+    "win_rate": 0.192
+   },
+   {
+    "update": 6130,
+    "decisions": 200867840,
+    "games": 2125710,
+    "stage": "league",
+    "win_rate": 0.222
+   },
+   {
+    "update": 6140,
+    "decisions": 201195520,
+    "games": 2128075,
+    "stage": "league",
+    "win_rate": 0.208
+   },
+   {
+    "update": 6150,
+    "decisions": 201523200,
+    "games": 2130475,
+    "stage": "league",
+    "win_rate": 0.2,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.18555,
+      "ci_low": 0.15426,
+      "ci_high": 0.22152
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.22656,
+      "ci_low": 0.19242,
+      "ci_high": 0.26478
+     }
+    }
+   },
+   {
+    "update": 6160,
+    "decisions": 201850880,
+    "games": 2132822,
+    "stage": "league",
+    "win_rate": 0.23
+   },
+   {
+    "update": 6170,
+    "decisions": 202178560,
+    "games": 2135240,
+    "stage": "league",
+    "win_rate": 0.194
+   },
+   {
+    "update": 6180,
+    "decisions": 202506240,
+    "games": 2137623,
+    "stage": "league",
+    "win_rate": 0.216
+   },
+   {
+    "update": 6190,
+    "decisions": 202833920,
+    "games": 2139974,
+    "stage": "league",
+    "win_rate": 0.217
+   },
+   {
+    "update": 6200,
+    "decisions": 203161600,
+    "games": 2142363,
+    "stage": "league",
+    "win_rate": 0.193,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.19336,
+      "ci_low": 0.16148,
+      "ci_high": 0.2298
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.19922,
+      "ci_low": 0.16692,
+      "ci_high": 0.236
+     }
+    }
+   },
+   {
+    "update": 6210,
+    "decisions": 203489280,
+    "games": 2144766,
+    "stage": "league",
+    "win_rate": 0.218
+   },
+   {
+    "update": 6220,
+    "decisions": 203816960,
+    "games": 2147159,
+    "stage": "league",
+    "win_rate": 0.221
+   },
+   {
+    "update": 6230,
+    "decisions": 204144640,
+    "games": 2149563,
+    "stage": "league",
+    "win_rate": 0.217
+   },
+   {
+    "update": 6240,
+    "decisions": 204472320,
+    "games": 2151936,
+    "stage": "league",
+    "win_rate": 0.227
+   },
+   {
+    "update": 6250,
+    "decisions": 204800000,
+    "games": 2154335,
+    "stage": "league",
+    "win_rate": 0.223,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.17773,
+      "ci_low": 0.14706,
+      "ci_high": 0.21321
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.23633,
+      "ci_low": 0.20158,
+      "ci_high": 0.27501
+     }
+    }
+   },
+   {
+    "update": 6260,
+    "decisions": 205127680,
+    "games": 2156747,
+    "stage": "league",
+    "win_rate": 0.217
+   },
+   {
+    "update": 6270,
+    "decisions": 205455360,
+    "games": 2159226,
+    "stage": "league",
+    "win_rate": 0.234
+   },
+   {
+    "update": 6280,
+    "decisions": 205783040,
+    "games": 2161608,
+    "stage": "league",
+    "win_rate": 0.22
+   },
+   {
+    "update": 6290,
+    "decisions": 206110720,
+    "games": 2164019,
+    "stage": "league",
+    "win_rate": 0.225
+   },
+   {
+    "update": 6300,
+    "decisions": 206438400,
+    "games": 2166458,
+    "stage": "league",
+    "win_rate": 0.215,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.19531,
+      "ci_low": 0.16329,
+      "ci_high": 0.23187
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.2207,
+      "ci_low": 0.18693,
+      "ci_high": 0.25863
+     }
+    }
+   },
+   {
+    "update": 6310,
+    "decisions": 206766080,
+    "games": 2168844,
+    "stage": "league",
+    "win_rate": 0.245
+   },
+   {
+    "update": 6320,
+    "decisions": 207093760,
+    "games": 2171262,
+    "stage": "league",
+    "win_rate": 0.207
+   },
+   {
+    "update": 6330,
+    "decisions": 207421440,
+    "games": 2173632,
+    "stage": "league",
+    "win_rate": 0.219
+   },
+   {
+    "update": 6340,
+    "decisions": 207749120,
+    "games": 2176011,
+    "stage": "league",
+    "win_rate": 0.214
+   },
+   {
+    "update": 6350,
+    "decisions": 208076800,
+    "games": 2178386,
+    "stage": "league",
+    "win_rate": 0.201,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.19141,
+      "ci_low": 0.15968,
+      "ci_high": 0.22773
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.19141,
+      "ci_low": 0.15968,
+      "ci_high": 0.22773
+     }
+    }
+   },
+   {
+    "update": 6360,
+    "decisions": 208404480,
+    "games": 2180750,
+    "stage": "league",
+    "win_rate": 0.211
+   },
+   {
+    "update": 6370,
+    "decisions": 208732160,
+    "games": 2183135,
+    "stage": "league",
+    "win_rate": 0.195
+   },
+   {
+    "update": 6380,
+    "decisions": 209059840,
+    "games": 2185499,
+    "stage": "league",
+    "win_rate": 0.22
+   },
+   {
+    "update": 6390,
+    "decisions": 209387520,
+    "games": 2187930,
+    "stage": "league",
+    "win_rate": 0.225
+   },
+   {
+    "update": 6400,
+    "decisions": 209715200,
+    "games": 2190330,
+    "stage": "league",
+    "win_rate": 0.188,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.17188,
+      "ci_low": 0.14167,
+      "ci_high": 0.20697
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.20117,
+      "ci_low": 0.16873,
+      "ci_high": 0.23806
+     }
+    }
+   },
+   {
+    "update": 6410,
+    "decisions": 210042880,
+    "games": 2192735,
+    "stage": "league",
+    "win_rate": 0.193
+   },
+   {
+    "update": 6420,
+    "decisions": 210370560,
+    "games": 2195201,
+    "stage": "league",
+    "win_rate": 0.212
+   },
+   {
+    "update": 6430,
+    "decisions": 210698240,
+    "games": 2197685,
+    "stage": "league",
+    "win_rate": 0.197
+   },
+   {
+    "update": 6440,
+    "decisions": 211025920,
+    "games": 2200155,
+    "stage": "league",
+    "win_rate": 0.208
+   },
+   {
+    "update": 6450,
+    "decisions": 211353600,
+    "games": 2202580,
+    "stage": "league",
+    "win_rate": 0.226,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.19922,
+      "ci_low": 0.16692,
+      "ci_high": 0.236
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.22266,
+      "ci_low": 0.18876,
+      "ci_high": 0.26068
+     }
+    }
+   },
+   {
+    "update": 6460,
+    "decisions": 211681280,
+    "games": 2205026,
+    "stage": "league",
+    "win_rate": 0.201
+   },
+   {
+    "update": 6470,
+    "decisions": 212008960,
+    "games": 2207432,
+    "stage": "league",
+    "win_rate": 0.223
+   },
+   {
+    "update": 6480,
+    "decisions": 212336640,
+    "games": 2209896,
+    "stage": "league",
+    "win_rate": 0.231
+   },
+   {
+    "update": 6490,
+    "decisions": 212664320,
+    "games": 2212384,
+    "stage": "league",
+    "win_rate": 0.227
+   },
+   {
+    "update": 6500,
+    "decisions": 212992000,
+    "games": 2214858,
+    "stage": "league",
+    "win_rate": 0.24,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.19922,
+      "ci_low": 0.16692,
+      "ci_high": 0.236
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.20117,
+      "ci_low": 0.16873,
+      "ci_high": 0.23806
+     }
+    }
+   },
+   {
+    "update": 6510,
+    "decisions": 213319680,
+    "games": 2217297,
+    "stage": "league",
+    "win_rate": 0.194
+   },
+   {
+    "update": 6520,
+    "decisions": 213647360,
+    "games": 2219735,
+    "stage": "league",
+    "win_rate": 0.213
+   },
+   {
+    "update": 6530,
+    "decisions": 213975040,
+    "games": 2222219,
+    "stage": "league",
+    "win_rate": 0.203
+   },
+   {
+    "update": 6540,
+    "decisions": 214302720,
+    "games": 2224713,
+    "stage": "league",
+    "win_rate": 0.21
+   },
+   {
+    "update": 6550,
+    "decisions": 214630400,
+    "games": 2227210,
+    "stage": "league",
+    "win_rate": 0.228,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.19531,
+      "ci_low": 0.16329,
+      "ci_high": 0.23187
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.18359,
+      "ci_low": 0.15246,
+      "ci_high": 0.21944
+     }
+    }
+   },
+   {
+    "update": 6560,
+    "decisions": 214958080,
+    "games": 2229668,
+    "stage": "league",
+    "win_rate": 0.212
+   },
+   {
+    "update": 6570,
+    "decisions": 215285760,
+    "games": 2232187,
+    "stage": "league",
+    "win_rate": 0.215
+   },
+   {
+    "update": 6580,
+    "decisions": 215613440,
+    "games": 2234642,
+    "stage": "league",
+    "win_rate": 0.224
+   },
+   {
+    "update": 6590,
+    "decisions": 215941120,
+    "games": 2237097,
+    "stage": "league",
+    "win_rate": 0.214
+   },
+   {
+    "update": 6600,
+    "decisions": 216268800,
+    "games": 2239572,
+    "stage": "league",
+    "win_rate": 0.211,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.18945,
+      "ci_low": 0.15787,
+      "ci_high": 0.22566
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.2207,
+      "ci_low": 0.18693,
+      "ci_high": 0.25863
+     }
+    }
+   },
+   {
+    "update": 6610,
+    "decisions": 216596480,
+    "games": 2242040,
+    "stage": "league",
+    "win_rate": 0.228
+   },
+   {
+    "update": 6620,
+    "decisions": 216924160,
+    "games": 2244511,
+    "stage": "league",
+    "win_rate": 0.225
+   },
+   {
+    "update": 6630,
+    "decisions": 217251840,
+    "games": 2247000,
+    "stage": "league",
+    "win_rate": 0.22
+   },
+   {
+    "update": 6640,
+    "decisions": 217579520,
+    "games": 2249485,
+    "stage": "league",
+    "win_rate": 0.231
+   },
+   {
+    "update": 6650,
+    "decisions": 217907200,
+    "games": 2251907,
+    "stage": "league",
+    "win_rate": 0.205,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.17773,
+      "ci_low": 0.14706,
+      "ci_high": 0.21321
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.18555,
+      "ci_low": 0.15426,
+      "ci_high": 0.22152
+     }
+    }
+   },
+   {
+    "update": 6660,
+    "decisions": 218234880,
+    "games": 2254406,
+    "stage": "league",
+    "win_rate": 0.236
+   },
+   {
+    "update": 6670,
+    "decisions": 218562560,
+    "games": 2256807,
+    "stage": "league",
+    "win_rate": 0.242
+   },
+   {
+    "update": 6680,
+    "decisions": 218890240,
+    "games": 2259283,
+    "stage": "league",
+    "win_rate": 0.237
+   },
+   {
+    "update": 6690,
+    "decisions": 219217920,
+    "games": 2261733,
+    "stage": "league",
+    "win_rate": 0.214
+   },
+   {
+    "update": 6700,
+    "decisions": 219545600,
+    "games": 2264133,
+    "stage": "league",
+    "win_rate": 0.219,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.20703,
+      "ci_low": 0.17418,
+      "ci_high": 0.24425
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.23438,
+      "ci_low": 0.19974,
+      "ci_high": 0.27296
+     }
+    }
+   },
+   {
+    "update": 6710,
+    "decisions": 219873280,
+    "games": 2266574,
+    "stage": "league",
+    "win_rate": 0.213
+   },
+   {
+    "update": 6720,
+    "decisions": 220200960,
+    "games": 2269053,
+    "stage": "league",
+    "win_rate": 0.225
+   },
+   {
+    "update": 6730,
+    "decisions": 220528640,
+    "games": 2271521,
+    "stage": "league",
+    "win_rate": 0.212
+   },
+   {
+    "update": 6740,
+    "decisions": 220856320,
+    "games": 2274002,
+    "stage": "league",
+    "win_rate": 0.202
+   },
+   {
+    "update": 6750,
+    "decisions": 221184000,
+    "games": 2276465,
+    "stage": "league",
+    "win_rate": 0.204,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.23828,
+      "ci_low": 0.20341,
+      "ci_high": 0.27705
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.23633,
+      "ci_low": 0.20158,
+      "ci_high": 0.27501
+     }
+    }
+   },
+   {
+    "update": 6760,
+    "decisions": 221511680,
+    "games": 2278885,
+    "stage": "league",
+    "win_rate": 0.219
+   },
+   {
+    "update": 6770,
+    "decisions": 221839360,
+    "games": 2281322,
+    "stage": "league",
+    "win_rate": 0.215
+   },
+   {
+    "update": 6780,
+    "decisions": 222167040,
+    "games": 2283787,
+    "stage": "league",
+    "win_rate": 0.223
+   },
+   {
+    "update": 6790,
+    "decisions": 222494720,
+    "games": 2286229,
+    "stage": "league",
+    "win_rate": 0.223
+   },
+   {
+    "update": 6800,
+    "decisions": 222822400,
+    "games": 2288685,
+    "stage": "league",
+    "win_rate": 0.21,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.2168,
+      "ci_low": 0.18328,
+      "ci_high": 0.25453
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.22656,
+      "ci_low": 0.19242,
+      "ci_high": 0.26478
+     }
+    }
+   },
+   {
+    "update": 6810,
+    "decisions": 223150080,
+    "games": 2291090,
+    "stage": "league",
+    "win_rate": 0.225
+   },
+   {
+    "update": 6820,
+    "decisions": 223477760,
+    "games": 2293530,
+    "stage": "league",
+    "win_rate": 0.225
+   },
+   {
+    "update": 6830,
+    "decisions": 223805440,
+    "games": 2295976,
+    "stage": "league",
+    "win_rate": 0.227
+   },
+   {
+    "update": 6840,
+    "decisions": 224133120,
+    "games": 2298429,
+    "stage": "league",
+    "win_rate": 0.241
+   },
+   {
+    "update": 6850,
+    "decisions": 224460800,
+    "games": 2300866,
+    "stage": "league",
+    "win_rate": 0.214,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.23242,
+      "ci_low": 0.19791,
+      "ci_high": 0.27092
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.23438,
+      "ci_low": 0.19974,
+      "ci_high": 0.27296
+     }
+    }
+   },
+   {
+    "update": 6860,
+    "decisions": 224788480,
+    "games": 2303251,
+    "stage": "league",
+    "win_rate": 0.225
+   },
+   {
+    "update": 6870,
+    "decisions": 225116160,
+    "games": 2305649,
+    "stage": "league",
+    "win_rate": 0.221
+   },
+   {
+    "update": 6880,
+    "decisions": 225443840,
+    "games": 2308055,
+    "stage": "league",
+    "win_rate": 0.23
+   },
+   {
+    "update": 6890,
+    "decisions": 225771520,
+    "games": 2310417,
+    "stage": "league",
+    "win_rate": 0.22
+   },
+   {
+    "update": 6900,
+    "decisions": 226099200,
+    "games": 2312820,
+    "stage": "league",
+    "win_rate": 0.243,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.22852,
+      "ci_low": 0.19425,
+      "ci_high": 0.26683
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.23633,
+      "ci_low": 0.20158,
+      "ci_high": 0.27501
+     }
+    }
+   },
+   {
+    "update": 6910,
+    "decisions": 226426880,
+    "games": 2315185,
+    "stage": "league",
+    "win_rate": 0.219
+   },
+   {
+    "update": 6920,
+    "decisions": 226754560,
+    "games": 2317564,
+    "stage": "league",
+    "win_rate": 0.216
+   },
+   {
+    "update": 6930,
+    "decisions": 227082240,
+    "games": 2319973,
+    "stage": "league",
+    "win_rate": 0.215
+   },
+   {
+    "update": 6940,
+    "decisions": 227409920,
+    "games": 2322394,
+    "stage": "league",
+    "win_rate": 0.235
+   },
+   {
+    "update": 6950,
+    "decisions": 227737600,
+    "games": 2324845,
+    "stage": "league",
+    "win_rate": 0.245,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.20312,
+      "ci_low": 0.17055,
+      "ci_high": 0.24013
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.22852,
+      "ci_low": 0.19425,
+      "ci_high": 0.26683
+     }
+    }
+   },
+   {
+    "update": 6960,
+    "decisions": 228065280,
+    "games": 2327267,
+    "stage": "league",
+    "win_rate": 0.225
+   },
+   {
+    "update": 6970,
+    "decisions": 228392960,
+    "games": 2329721,
+    "stage": "league",
+    "win_rate": 0.258
+   },
+   {
+    "update": 6980,
+    "decisions": 228720640,
+    "games": 2332145,
+    "stage": "league",
+    "win_rate": 0.228
+   },
+   {
+    "update": 6990,
+    "decisions": 229048320,
+    "games": 2334637,
+    "stage": "league",
+    "win_rate": 0.218
+   },
+   {
+    "update": 7000,
+    "decisions": 229376000,
+    "games": 2337061,
+    "stage": "league",
+    "win_rate": 0.244,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.24414,
+      "ci_low": 0.20893,
+      "ci_high": 0.28317
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.23633,
+      "ci_low": 0.20158,
+      "ci_high": 0.27501
+     }
+    }
+   },
+   {
+    "update": 7010,
+    "decisions": 229703680,
+    "games": 2339533,
+    "stage": "league",
+    "win_rate": 0.233
+   },
+   {
+    "update": 7020,
+    "decisions": 230031360,
+    "games": 2341958,
+    "stage": "league",
+    "win_rate": 0.215
+   },
+   {
+    "update": 7030,
+    "decisions": 230359040,
+    "games": 2344386,
+    "stage": "league",
+    "win_rate": 0.244
+   },
+   {
+    "update": 7040,
+    "decisions": 230686720,
+    "games": 2346833,
+    "stage": "league",
+    "win_rate": 0.23
+   },
+   {
+    "update": 7050,
+    "decisions": 231014400,
+    "games": 2349311,
+    "stage": "league",
+    "win_rate": 0.223,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.24609,
+      "ci_low": 0.21077,
+      "ci_high": 0.2852
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.25,
+      "ci_low": 0.21445,
+      "ci_high": 0.28928
+     }
+    }
+   },
+   {
+    "update": 7060,
+    "decisions": 231342080,
+    "games": 2351715,
+    "stage": "league",
+    "win_rate": 0.208
+   },
+   {
+    "update": 7070,
+    "decisions": 231669760,
+    "games": 2354152,
+    "stage": "league",
+    "win_rate": 0.235
+   },
+   {
+    "update": 7080,
+    "decisions": 231997440,
+    "games": 2356533,
+    "stage": "league",
+    "win_rate": 0.224
+   },
+   {
+    "update": 7090,
+    "decisions": 232325120,
+    "games": 2358943,
+    "stage": "league",
+    "win_rate": 0.262
+   },
+   {
+    "update": 7100,
+    "decisions": 232652800,
+    "games": 2361387,
+    "stage": "league",
+    "win_rate": 0.2,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.22461,
+      "ci_low": 0.19059,
+      "ci_high": 0.26273
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.21094,
+      "ci_low": 0.17782,
+      "ci_high": 0.24836
+     }
+    }
+   },
+   {
+    "update": 7110,
+    "decisions": 232980480,
+    "games": 2363842,
+    "stage": "league",
+    "win_rate": 0.221
+   },
+   {
+    "update": 7120,
+    "decisions": 233308160,
+    "games": 2366311,
+    "stage": "league",
+    "win_rate": 0.21
+   },
+   {
+    "update": 7130,
+    "decisions": 233635840,
+    "games": 2368741,
+    "stage": "league",
+    "win_rate": 0.211
+   },
+   {
+    "update": 7140,
+    "decisions": 233963520,
+    "games": 2371173,
+    "stage": "league",
+    "win_rate": 0.219
+   },
+   {
+    "update": 7150,
+    "decisions": 234291200,
+    "games": 2373619,
+    "stage": "league",
+    "win_rate": 0.211,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.21875,
+      "ci_low": 0.18511,
+      "ci_high": 0.25658
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.22852,
+      "ci_low": 0.19425,
+      "ci_high": 0.26683
+     }
+    }
+   },
+   {
+    "update": 7160,
+    "decisions": 234618880,
+    "games": 2376096,
+    "stage": "league",
+    "win_rate": 0.241
+   },
+   {
+    "update": 7170,
+    "decisions": 234946560,
+    "games": 2378519,
+    "stage": "league",
+    "win_rate": 0.221
+   },
+   {
+    "update": 7180,
+    "decisions": 235274240,
+    "games": 2380971,
+    "stage": "league",
+    "win_rate": 0.232
+   },
+   {
+    "update": 7190,
+    "decisions": 235601920,
+    "games": 2383428,
+    "stage": "league",
+    "win_rate": 0.237
+   },
+   {
+    "update": 7200,
+    "decisions": 235929600,
+    "games": 2385868,
+    "stage": "league",
+    "win_rate": 0.232,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.21875,
+      "ci_low": 0.18511,
+      "ci_high": 0.25658
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.23047,
+      "ci_low": 0.19608,
+      "ci_high": 0.26887
+     }
+    }
+   },
+   {
+    "update": 7210,
+    "decisions": 236257280,
+    "games": 2388341,
+    "stage": "league",
+    "win_rate": 0.229
+   },
+   {
+    "update": 7220,
+    "decisions": 236584960,
+    "games": 2390790,
+    "stage": "league",
+    "win_rate": 0.242
+   },
+   {
+    "update": 7230,
+    "decisions": 236912640,
+    "games": 2393231,
+    "stage": "league",
+    "win_rate": 0.2
+   },
+   {
+    "update": 7240,
+    "decisions": 237240320,
+    "games": 2395663,
+    "stage": "league",
+    "win_rate": 0.23
+   },
+   {
+    "update": 7250,
+    "decisions": 237568000,
+    "games": 2398097,
+    "stage": "league",
+    "win_rate": 0.257,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.23828,
+      "ci_low": 0.20341,
+      "ci_high": 0.27705
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.23633,
+      "ci_low": 0.20158,
+      "ci_high": 0.27501
+     }
+    }
+   },
+   {
+    "update": 7260,
+    "decisions": 237895680,
+    "games": 2400566,
+    "stage": "league",
+    "win_rate": 0.25
+   },
+   {
+    "update": 7270,
+    "decisions": 238223360,
+    "games": 2403002,
+    "stage": "league",
+    "win_rate": 0.224
+   },
+   {
+    "update": 7280,
+    "decisions": 238551040,
+    "games": 2405470,
+    "stage": "league",
+    "win_rate": 0.236
+   },
+   {
+    "update": 7290,
+    "decisions": 238878720,
+    "games": 2407910,
+    "stage": "league",
+    "win_rate": 0.192
+   },
+   {
+    "update": 7300,
+    "decisions": 239206400,
+    "games": 2410365,
+    "stage": "league",
+    "win_rate": 0.248,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.23242,
+      "ci_low": 0.19791,
+      "ci_high": 0.27092
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.24219,
+      "ci_low": 0.20709,
+      "ci_high": 0.28113
+     }
+    }
+   },
+   {
+    "update": 7310,
+    "decisions": 239534080,
+    "games": 2412815,
+    "stage": "league",
+    "win_rate": 0.239
+   },
+   {
+    "update": 7320,
+    "decisions": 239861760,
+    "games": 2415235,
+    "stage": "league",
+    "win_rate": 0.216
+   },
+   {
+    "update": 7330,
+    "decisions": 240189440,
+    "games": 2417667,
+    "stage": "league",
+    "win_rate": 0.237
+   },
+   {
+    "update": 7340,
+    "decisions": 240517120,
+    "games": 2420122,
+    "stage": "league",
+    "win_rate": 0.22
+   },
+   {
+    "update": 7350,
+    "decisions": 240844800,
+    "games": 2422520,
+    "stage": "league",
+    "win_rate": 0.237,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.21289,
+      "ci_low": 0.17964,
+      "ci_high": 0.25042
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.25781,
+      "ci_low": 0.22182,
+      "ci_high": 0.29741
+     }
+    }
+   },
+   {
+    "update": 7360,
+    "decisions": 241172480,
+    "games": 2424932,
+    "stage": "league",
+    "win_rate": 0.245
+   },
+   {
+    "update": 7370,
+    "decisions": 241500160,
+    "games": 2427378,
+    "stage": "league",
+    "win_rate": 0.235
+   },
+   {
+    "update": 7380,
+    "decisions": 241827840,
+    "games": 2429788,
+    "stage": "league",
+    "win_rate": 0.233
+   },
+   {
+    "update": 7390,
+    "decisions": 242155520,
+    "games": 2432186,
+    "stage": "league",
+    "win_rate": 0.236
+   },
+   {
+    "update": 7400,
+    "decisions": 242483200,
+    "games": 2434603,
+    "stage": "league",
+    "win_rate": 0.238,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.24609,
+      "ci_low": 0.21077,
+      "ci_high": 0.2852
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.20508,
+      "ci_low": 0.17236,
+      "ci_high": 0.24219
+     }
+    }
+   },
+   {
+    "update": 7410,
+    "decisions": 242810880,
+    "games": 2436989,
+    "stage": "league",
+    "win_rate": 0.257
+   },
+   {
+    "update": 7420,
+    "decisions": 243138560,
+    "games": 2439406,
+    "stage": "league",
+    "win_rate": 0.23
+   },
+   {
+    "update": 7430,
+    "decisions": 243466240,
+    "games": 2441835,
+    "stage": "league",
+    "win_rate": 0.245
+   },
+   {
+    "update": 7440,
+    "decisions": 243793920,
+    "games": 2444296,
+    "stage": "league",
+    "win_rate": 0.245
+   },
+   {
+    "update": 7450,
+    "decisions": 244121600,
+    "games": 2446746,
+    "stage": "league",
+    "win_rate": 0.235,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.21094,
+      "ci_low": 0.17782,
+      "ci_high": 0.24836
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.20312,
+      "ci_low": 0.17055,
+      "ci_high": 0.24013
+     }
+    }
+   },
+   {
+    "update": 7460,
+    "decisions": 244449280,
+    "games": 2449133,
+    "stage": "league",
+    "win_rate": 0.221
+   },
+   {
+    "update": 7470,
+    "decisions": 244776960,
+    "games": 2451556,
+    "stage": "league",
+    "win_rate": 0.218
+   },
+   {
+    "update": 7480,
+    "decisions": 245104640,
+    "games": 2454009,
+    "stage": "league",
+    "win_rate": 0.22
+   },
+   {
+    "update": 7490,
+    "decisions": 245432320,
+    "games": 2456423,
+    "stage": "league",
+    "win_rate": 0.221
+   },
+   {
+    "update": 7500,
+    "decisions": 245760000,
+    "games": 2458860,
+    "stage": "league",
+    "win_rate": 0.214,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.22852,
+      "ci_low": 0.19425,
+      "ci_high": 0.26683
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.22852,
+      "ci_low": 0.19425,
+      "ci_high": 0.26683
+     }
+    }
+   },
+   {
+    "update": 7510,
+    "decisions": 246087680,
+    "games": 2461333,
+    "stage": "league",
+    "win_rate": 0.247
+   },
+   {
+    "update": 7520,
+    "decisions": 246415360,
+    "games": 2463775,
+    "stage": "league",
+    "win_rate": 0.24
+   },
+   {
+    "update": 7530,
+    "decisions": 246743040,
+    "games": 2466182,
+    "stage": "league",
+    "win_rate": 0.228
+   },
+   {
+    "update": 7540,
+    "decisions": 247070720,
+    "games": 2468610,
+    "stage": "league",
+    "win_rate": 0.25
+   },
+   {
+    "update": 7550,
+    "decisions": 247398400,
+    "games": 2471067,
+    "stage": "league",
+    "win_rate": 0.231,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.23438,
+      "ci_low": 0.19974,
+      "ci_high": 0.27296
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.26758,
+      "ci_low": 0.23107,
+      "ci_high": 0.30755
+     }
+    }
+   },
+   {
+    "update": 7560,
+    "decisions": 247726080,
+    "games": 2473543,
+    "stage": "league",
+    "win_rate": 0.223
+   },
+   {
+    "update": 7570,
+    "decisions": 248053760,
+    "games": 2476015,
+    "stage": "league",
+    "win_rate": 0.234
+   },
+   {
+    "update": 7580,
+    "decisions": 248381440,
+    "games": 2478471,
+    "stage": "league",
+    "win_rate": 0.228
+   },
+   {
+    "update": 7590,
+    "decisions": 248709120,
+    "games": 2480921,
+    "stage": "league",
+    "win_rate": 0.219
+   },
+   {
+    "update": 7600,
+    "decisions": 249036800,
+    "games": 2483361,
+    "stage": "league",
+    "win_rate": 0.219,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.24219,
+      "ci_low": 0.20709,
+      "ci_high": 0.28113
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.25977,
+      "ci_low": 0.22367,
+      "ci_high": 0.29944
+     }
+    }
+   },
+   {
+    "update": 7610,
+    "decisions": 249364480,
+    "games": 2485853,
+    "stage": "league",
+    "win_rate": 0.22
+   },
+   {
+    "update": 7620,
+    "decisions": 249692160,
+    "games": 2488307,
+    "stage": "league",
+    "win_rate": 0.258
+   },
+   {
+    "update": 7630,
+    "decisions": 250019840,
+    "games": 2490753,
+    "stage": "league",
+    "win_rate": 0.227
+   },
+   {
+    "update": 7640,
+    "decisions": 250347520,
+    "games": 2493254,
+    "stage": "league",
+    "win_rate": 0.236
+   },
+   {
+    "update": 7650,
+    "decisions": 250675200,
+    "games": 2495794,
+    "stage": "league",
+    "win_rate": 0.253,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.20898,
+      "ci_low": 0.176,
+      "ci_high": 0.24631
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.24219,
+      "ci_low": 0.20709,
+      "ci_high": 0.28113
+     }
+    }
+   },
+   {
+    "update": 7660,
+    "decisions": 251002880,
+    "games": 2498250,
+    "stage": "league",
+    "win_rate": 0.245
+   },
+   {
+    "update": 7670,
+    "decisions": 251330560,
+    "games": 2500733,
+    "stage": "league",
+    "win_rate": 0.206
+   },
+   {
+    "update": 7680,
+    "decisions": 251658240,
+    "games": 2503212,
+    "stage": "league",
+    "win_rate": 0.243
+   },
+   {
+    "update": 7690,
+    "decisions": 251985920,
+    "games": 2505708,
+    "stage": "league",
+    "win_rate": 0.234
+   },
+   {
+    "update": 7700,
+    "decisions": 252313600,
+    "games": 2508146,
+    "stage": "league",
+    "win_rate": 0.223,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.21484,
+      "ci_low": 0.18146,
+      "ci_high": 0.25247
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.25,
+      "ci_low": 0.21445,
+      "ci_high": 0.28928
+     }
+    }
+   },
+   {
+    "update": 7710,
+    "decisions": 252641280,
+    "games": 2510593,
+    "stage": "league",
+    "win_rate": 0.222
+   },
+   {
+    "update": 7720,
+    "decisions": 252968960,
+    "games": 2513059,
+    "stage": "league",
+    "win_rate": 0.222
+   },
+   {
+    "update": 7730,
+    "decisions": 253296640,
+    "games": 2515516,
+    "stage": "league",
+    "win_rate": 0.231
+   },
+   {
+    "update": 7740,
+    "decisions": 253624320,
+    "games": 2517992,
+    "stage": "league",
+    "win_rate": 0.231
+   },
+   {
+    "update": 7750,
+    "decisions": 253952000,
+    "games": 2520435,
+    "stage": "league",
+    "win_rate": 0.24,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.2168,
+      "ci_low": 0.18328,
+      "ci_high": 0.25453
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.23828,
+      "ci_low": 0.20341,
+      "ci_high": 0.27705
+     }
+    }
+   },
+   {
+    "update": 7760,
+    "decisions": 254279680,
+    "games": 2522870,
+    "stage": "league",
+    "win_rate": 0.213
+   },
+   {
+    "update": 7770,
+    "decisions": 254607360,
+    "games": 2525302,
+    "stage": "league",
+    "win_rate": 0.237
+   },
+   {
+    "update": 7780,
+    "decisions": 254935040,
+    "games": 2527793,
+    "stage": "league",
+    "win_rate": 0.224
+   },
+   {
+    "update": 7790,
+    "decisions": 255262720,
+    "games": 2530259,
+    "stage": "league",
+    "win_rate": 0.23
+   },
+   {
+    "update": 7800,
+    "decisions": 255590400,
+    "games": 2532720,
+    "stage": "league",
+    "win_rate": 0.229,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.23047,
+      "ci_low": 0.19608,
+      "ci_high": 0.26887
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.24609,
+      "ci_low": 0.21077,
+      "ci_high": 0.2852
+     }
+    }
+   },
+   {
+    "update": 7810,
+    "decisions": 255918080,
+    "games": 2535184,
+    "stage": "league",
+    "win_rate": 0.241
+   },
+   {
+    "update": 7820,
+    "decisions": 256245760,
+    "games": 2537582,
+    "stage": "league",
+    "win_rate": 0.216
+   },
+   {
+    "update": 7830,
+    "decisions": 256573440,
+    "games": 2540052,
+    "stage": "league",
+    "win_rate": 0.261
+   },
+   {
+    "update": 7840,
+    "decisions": 256901120,
+    "games": 2542511,
+    "stage": "league",
+    "win_rate": 0.241
+   },
+   {
+    "update": 7850,
+    "decisions": 257228800,
+    "games": 2544956,
+    "stage": "league",
+    "win_rate": 0.234,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.21875,
+      "ci_low": 0.18511,
+      "ci_high": 0.25658
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.25195,
+      "ci_low": 0.21629,
+      "ci_high": 0.29131
+     }
+    }
+   },
+   {
+    "update": 7860,
+    "decisions": 257556480,
+    "games": 2547407,
+    "stage": "league",
+    "win_rate": 0.23
+   },
+   {
+    "update": 7870,
+    "decisions": 257884160,
+    "games": 2549875,
+    "stage": "league",
+    "win_rate": 0.243
+   },
+   {
+    "update": 7880,
+    "decisions": 258211840,
+    "games": 2552342,
+    "stage": "league",
+    "win_rate": 0.25
+   },
+   {
+    "update": 7890,
+    "decisions": 258539520,
+    "games": 2554780,
+    "stage": "league",
+    "win_rate": 0.239
+   },
+   {
+    "update": 7900,
+    "decisions": 258867200,
+    "games": 2557226,
+    "stage": "league",
+    "win_rate": 0.243,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.23438,
+      "ci_low": 0.19974,
+      "ci_high": 0.27296
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.24219,
+      "ci_low": 0.20709,
+      "ci_high": 0.28113
+     }
+    }
+   },
+   {
+    "update": 7910,
+    "decisions": 259194880,
+    "games": 2559693,
+    "stage": "league",
+    "win_rate": 0.229
+   },
+   {
+    "update": 7920,
+    "decisions": 259522560,
+    "games": 2562162,
+    "stage": "league",
+    "win_rate": 0.244
+   },
+   {
+    "update": 7930,
+    "decisions": 259850240,
+    "games": 2564661,
+    "stage": "league",
+    "win_rate": 0.23
+   },
+   {
+    "update": 7940,
+    "decisions": 260177920,
+    "games": 2567090,
+    "stage": "league",
+    "win_rate": 0.243
+   },
+   {
+    "update": 7950,
+    "decisions": 260505600,
+    "games": 2569579,
+    "stage": "league",
+    "win_rate": 0.234,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.24023,
+      "ci_low": 0.20525,
+      "ci_high": 0.27909
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.25977,
+      "ci_low": 0.22367,
+      "ci_high": 0.29944
+     }
+    }
+   },
+   {
+    "update": 7960,
+    "decisions": 260833280,
+    "games": 2572023,
+    "stage": "league",
+    "win_rate": 0.237
+   },
+   {
+    "update": 7970,
+    "decisions": 261160960,
+    "games": 2574503,
+    "stage": "league",
+    "win_rate": 0.236
+   },
+   {
+    "update": 7980,
+    "decisions": 261488640,
+    "games": 2576993,
+    "stage": "league",
+    "win_rate": 0.225
+   },
+   {
+    "update": 7990,
+    "decisions": 261816320,
+    "games": 2579451,
+    "stage": "league",
+    "win_rate": 0.201
+   },
+   {
+    "update": 8000,
+    "decisions": 262144000,
+    "games": 2581972,
+    "stage": "league",
+    "win_rate": 0.24,
+    "eval": {
+     "balanced_ows_road_builder": {
+      "win_rate": 0.23047,
+      "ci_low": 0.19608,
+      "ci_high": 0.26887
+     },
+     "dev_rush_port_master_balanced": {
+      "win_rate": 0.25391,
+      "ci_low": 0.21813,
+      "ci_high": 0.29334
+     }
+    }
+   }
+  ],
+  "decisions": 262144000,
+  "games": 2581972,
+  "hours": 16.309444444444445,
+  "eval_tables": [
+   [
+    "balanced",
+    "ows",
+    "road_builder"
+   ],
+   [
+    "dev_rush",
+    "port_master",
+    "balanced"
+   ]
+  ]
+ },
+ "evaluation": [
+  {
+   "table": [
+    "balanced",
+    "ows",
+    "road_builder"
+   ],
+   "games": 40448,
+   "win_rate": 0.24137163765822786,
+   "ci_low": 0.237226044708579,
+   "ci_high": 0.2455663530545923,
+   "avg_vp": 7.277566257911392,
+   "baseline": {
+    "bot": "balanced",
+    "win_rate": 0.28255,
+    "ci_low": 0.278158698438737,
+    "ci_high": 0.28698306534626905,
+    "games": 40000
+   },
+   "opponents": [
+    {
+     "bot": "balanced",
+     "win_rate": 0.30453916139240506,
+     "ci_low": 0.3000728672259506,
+     "ci_high": 0.3090425803140199
+    },
+    {
+     "bot": "ows",
+     "win_rate": 0.24713212025316456,
+     "ci_low": 0.24295256725096473,
+     "ci_high": 0.2513597015877424
+    },
+    {
+     "bot": "road_builder",
+     "win_rate": 0.20695708069620253,
+     "ci_low": 0.20303682782554328,
+     "ci_high": 0.21093299252498432
+    }
+   ]
+  },
+  {
+   "table": [
+    "balanced",
+    "ows",
+    "dev_rush"
+   ],
+   "games": 4096,
+   "win_rate": 0.232421875,
+   "ci_low": 0.21974094800914962,
+   "ci_high": 0.24560424971751382,
+   "avg_vp": 7.080078125,
+   "baseline": {
+    "bot": "balanced",
+    "win_rate": 0.356,
+    "ci_low": 0.3413060048403903,
+    "ci_high": 0.3709703249724573,
+    "games": 4000
+   },
+   "opponents": [
+    {
+     "bot": "balanced",
+     "win_rate": 0.443115234375,
+     "ci_low": 0.4279624932234452,
+     "ci_high": 0.4583745789210007
+    },
+    {
+     "bot": "ows",
+     "win_rate": 0.197998046875,
+     "ci_low": 0.18607968620610502,
+     "ci_high": 0.21048236633758352
+    },
+    {
+     "bot": "dev_rush",
+     "win_rate": 0.12646484375,
+     "ci_low": 0.11663469378339791,
+     "ci_high": 0.13699500742261944
+    }
+   ]
+  },
+  {
+   "table": [
+    "balanced",
+    "ows",
+    "port_master"
+   ],
+   "games": 4096,
+   "win_rate": 0.247802734375,
+   "ci_low": 0.23482119455304745,
+   "ci_high": 0.2612568978298388,
+   "avg_vp": 7.182373046875,
+   "baseline": {
+    "bot": "balanced",
+    "win_rate": 0.324,
+    "ci_low": 0.3096713739821613,
+    "ci_high": 0.3386663624557636,
+    "games": 4000
+   },
+   "opponents": [
+    {
+     "bot": "port_master",
+     "win_rate": 0.15673828125,
+     "ci_low": 0.14592665569796281,
+     "ci_high": 0.16819318737109623
+    },
+    {
+     "bot": "balanced",
+     "win_rate": 0.37451171875,
+     "ci_low": 0.3598133868387655,
+     "ci_high": 0.3894452186644326
+    },
+    {
+     "bot": "ows",
+     "win_rate": 0.220947265625,
+     "ci_low": 0.2085061506166307,
+     "ci_high": 0.23391133204904108
+    }
+   ]
+  },
+  {
+   "table": [
+    "balanced",
+    "road_builder",
+    "dev_rush"
+   ],
+   "games": 4096,
+   "win_rate": 0.24169921875,
+   "ci_low": 0.2288341994126505,
+   "ci_high": 0.255048299852687,
+   "avg_vp": 7.17236328125,
+   "baseline": {
+    "bot": "balanced",
+    "win_rate": 0.30225,
+    "ci_low": 0.28821352297692165,
+    "ci_high": 0.31666595077648557,
+    "games": 4000
+   },
+   "opponents": [
+    {
+     "bot": "balanced",
+     "win_rate": 0.339111328125,
+     "ci_low": 0.324769982294501,
+     "ci_high": 0.35375418312691437
+    },
+    {
+     "bot": "road_builder",
+     "win_rate": 0.21728515625,
+     "ci_low": 0.20492350624350736,
+     "ci_high": 0.23017662055163518
+    },
+    {
+     "bot": "dev_rush",
+     "win_rate": 0.201904296875,
+     "ci_low": 0.18989267956545616,
+     "ci_high": 0.21447455257346357
+    }
+   ]
+  },
+  {
+   "table": [
+    "balanced",
+    "road_builder",
+    "port_master"
+   ],
+   "games": 4096,
+   "win_rate": 0.300537109375,
+   "ci_low": 0.28668803851524294,
+   "ci_high": 0.3147599784032644,
+   "avg_vp": 7.810302734375,
+   "baseline": {
+    "bot": "balanced",
+    "win_rate": 0.35875,
+    "ci_low": 0.34402803997836545,
+    "ci_high": 0.3737430127026396,
+    "games": 4000
+   },
+   "opponents": [
+    {
+     "bot": "balanced",
+     "win_rate": 0.33837890625,
+     "ci_low": 0.3240458779479633,
+     "ci_high": 0.3530148162993462
+    },
+    {
+     "bot": "road_builder",
+     "win_rate": 0.2119140625,
+     "ci_low": 0.19967161162479513,
+     "ci_high": 0.22469639322690454
+    },
+    {
+     "bot": "port_master",
+     "win_rate": 0.149169921875,
+     "ci_low": 0.138588476453278,
+     "ci_high": 0.16040883115002064
+    }
+   ]
+  },
+  {
+   "table": [
+    "balanced",
+    "dev_rush",
+    "port_master"
+   ],
+   "games": 4096,
+   "win_rate": 0.245849609375,
+   "ci_low": 0.23290496695913387,
+   "ci_high": 0.2592705356261368,
+   "avg_vp": 7.191162109375,
+   "baseline": {
+    "bot": "balanced",
+    "win_rate": 0.34725,
+    "ci_low": 0.3326485429620833,
+    "ci_high": 0.36214457772480896,
+    "games": 4000
+   },
+   "opponents": [
+    {
+     "bot": "balanced",
+     "win_rate": 0.416259765625,
+     "ci_low": 0.40124888455216534,
+     "ci_high": 0.43142757787506614
+    },
+    {
+     "bot": "dev_rush",
+     "win_rate": 0.162109375,
+     "ci_low": 0.15113995199291025,
+     "ci_high": 0.17371201301959172
+    },
+    {
+     "bot": "port_master",
+     "win_rate": 0.17578125,
+     "ci_low": 0.16442963487788528,
+     "ci_high": 0.18774045871792586
+    }
+   ]
+  },
+  {
+   "table": [
+    "ows",
+    "road_builder",
+    "dev_rush"
+   ],
+   "games": 4096,
+   "win_rate": 0.228515625,
+   "ci_low": 0.21591480137529462,
+   "ci_high": 0.24162521675613763,
+   "avg_vp": 7.031982421875,
+   "baseline": {
+    "bot": "balanced",
+    "win_rate": 0.3265,
+    "ci_low": 0.31214011832470034,
+    "ci_high": 0.3411928207206405,
+    "games": 4000
+   },
+   "opponents": [
+    {
+     "bot": "dev_rush",
+     "win_rate": 0.191162109375,
+     "ci_low": 0.1794114060842759,
+     "ci_high": 0.20349158216775806
+    },
+    {
+     "bot": "ows",
+     "win_rate": 0.263916015625,
+     "ci_low": 0.2506436407080023,
+     "ci_high": 0.2776308175052126
+    },
+    {
+     "bot": "road_builder",
+     "win_rate": 0.31640625,
+     "ci_low": 0.30234103948726426,
+     "ci_high": 0.3308155195368699
+    }
+   ]
+  },
+  {
+   "table": [
+    "ows",
+    "road_builder",
+    "port_master"
+   ],
+   "games": 4096,
+   "win_rate": 0.275634765625,
+   "ci_low": 0.2621655174306006,
+   "ci_high": 0.2895244795683079,
+   "avg_vp": 7.440185546875,
+   "baseline": {
+    "bot": "balanced",
+    "win_rate": 0.334,
+    "ci_low": 0.31954915340605355,
+    "ci_high": 0.34876939346153474,
+    "games": 4000
+   },
+   "opponents": [
+    {
+     "bot": "ows",
+     "win_rate": 0.267333984375,
+     "ci_low": 0.25400294443558913,
+     "ci_high": 0.2811010459234531
+    },
+    {
+     "bot": "road_builder",
+     "win_rate": 0.290771484375,
+     "ci_low": 0.2770652958973999,
+     "ci_high": 0.30486977203302945
+    },
+    {
+     "bot": "port_master",
+     "win_rate": 0.166259765625,
+     "ci_low": 0.15517143218631035,
+     "ci_high": 0.17797353614612477
+    }
+   ]
+  },
+  {
+   "table": [
+    "ows",
+    "dev_rush",
+    "port_master"
+   ],
+   "games": 4096,
+   "win_rate": 0.296630859375,
+   "ci_low": 0.2828380218253216,
+   "ci_high": 0.3108048154979546,
+   "avg_vp": 7.45166015625,
+   "baseline": {
+    "bot": "balanced",
+    "win_rate": 0.42675,
+    "ci_low": 0.41149949765725363,
+    "ci_high": 0.44214106594546226,
+    "games": 4000
+   },
+   "opponents": [
+    {
+     "bot": "ows",
+     "win_rate": 0.2578125,
+     "ci_low": 0.24464748629066718,
+     "ci_high": 0.27143137880499907
+    },
+    {
+     "bot": "dev_rush",
+     "win_rate": 0.160400390625,
+     "ci_low": 0.1494806899631725,
+     "ci_high": 0.17195650897641584
+    },
+    {
+     "bot": "port_master",
+     "win_rate": 0.28515625,
+     "ci_low": 0.27153572910922646,
+     "ci_high": 0.29917939315305814
+    }
+   ]
+  },
+  {
+   "table": [
+    "road_builder",
+    "dev_rush",
+    "port_master"
+   ],
+   "games": 4096,
+   "win_rate": 0.286376953125,
+   "ci_low": 0.2727375876753846,
+   "ci_high": 0.30041665321040967,
+   "avg_vp": 7.466552734375,
+   "baseline": {
+    "bot": "balanced",
+    "win_rate": 0.36325,
+    "ci_low": 0.3484834217053373,
+    "ci_high": 0.37827899566901635,
+    "games": 4000
+   },
+   "opponents": [
+    {
+     "bot": "road_builder",
+     "win_rate": 0.31005859375,
+     "ci_low": 0.29607749760018426,
+     "ci_high": 0.32439564458169917
+    },
+    {
+     "bot": "dev_rush",
+     "win_rate": 0.224853515625,
+     "ci_low": 0.2123292189617061,
+     "ci_high": 0.23789344329919687
+    },
+    {
+     "bot": "port_master",
+     "win_rate": 0.1787109375,
+     "ci_low": 0.1672808773680115,
+     "ci_high": 0.19074310092422303
+    }
+   ]
+  }
+ ],
+ "style": {
+  "metrics": [
+   {
+    "key": "win_rate",
+    "label": "Win rate",
+    "format": "pct"
+   },
+   {
+    "key": "opening_ore_wheat",
+    "label": "Opening ore+wheat",
+    "format": "pct"
+   },
+   {
+    "key": "opening_wood_brick",
+    "label": "Opening wood+brick",
+    "format": "pct"
+   },
+   {
+    "key": "opening_port",
+    "label": "Opens on a harbour",
+    "format": "pct"
+   },
+   {
+    "key": "settlements",
+    "label": "Settlements",
+    "format": "num"
+   },
+   {
+    "key": "cities",
+    "label": "Cities",
+    "format": "num"
+   },
+   {
+    "key": "roads",
+    "label": "Roads",
+    "format": "num"
+   },
+   {
+    "key": "dev_bought",
+    "label": "Dev cards",
+    "format": "num"
+   },
+   {
+    "key": "trades",
+    "label": "Bank trades",
+    "format": "num"
+   },
+   {
+    "key": "longest_road",
+    "label": "Holds Longest Road",
+    "format": "pct"
+   },
+   {
+    "key": "largest_army",
+    "label": "Holds Largest Army",
+    "format": "pct"
+   },
+   {
+    "key": "first_city_turn",
+    "label": "First city (turn)",
+    "format": "num"
+   }
+  ],
+  "rows": [
+   {
+    "bot": "learned",
+    "win_rate": 0.2490234375,
+    "opening_ore_wheat": 0.44417545478864173,
+    "opening_wood_brick": 0.33159454277457523,
+    "opening_port": 0.136962890625,
+    "settlements": 1.4168701171875,
+    "cities": 1.6397705078125,
+    "roads": 6.2769775390625,
+    "dev_bought": 7.015380859375,
+    "trades": 5.875244140625,
+    "longest_road": 0.0701904296875,
+    "largest_army": 0.5048828125,
+    "first_city_turn": 35.054567380162794
+   },
+   {
+    "bot": "balanced",
+    "win_rate": 0.37642787318461035,
+    "opening_ore_wheat": 0.39849653675686586,
+    "opening_wood_brick": 0.42533938956706224,
+    "opening_port": 0.20219109312145767,
+    "settlements": 3.1632738141371006,
+    "cities": 1.8980750431893356,
+    "roads": 8.796728235950027,
+    "dev_bought": 1.7309173139858445,
+    "trades": 6.559162514406863,
+    "longest_road": 0.28994482265496285,
+    "largest_army": 0.02995002287597223,
+    "first_city_turn": 42.11960424661532
+   },
+   {
+    "bot": "ows",
+    "win_rate": 0.2865899401107763,
+    "opening_ore_wheat": 0.6698413594118859,
+    "opening_wood_brick": 0.15651212119705613,
+    "opening_port": 0.23662744901914204,
+    "settlements": 0.5627592803290782,
+    "cities": 2.486471787049424,
+    "roads": 4.375959290331454,
+    "dev_bought": 5.938284092471962,
+    "trades": 6.381954464185244,
+    "longest_road": 0.012334179367599805,
+    "largest_army": 0.3623160500618897,
+    "first_city_turn": 23.84316814880317
+   },
+   {
+    "bot": "road_builder",
+    "win_rate": 0.22929377126046935,
+    "opening_ore_wheat": 0.17175440334683628,
+    "opening_wood_brick": 0.6781200095983974,
+    "opening_port": 0.20868314433749816,
+    "settlements": 3.955308337728101,
+    "cities": 0.9125605790595781,
+    "roads": 9.62518464272414,
+    "dev_bought": 0.7776520443792381,
+    "trades": 6.399953636243211,
+    "longest_road": 0.7146398248424757,
+    "largest_army": 0.004060890234118227,
+    "first_city_turn": 56.42172652873903
+   },
+   {
+    "bot": "dev_rush",
+    "win_rate": 0.20258718785559765,
+    "opening_ore_wheat": 0.49733227685099163,
+    "opening_wood_brick": 0.12719607078481793,
+    "opening_port": 0.22822148028660388,
+    "settlements": 0.771921696615023,
+    "cities": 1.6880406647409687,
+    "roads": 3.207096947643521,
+    "dev_bought": 7.81213627439947,
+    "trades": 6.487653649447925,
+    "longest_road": 0.0016099586099961236,
+    "largest_army": 0.6154781108151705,
+    "first_city_turn": 29.55720395319979
+   },
+   {
+    "bot": "port_master",
+    "win_rate": 0.15514106857257098,
+    "opening_ore_wheat": 0.3366598603579934,
+    "opening_wood_brick": 0.43112898000184646,
+    "opening_port": 0.6675411085565773,
+    "settlements": 3.034597411035586,
+    "cities": 1.471938724510196,
+    "roads": 7.759122600959616,
+    "dev_bought": 0.9436744052379048,
+    "trades": 9.127431527389044,
+    "longest_road": 0.1896797530987605,
+    "largest_army": 0.00938249700119952,
+    "first_city_turn": 43.76974718269297
+   }
+  ]
+ },
+ "totals": {
+  "games_simulated": 13667284
+ }
+}

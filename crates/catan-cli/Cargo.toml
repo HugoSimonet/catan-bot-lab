@@ -1,0 +1,20 @@
+[package]
+name = "catan-cli"
+description = "Command-line tournaments, benchmarks and replay export for catan-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "catan-sim"
+path = "src/main.rs"
+
+[dependencies]
+catan-core.workspace = true
+rayon.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+clap = { version = "4", features = ["derive"] }
+
+[lints]
+workspace = true

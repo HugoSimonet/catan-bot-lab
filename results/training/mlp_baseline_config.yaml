@@ -1,0 +1,71 @@
+run_name: main
+runs_dir: runs
+seed: 0
+device: cuda
+num_envs: 256
+rollout_steps: 128
+total_updates: 4000
+lr: 0.00025
+lr_final: 5.0e-05
+gamma: 0.999
+gae_lambda: 0.95
+clip: 0.2
+epochs: 4
+minibatch: 4096
+ent_coef: 0.005
+ent_coef_final: 0.001
+vf_coef: 0.5
+max_grad_norm: 0.5
+target_kl: 0.03
+loss_reward: -0.3333333333333333
+shaping_start: 0.1
+shaping_end_update: 2000
+hidden: 512
+blocks: 4
+stages:
+- name: warmup
+  bots:
+  - random
+  - greedy
+  until_win_rate: 0.6
+  min_updates: 10
+  max_updates: 150
+- name: ladder
+  bots:
+  - greedy
+  - port_master
+  - dev_rush
+  until_win_rate: 0.35
+  max_updates: 600
+- name: strategies
+  bots:
+  - balanced
+  - ows
+  - road_builder
+  - dev_rush
+  - port_master
+  until_win_rate: 0.3
+  max_updates: 1200
+- name: league
+  bots:
+  - balanced
+  - ows
+  - road_builder
+  - dev_rush
+  - port_master
+  snapshot_prob: 0.35
+  self_prob: 0.15
+  pfsp: true
+snapshot_every: 50
+snapshot_slots: 4
+win_rate_window: 1000
+eval_every: 50
+eval_games: 512
+eval_opponents:
+- - balanced
+  - ows
+  - road_builder
+- - dev_rush
+  - port_master
+  - balanced
+checkpoint_every: 25

@@ -1,0 +1,163 @@
+{
+ "metrics": [
+  {
+   "key": "win_rate",
+   "label": "Win rate",
+   "format": "pct"
+  },
+  {
+   "key": "opening_ore_wheat",
+   "label": "Opening ore+wheat",
+   "format": "pct"
+  },
+  {
+   "key": "opening_wood_brick",
+   "label": "Opening wood+brick",
+   "format": "pct"
+  },
+  {
+   "key": "opening_port",
+   "label": "Opens on a harbour",
+   "format": "pct"
+  },
+  {
+   "key": "settlements",
+   "label": "Settlements",
+   "format": "num"
+  },
+  {
+   "key": "cities",
+   "label": "Cities",
+   "format": "num"
+  },
+  {
+   "key": "roads",
+   "label": "Roads",
+   "format": "num"
+  },
+  {
+   "key": "dev_bought",
+   "label": "Dev cards",
+   "format": "num"
+  },
+  {
+   "key": "trades",
+   "label": "Bank trades",
+   "format": "num"
+  },
+  {
+   "key": "longest_road",
+   "label": "Holds Longest Road",
+   "format": "pct"
+  },
+  {
+   "key": "largest_army",
+   "label": "Holds Largest Army",
+   "format": "pct"
+  },
+  {
+   "key": "first_city_turn",
+   "label": "First city (turn)",
+   "format": "num"
+  }
+ ],
+ "rows": [
+  {
+   "bot": "learned",
+   "win_rate": 0.2490234375,
+   "opening_ore_wheat": 0.44417545478864173,
+   "opening_wood_brick": 0.33159454277457523,
+   "opening_port": 0.136962890625,
+   "settlements": 1.4168701171875,
+   "cities": 1.6397705078125,
+   "roads": 6.2769775390625,
+   "dev_bought": 7.015380859375,
+   "trades": 5.875244140625,
+   "longest_road": 0.0701904296875,
+   "largest_army": 0.5048828125,
+   "first_city_turn": 35.054567380162794
+  },
+  {
+   "bot": "balanced",
+   "win_rate": 0.37642787318461035,
+   "opening_ore_wheat": 0.39849653675686586,
+   "opening_wood_brick": 0.42533938956706224,
+   "opening_port": 0.20219109312145767,
+   "settlements": 3.1632738141371006,
+   "cities": 1.8980750431893356,
+   "roads": 8.796728235950027,
+   "dev_bought": 1.7309173139858445,
+   "trades": 6.559162514406863,
+   "longest_road": 0.28994482265496285,
+   "largest_army": 0.02995002287597223,
+   "first_city_turn": 42.11960424661532
+  },
+  {
+   "bot": "ows",
+   "win_rate": 0.2865899401107763,
+   "opening_ore_wheat": 0.6698413594118859,
+   "opening_wood_brick": 0.15651212119705613,
+   "opening_port": 0.23662744901914204,
+   "settlements": 0.5627592803290782,
+   "cities": 2.486471787049424,
+   "roads": 4.375959290331454,
+   "dev_bought": 5.938284092471962,
+   "trades": 6.381954464185244,
+   "longest_road": 0.012334179367599805,
+   "largest_army": 0.3623160500618897,
+   "first_city_turn": 23.84316814880317
+  },
+  {
+   "bot": "road_builder",
+   "win_rate": 0.22929377126046935,
+   "opening_ore_wheat": 0.17175440334683628,
+   "opening_wood_brick": 0.6781200095983974,
+   "opening_port": 0.20868314433749816,
+   "settlements": 3.955308337728101,
+   "cities": 0.9125605790595781,
+   "roads": 9.62518464272414,
+   "dev_bought": 0.7776520443792381,
+   "trades": 6.399953636243211,
+   "longest_road": 0.7146398248424757,
+   "largest_army": 0.004060890234118227,
+   "first_city_turn": 56.42172652873903
+  },
+  {
+   "bot": "dev_rush",
+   "win_rate": 0.20258718785559765,
+   "opening_ore_wheat": 0.49733227685099163,
+   "opening_wood_brick": 0.12719607078481793,
+   "opening_port": 0.22822148028660388,
+   "settlements": 0.771921696615023,
+   "cities": 1.6880406647409687,
+   "roads": 3.207096947643521,
+   "dev_bought": 7.81213627439947,
+   "trades": 6.487653649447925,
+   "longest_road": 0.0016099586099961236,
+   "largest_army": 0.6154781108151705,
+   "first_city_turn": 29.55720395319979
+  },
+  {
+   "bot": "port_master",
+   "win_rate": 0.15514106857257098,
+   "opening_ore_wheat": 0.3366598603579934,
+   "opening_wood_brick": 0.43112898000184646,
+   "opening_port": 0.6675411085565773,
+   "settlements": 3.034597411035586,
+   "cities": 1.471938724510196,
+   "roads": 7.759122600959616,
+   "dev_bought": 0.9436744052379048,
+   "trades": 9.127431527389044,
+   "longest_road": 0.1896797530987605,
+   "largest_army": 0.00938249700119952,
+   "first_city_turn": 43.76974718269297
+  }
+ ],
+ "games": 8000,
+ "opponents": [
+  "balanced",
+  "ows",
+  "road_builder"
+ ],
+ "note": "Learned agent measured against the top-3 table; strategies measured in the main tournament."
+}

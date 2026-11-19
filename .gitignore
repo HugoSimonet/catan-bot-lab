@@ -1,0 +1,32 @@
+# Rust
+target/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyd
+*.pdb
+*.so
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+
+# Training / simulation outputs (large)
+results/raw/
+results/*.csv
+results/*.parquet
+checkpoints/
+runs/
+
+# Web
+web/node_modules/
+web/.next/
+web/out/
+web/.vercel/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

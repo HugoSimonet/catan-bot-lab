@@ -1,0 +1,19 @@
+# Quick sanity check: the agent should learn to beat random bots.
+run_name: smoke
+num_envs: 128
+rollout_steps: 64
+total_updates: 150
+minibatch: 2048
+shaping_start: 0.05
+shaping_end_update: 150
+hidden: 256
+blocks: 2
+eval_every: 25
+eval_games: 256
+eval_opponents:
+  - [random, random, random]
+  - [greedy, greedy, greedy]
+checkpoint_every: 50
+stages:
+  - name: random
+    bots: [random]

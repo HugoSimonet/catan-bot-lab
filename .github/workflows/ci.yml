@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  rust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+      - uses: Swatinem/rust-cache@v2
+      - name: Test engine
+        run: cargo test -p catan-core -p catan-cli --release
+      - name: Clippy
+        run: cargo clippy -p catan-core -p catan-cli --release -- -D warnings
+      - name: Benchmark (smoke)
+        run: cargo run --release -p catan-cli -- bench --games 4000
+
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - uses: astral-sh/setup-uv@v5
+      - name: Build extension and install dependencies (CPU torch)
+        run: |
+          uv venv --python 3.12
+          uv pip install torch --index-url https://download.pytorch.org/whl/cpu
+          uv pip install maturin numpy polars pyarrow matplotlib pyyaml openskill tqdm pytest
+          uv run --no-project maturin develop --release --uv
+      - name: Tests
+        run: uv run --no-project pytest -q
+
+  web:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build

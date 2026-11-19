@@ -1,0 +1,53 @@
+# Full curriculum: an opponent ladder from random bots up to the tuned
+# community strategies, then a self-play league with PFSP.
+run_name: main
+num_envs: 256
+rollout_steps: 128
+# Extended from 4000 at update 1200 to use a full night (~5 s per update on a
+# GTX 1660 Ti); the learning-rate and entropy schedules stretch to match.
+total_updates: 8000
+lr: 2.5e-4
+lr_final: 5.0e-5
+gamma: 0.999
+gae_lambda: 0.95
+epochs: 4
+minibatch: 4096
+ent_coef: 0.005
+ent_coef_final: 0.001
+# Reward per victory point gained, fading to zero: dense early guidance that
+# is aligned with winning, removed before the end so only wins count.
+shaping_start: 0.1
+shaping_end_update: 2000
+arch: graph
+hidden: 384
+blocks: 3
+ent: 64
+rounds: 2
+snapshot_every: 50
+snapshot_slots: 4
+win_rate_window: 1000
+eval_every: 50
+eval_games: 512
+eval_opponents:
+  - [balanced, ows, road_builder]
+  - [dev_rush, port_master, balanced]
+checkpoint_every: 25
+stages:
+  - name: warmup
+    bots: [random, greedy]
+    until_win_rate: 0.6
+    min_updates: 10
+    max_updates: 150
+  - name: ladder
+    bots: [greedy, port_master, dev_rush]
+    until_win_rate: 0.35
+    max_updates: 600
+  - name: strategies
+    bots: [balanced, ows, road_builder, dev_rush, port_master]
+    until_win_rate: 0.3
+    max_updates: 1200
+  - name: league
+    bots: [balanced, ows, road_builder, dev_rush, port_master]
+    snapshot_prob: 0.35
+    self_prob: 0.15
+    pfsp: true

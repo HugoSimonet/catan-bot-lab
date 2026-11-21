@@ -64,24 +64,24 @@
  "rows": [
   {
    "bot": "learned",
-   "win_rate": 0.2490234375,
-   "opening_ore_wheat": 0.44417545478864173,
-   "opening_wood_brick": 0.33159454277457523,
-   "opening_port": 0.136962890625,
-   "settlements": 1.4168701171875,
-   "cities": 1.6397705078125,
-   "roads": 6.2769775390625,
-   "dev_bought": 7.015380859375,
-   "trades": 5.875244140625,
-   "longest_road": 0.0701904296875,
-   "largest_army": 0.5048828125,
-   "first_city_turn": 35.054567380162794
+   "win_rate": 0.3634033203125,
+   "opening_ore_wheat": 0.4909912832739176,
+   "opening_wood_brick": 0.2982752766857307,
+   "opening_port": 0.1092529296875,
+   "settlements": 1.4249267578125,
+   "cities": 1.7889404296875,
+   "roads": 5.8138427734375,
+   "dev_bought": 7.55322265625,
+   "trades": 5.5682373046875,
+   "longest_road": 0.07421875,
+   "largest_army": 0.5755615234375,
+   "first_city_turn": 32.45510923185342
   },
   {
    "bot": "balanced",
    "win_rate": 0.37642787318461035,
-   "opening_ore_wheat": 0.39849653675686586,
-   "opening_wood_brick": 0.42533938956706224,
+   "opening_ore_wheat": 0.3984965367568657,
+   "opening_wood_brick": 0.4253393895670619,
    "opening_port": 0.20219109312145767,
    "settlements": 3.1632738141371006,
    "cities": 1.8980750431893356,
@@ -95,8 +95,8 @@
   {
    "bot": "ows",
    "win_rate": 0.2865899401107763,
-   "opening_ore_wheat": 0.6698413594118859,
-   "opening_wood_brick": 0.15651212119705613,
+   "opening_ore_wheat": 0.6698413594118857,
+   "opening_wood_brick": 0.15651212119705615,
    "opening_port": 0.23662744901914204,
    "settlements": 0.5627592803290782,
    "cities": 2.486471787049424,
@@ -110,8 +110,8 @@
   {
    "bot": "road_builder",
    "win_rate": 0.22929377126046935,
-   "opening_ore_wheat": 0.17175440334683628,
-   "opening_wood_brick": 0.6781200095983974,
+   "opening_ore_wheat": 0.17175440334683625,
+   "opening_wood_brick": 0.6781200095983972,
    "opening_port": 0.20868314433749816,
    "settlements": 3.955308337728101,
    "cities": 0.9125605790595781,
@@ -125,8 +125,8 @@
   {
    "bot": "dev_rush",
    "win_rate": 0.20258718785559765,
-   "opening_ore_wheat": 0.49733227685099163,
-   "opening_wood_brick": 0.12719607078481793,
+   "opening_ore_wheat": 0.4973322768509915,
+   "opening_wood_brick": 0.12719607078481782,
    "opening_port": 0.22822148028660388,
    "settlements": 0.771921696615023,
    "cities": 1.6880406647409687,
@@ -141,7 +141,7 @@
    "bot": "port_master",
    "win_rate": 0.15514106857257098,
    "opening_ore_wheat": 0.3366598603579934,
-   "opening_wood_brick": 0.43112898000184646,
+   "opening_wood_brick": 0.4311289800018466,
    "opening_port": 0.6675411085565773,
    "settlements": 3.034597411035586,
    "cities": 1.471938724510196,
@@ -153,11 +153,26 @@
    "first_city_turn": 43.76974718269297
   }
  ],
- "games": 8000,
+ "games": 8192,
  "opponents": [
   "balanced",
   "ows",
   "road_builder"
  ],
+ "checkpoint": "runs/phase2/checkpoints/latest.pt",
+ "lookahead": {
+  "k": 6,
+  "sims": 16,
+  "threshold": 1.01,
+  "min_prior": 0.005,
+  "margin": 0.0,
+  "opponent": "balanced",
+  "win": 1.0,
+  "loss": -0.3333333333333333,
+  "leaf_batch": 8192,
+  "phases": null,
+  "horizon": "turn",
+  "max_own": 40
+ },
  "note": "Learned agent measured against the top-3 table; strategies measured in the main tournament."
 }

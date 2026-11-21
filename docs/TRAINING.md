@@ -86,3 +86,31 @@ delete the numbered ones:
 ```powershell
 Get-ChildItem runs\main\checkpoints\update_*.pt | Remove-Item
 ```
+
+## 7. Phase 2: focus on the strongest strategies
+
+`configs/phase2.yaml` starts from the phase-1 agent's weights (`runs/main/checkpoints/latest.pt`) and
+trains it for 3,000 more updates, mostly against the strategy bots it beats least (see the comments in the
+config). It writes to `runs/phase2/` and leaves `runs/main/` untouched.
+
+```powershell
+$tries = 0; do { .\.venv\Scripts\python.exe -m catanbot.train --config configs/phase2.yaml --resume; $tries++ } while ($LASTEXITCODE -ne 0 -and $tries -lt 5)
+```
+
+The same command starts the run and resumes it: while `runs/phase2` has no checkpoint yet, it starts from
+the phase-1 weights. Each update takes about 10 s (512 games x 128 decisions),
+so the run takes 8 to 9 hours (the reference run: 8.0 hours, 197 million decisions). Evaluations (2,048 games each) come every 100 updates. Only every 250th
+numbered checkpoint is kept, plus `latest.pt`.
+
+When phase 2 has finished, measure each improvement on 40,000 games with fresh seeds (the first agent and
+the phase-2 agent, each with and without look-ahead), then run the full evaluation with look-ahead and
+rebuild the website data:
+
+```powershell
+.\.venv\Scripts\python.exe -m catanbot.pipeline improvements --before runs/main/checkpoints/latest.pt --checkpoint runs/phase2/checkpoints/latest.pt --games 40000
+.\.venv\Scripts\python.exe -m catanbot.pipeline agent --checkpoint runs/phase2/checkpoints/latest.pt --games 40000 --lookahead --seed 50000000
+```
+
+Look-ahead makes evaluation games much slower (about 0.1 s per game on a GTX 1660 Ti), so these two
+commands take a few hours. The look-ahead settings themselves were chosen with
+`pipeline lookahead --checkpoint runs/main/checkpoints/latest.pt --games 8192`, on different seeds.

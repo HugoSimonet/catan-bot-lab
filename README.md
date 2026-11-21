@@ -17,7 +17,8 @@ early on, and after that only for winning.
 | **Engine** | Rust, full 4-player base game (bank and harbour trades), **~43,000 random games/s** and **~9,700 strategy-bot games/s** on a 6-core desktop |
 | **Strategies** | Ore-Wheat-Sheep, Road Builder, Dev-Card Rush, Port Master and Balanced, as one parameterised heuristic bot |
 | **Simulation** | Seat rotation + common random numbers + Wilson confidence intervals; **2,000,000-game** headline tournament |
-| **Learning** | PPO with action masking and a graph network over the board, per-seat GAE, curriculum then league with prioritised fictitious self-play (PyTorch, one GTX 1660 Ti) |
+| **Learning** | PPO with action masking and a graph network over the board, per-seat GAE, curriculum then league with prioritised fictitious self-play, then a focused second phase (PyTorch, one GTX 1660 Ti) |
+| **Look-ahead** | Decision-time search: each plausible move is played to the agent's next turn in imagined futures (hidden cards re-dealt, dice re-seeded) and scored by the agent's value network; simulated in Rust |
 | **Website** | Static Next.js site with an interactive replay viewer, deployed on Vercel ([live](https://catan-bot-lab.vercel.app), source in `web/`) |
 
 ## Results
@@ -52,34 +53,50 @@ Coordinate-ascent tuning (about 8 million games) with each strategy's resource p
 
 ### The learning agent
 
-8,000 PPO updates: 262 million decisions over 2.6 million training games, 16 hours on one GTX 1660 Ti.
-Then 40,448 evaluation games against the three strongest tuned strategies, all seats rotated:
+Two training phases on one GTX 1660 Ti:
+- 8,000 PPO updates: 262 million decisions over 2.6 million games, 16 hours;
+- then 3,000 updates focused on the strategy bots it was losing to: 197 million decisions over 2.1 million games, 8 hours.
 
-| Player (same games) | Win rate | 95% CI |
+At play time it can also look ahead before uncertain moves. Each step below plays the same 40,448 games against
+the three strongest tuned strategies, all seats rotated, on seeds the look-ahead settings were never tuned on:
+
+| Agent (same 40,448 games) | Win rate | 95% CI |
 |---|---|---|
-| Balanced | 30.5% | 30.0–30.9% |
-| Ore-Wheat-Sheep | 24.7% | 24.3–25.1% |
-| **Learned agent** | **24.1%** | 23.7–24.6% |
-| Road Builder | 20.7% | 20.3–21.1% |
+| First run (8,000 updates) | 24.0% | 23.6–24.4% |
+| First run + look-ahead | 31.4% | 30.9–31.8% |
+| After phase 2 | 29.8% | 29.4–30.2% |
+| **Phase 2 + look-ahead** | **36.1%** | 35.6–36.6% |
+| *Balanced in the agent's seat* | *28.9%* | *28.5–29.4%* |
 
-**Close, but not yet.** The agent is level with Ore-Wheat-Sheep and clearly ahead of Road Builder, but the tuned
-Balanced bot is still better: put in the agent's seat, it wins 28.3%. Across all ten tables of three
-strategies, the agent averages 26.0%. It is above break-even at four of them (up to 30.1% against
-Balanced, Road Builder and Port Master), level at three and below at three.
+**It now beats the best strategy.** In the final agent's games, the three bots win 24.8% (Balanced),
+21.9% (Ore-Wheat-Sheep) and 17.2% (Road Builder). The tuned Balanced bot, put in the agent's seat against the same
+opponents, wins 28.9%, and the confidence intervals don't overlap. Across all ten tables of three strategies,
+the final agent averages 38.3% (the first agent averaged 26.0%). It is above break-even at every table, clearly
+ahead of Balanced-in-its-seat at five, and level with it at the other five.
 
-Its evaluation win rate against the top three rose from 4.9% (update 100) to 14.6% (update 1,200) and about
-23% over the last 1,000 updates. It was still improving slowly when training stopped.
+**What made the difference** ([full story](https://catan-bot-lab.vercel.app/improving/)):
 
-**What it learned.** Nobody showed it a strategy, and it settled on a hybrid of Ore-Wheat-Sheep and
-Dev-Card Rush:
+- **Who it practised against.** In the first run's league, half of the opponent seats went to copies of the
+  agent, which it already beat about half the time. It finished ahead of Balanced in only 38% of its
+  games, and of Road Builder in 42%. Phase 2 gave 75% of the seats to strategy bots, picked by prioritised
+  fictitious self-play. Over its last 100 updates it finished ahead of Balanced in 46% of its training games and
+  of Road Builder in 55%.
+- **Look-ahead.** Before a decision with two or more plausible moves, each candidate is played to the agent's
+  next turn in 16 imagined futures and scored by its own value network. It adds about 6–7 points with either
+  network and overrides the policy on 14% of decisions. The first version scored moves at the agent's very next
+  decision and gained almost nothing.
 
-- it opens a little heavier on ore and wheat than Balanced (44% of opening production vs 40%);
-- it buys 7.0 dev cards a game (Dev-Card Rush 7.8, Balanced 1.7);
-- it holds Largest Army at the end of half its games;
+**What it learned.** Nobody showed it a strategy. It settled on a hybrid of Ore-Wheat-Sheep and
+Dev-Card Rush, and the second phase pushed it further that way:
+
+- it opens heavier on ore and wheat than Balanced (49% of opening production vs 40%);
+- it buys 7.6 dev cards a game (Dev-Card Rush 7.8, Balanced 1.7);
+- it holds Largest Army at the end of 58% of its games;
+- it builds its first city around turn 32, ten turns before Balanced;
 - it almost ignores Longest Road (7% of games vs 29% for Balanced).
 
 In the games it wins, its 10 points come on average from cities (4.8 VP), hidden VP cards (2.0) and
-Largest Army (1.5).
+Largest Army (1.6).
 <!-- RESULTS:END -->
 
 Full charts: the [website](https://catan-bot-lab.vercel.app/results/) and the notebooks in [`notebooks/`](notebooks/).
@@ -113,7 +130,16 @@ than a flat MLP. Forced moves are auto-played inside Rust. The Rust `VecEnv` adv
 seats and dice in parallel and only returns to Python when a network has to decide. PPO links each seat's own
 decisions into a trajectory for GAE. Training runs as a curriculum (random → weaker strategies → all tuned
 strategies), then a league in which each opponent is a strategy bot, a frozen past copy of the agent, or the
-agent itself. Opponents are drawn with prioritised fictitious self-play.
+agent itself. Opponents are drawn with prioritised fictitious self-play. A second phase (`configs/phase2.yaml`)
+continues from the league's weights with most opponent seats given to the strategy bots it loses to.
+
+**Look-ahead.** At decision time, each plausible move (up to six) is played forward in 16 imagined futures
+(`crates/catan-core/src/search.rs`, `python/catanbot/lookahead.py`). Each future re-deals what the agent can't
+see, so the search never peeks at real hidden cards or future dice, and every candidate gets the same futures.
+The agent finishes its turn with its own policy, the opponents are played by the Balanced bot as a stand-in,
+and the agent's value network scores the position at its next turn. A first version that scored moves at the
+agent's very next decision gained almost nothing; playing every candidate to the same point is what made it
+work.
 
 ## Reproduce
 

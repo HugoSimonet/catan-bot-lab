@@ -249,7 +249,10 @@ export default function Results() {
 
       {s.evaluation && s.evaluation.length > 0 && (
         <section>
-          <SectionTitle title="5 · Final evaluation" sub="The trained agent in one seat, three strategy bots in the others, all seats rotated" />
+          <SectionTitle
+            title="5 · Final evaluation"
+            sub={`${s.evaluation[0].lookahead ? "The final agent (both training phases, playing with look-ahead)" : "The trained agent"} in one seat, three strategy bots in the others, all seats rotated`}
+          />
           <div className="card p-4 sm:p-6">
             <WinRateBars
               reference={0.25}
@@ -355,7 +358,14 @@ function StageStrip({ curve }: { curve: { decisions: number; stage: string }[] }
     if (last && last.stage === c.stage) last.end = c.decisions;
     else spans.push({ stage: c.stage, start: last ? last.end : 0, end: c.decisions });
   }
-  const colors: Record<string, string> = { warmup: "#b8bcc4", ladder: "#7d8590", strategies: "#2a6f97", league: "#d1495b" };
+  const colors: Record<string, string> = {
+    warmup: "#b8bcc4",
+    ladder: "#7d8590",
+    strategies: "#2a6f97",
+    league: "#d1495b",
+    focus: "#9e2235",
+  };
+  const label = (stage: string) => (stage === "focus" ? "phase 2: focus on the strongest bots" : `${stage} curriculum stage`);
   return (
     <div className="mt-4">
       <div className="flex h-3 overflow-hidden rounded">
@@ -368,7 +378,7 @@ function StageStrip({ curve }: { curve: { decisions: number; stage: string }[] }
         {spans.map((sp) => (
           <span key={sp.stage + sp.start} className="inline-flex items-center gap-1">
             <span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ background: colors[sp.stage] ?? "#999" }} />
-            {sp.stage} curriculum stage
+            {label(sp.stage)}
           </span>
         ))}
       </div>

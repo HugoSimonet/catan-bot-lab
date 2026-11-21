@@ -21,19 +21,24 @@ export function WinRateBars({
   reference,
   referenceLabel = "parity (25%)",
   max,
+  wideLabels = false,
 }: {
   rows: BarRow[];
   reference?: number;
   referenceLabel?: string;
   max?: number;
+  /** Wider label column (for long labels) on screens wider than a phone. */
+  wideLabels?: boolean;
 }) {
+  // Literal class names, so Tailwind generates both.
+  const cols = wideLabels ? "sm:grid-cols-[15rem_minmax(0,1fr)_5.5rem]" : "sm:grid-cols-[10rem_minmax(0,1fr)_5.5rem]";
   const hi = max ?? Math.min(1, Math.max(...rows.map((r) => r.hi ?? r.value), reference ?? 0) * 1.12);
   const pos = (v: number) => `${(100 * Math.max(0, v)) / hi}%`;
   return (
     <div role="list" aria-label="Win rates" className="flex flex-col gap-2.5">
       {rows.map((r) => (
         <div key={r.label} role="listitem"
-          className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 gap-y-1 sm:grid-cols-[10rem_minmax(0,1fr)_5.5rem]">
+          className={`grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 gap-y-1 ${cols}`}>
           <div className="truncate text-sm font-semibold sm:text-right">{r.label}</div>
           <div className="relative order-3 col-span-2 h-6 sm:order-none sm:col-span-1"
             title={`${r.label}: ${pct(r.value, 2)}${r.lo !== undefined ? ` (95% CI ${pct(r.lo, 2)}–${pct(r.hi!, 2)})` : ""}`}>
@@ -55,7 +60,7 @@ export function WinRateBars({
         </div>
       ))}
       {reference !== undefined && (
-        <div className="grid grid-cols-1 sm:grid-cols-[10rem_minmax(0,1fr)_5.5rem] sm:gap-x-3">
+        <div className={`grid grid-cols-1 sm:gap-x-3 ${cols}`}>
           <div className="hidden sm:block" />
           <div className="relative h-4 text-[11px] text-muted">
             <span className="absolute -translate-x-1/2 whitespace-nowrap" style={{ left: pos(reference) }}>

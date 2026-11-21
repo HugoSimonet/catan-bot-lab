@@ -1,0 +1,49 @@
+# Phase 2: continue from the phase-1 agent (configs/main.yaml) and focus on
+# the strongest strategies.
+#
+# In phase 1's league, half of the opponent seats were copies of the agent
+# itself, which it already beat about 52% of the time, while it beat the
+# tuned Balanced bot only 44% of the time (pairwise, by final VP). Here 75%
+# of opponent seats are strategy bots, picked with PFSP (the ones it beats
+# least come up most), plus a few past and current copies of itself so it
+# doesn't forget how to play a general table. Bigger batches (512 games x 128
+# decisions per update) and a lower learning rate suit late, fine-grained
+# improvement.
+run_name: phase2
+seed: 2
+init_from: runs/main/checkpoints/latest.pt
+num_envs: 512
+rollout_steps: 128
+total_updates: 3000
+lr: 1.0e-4
+lr_final: 2.0e-5
+gamma: 0.999
+gae_lambda: 0.95
+epochs: 4
+minibatch: 4096
+ent_coef: 0.001
+ent_coef_final: 0.0005
+# No VP shaping: only winning counts.
+shaping_start: 0.0
+shaping_end_update: 1
+arch: graph
+hidden: 384
+blocks: 3
+ent: 64
+rounds: 2
+snapshot_every: 100
+snapshot_slots: 2
+win_rate_window: 2000
+eval_every: 100
+eval_games: 2048
+eval_opponents:
+  - [balanced, ows, road_builder]
+  - [dev_rush, port_master, balanced]
+checkpoint_every: 25
+checkpoint_keep_every: 250
+stages:
+  - name: focus
+    bots: [balanced, ows, road_builder, dev_rush, port_master]
+    snapshot_prob: 0.15
+    self_prob: 0.10
+    pfsp: true

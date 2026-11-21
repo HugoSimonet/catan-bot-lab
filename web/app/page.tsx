@@ -10,6 +10,8 @@ export default function Home() {
   const strategies = strategyRows();
   const best = strategies[0];
   const headline = s.evaluation?.[0];
+  const steps = s.improvements?.steps ?? [];
+  const improved = steps.length > 1 ? { from: steps[0], to: steps[steps.length - 1] } : null;
 
   return (
     <div className="flex flex-col gap-16">
@@ -67,8 +69,8 @@ export default function Home() {
           matchup rotates seats and reuses the same boards and dice, so comparisons are fair and tight.
         </Step>
         <Step n={3} title="An AI that finds its own way">
-          A PPO agent with action masking trains through a curriculum and then a self-play league that keeps
-          picking the opponents it struggles against most.
+          A PPO agent with action masking trains through a curriculum, a self-play league and a second phase
+          against the strategies it struggles with most, then imagines the next turn before uncertain moves.
         </Step>
       </section>
 
@@ -78,7 +80,8 @@ export default function Home() {
             <div>
               <h2 className="font-display text-2xl font-semibold">The AI against the three strongest strategies</h2>
               <p className="text-sm text-muted">
-                {fmtInt(headline.games)} games, all seats rotated. {standing(headline.win_rate, headline.opponents)}
+                {fmtInt(headline.games)} games, all seats rotated{headline.lookahead ? ", the AI playing with look-ahead" : ""}.{" "}
+                {standing(headline.win_rate, headline.opponents)}
               </p>
             </div>
             <Link href="/results/" className="link shrink-0 whitespace-nowrap text-sm">full evaluation →</Link>
@@ -100,6 +103,25 @@ export default function Home() {
                 }))}
             />
           </div>
+        </section>
+      )}
+
+      {improved && (
+        <section className="card grid gap-6 p-5 sm:p-7 md:grid-cols-[1.3fr_1fr] md:items-center">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Round two</p>
+            <h2 className="mt-1 font-display text-2xl font-semibold">Making it stronger</h2>
+            <p className="mt-2 leading-relaxed text-muted">
+              The first training run left the AI just behind the best strategy. A diagnosis of what it was practising
+              against led to a second, focused training phase, and a look-ahead now imagines the next turn before
+              uncertain moves.
+            </p>
+            <Link href="/improving/" className="link mt-3 inline-block text-sm font-semibold">how it got better →</Link>
+          </div>
+          <dl className="grid grid-cols-2 gap-4">
+            <Stat value={pct(improved.from.win_rate)} label={improved.from.label} />
+            <Stat value={pct(improved.to.win_rate)} label={improved.to.label} accent />
+          </dl>
         </section>
       )}
 

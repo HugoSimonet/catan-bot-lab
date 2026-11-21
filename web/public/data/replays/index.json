@@ -1,55 +1,55 @@
 [
  {
   "id": "ai-win-1",
-  "title": "Learned agent wins (76 turns)",
+  "title": "Learned agent wins (74 turns)",
   "description": "Reinforcement-learning agent vs the three strongest strategy bots.",
   "players": [
-   "learned",
-   "balanced",
    "ows",
-   "road_builder"
+   "road_builder",
+   "learned",
+   "balanced"
   ],
-  "winner": 0,
-  "turns": 76,
+  "winner": 2,
+  "turns": 74,
   "featured": true
  },
  {
   "id": "ai-win-2",
-  "title": "Learned agent wins (78 turns)",
+  "title": "Learned agent wins (73 turns)",
   "description": "Reinforcement-learning agent vs the three strongest strategy bots.",
   "players": [
-   "ows",
    "road_builder",
    "learned",
-   "balanced"
+   "balanced",
+   "ows"
   ],
-  "winner": 2,
-  "turns": 78,
+  "winner": 1,
+  "turns": 73,
   "featured": false
  },
  {
   "id": "ai-win-3",
-  "title": "Learned agent wins (78 turns)",
+  "title": "Learned agent wins (73 turns)",
   "description": "Reinforcement-learning agent vs the three strongest strategy bots.",
   "players": [
-   "ows",
    "road_builder",
    "learned",
-   "balanced"
+   "balanced",
+   "ows"
   ],
-  "winner": 2,
-  "turns": 78,
+  "winner": 1,
+  "turns": 73,
   "featured": false
  },
  {
   "id": "ai-loss-4",
-  "title": "Ore-Wheat-Sheep beats the learned agent (76 turns)",
+  "title": "Balanced beats the learned agent (76 turns)",
   "description": "Reinforcement-learning agent vs the three strongest strategy bots.",
   "players": [
+   "balanced",
    "ows",
    "road_builder",
-   "learned",
-   "balanced"
+   "learned"
   ],
   "winner": 0,
   "turns": 76,

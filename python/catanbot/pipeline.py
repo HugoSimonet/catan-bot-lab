@@ -6,7 +6,13 @@
     python -m catanbot.pipeline evaluate --checkpoint runs/main/checkpoints/latest.pt --games 40000
     python -m catanbot.pipeline style --checkpoint runs/main/checkpoints/latest.pt
     python -m catanbot.pipeline replays [--checkpoint ...]
+    python -m catanbot.pipeline improvements --before runs/main/checkpoints/latest.pt \\
+        --checkpoint runs/phase2/checkpoints/latest.pt --games 40000
+    python -m catanbot.pipeline lookahead --checkpoint runs/main/checkpoints/latest.pt --games 8192
     python -m catanbot.pipeline export
+
+Add ``--lookahead`` (optionally with JSON overrides, e.g. ``--lookahead '{"sims": 32}'``)
+to evaluate/style/replays/agent to play the agent with decision-time look-ahead.
 
 Outputs go to ``results/`` (small JSON summaries; raw per-game data in
 ``results/raw/``, gitignored) and to ``web/`` (``web/data/summary.json`` and
@@ -19,17 +25,21 @@ import argparse
 import itertools
 import json
 import os
+import sys
 import time
+from dataclasses import asdict
 from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
 import polars as pl
 import torch
+import yaml
 
 from catanbot import play_replay
 from catanbot.env import CatanVecEnv, policy_code
 from catanbot.evaluate import evaluate, wilson
+from catanbot.lookahead import Lookahead, LookaheadConfig
 from catanbot.model import load_policy
 from catanbot.sweep import get_param, sweep_one
 from catanbot.tournament import (
@@ -152,45 +162,137 @@ def _top3() -> list[str]:
     return [b["bot"] for b in t["bots"]][:3]
 
 
-def evaluate_checkpoint(checkpoint: str, games: int) -> list[dict]:
+#: Seeds of the evaluation games. The look-ahead settings were chosen on games from
+#: EVAL_SEED (`pipeline lookahead`); the improvement results use FRESH_SEED, games
+#: those settings were never tuned on.
+EVAL_SEED = 10_000_000
+FRESH_SEED = 50_000_000
+
+
+def _baseline(bot: str, table: list[str], games: int, seed: int = EVAL_SEED) -> dict:
+    """``bot`` in the agent's seat against ``table``: the same opponents and seed count."""
+    df = rotated([bot] + table, games // 4, base_seed=seed)
+    # The baseline is lineup position 0. Game k is played in rotation k % 4,
+    # which puts lineup position 0 in seat (4 - rotation) % 4. (Matching by
+    # name would be ambiguous: the baseline bot can also sit at the table.)
+    rot = df["game_id"] % 4
+    base_rows = df.filter(df["seat"] == (4 - rot) % 4)
+    bw, bn = int(base_rows["won"].sum()), base_rows.height
+    lo, hi = wilson(bw, bn)
+    return {"bot": bot, "win_rate": bw / bn, "ci_low": lo, "ci_high": hi, "games": bn}
+
+
+def improvements(before: str, after: str | None, games: int, lookahead: LookaheadConfig,
+                 seed: int = FRESH_SEED) -> dict:
+    """Each improvement step on the same top-3 table and the same seeds.
+
+    Steps already in results/improvements.json with the same checkpoint, games,
+    seed and look-ahead settings are reused, and the phase-2 steps are skipped
+    while ``after`` is None, so the phase-1 steps can be computed early.
+    """
+    top = _top3()
+    plan = [("phase1", "First agent (8,000 updates)", before, None),
+            ("phase1_lookahead", "First agent + look-ahead", before, lookahead),
+            ("phase2", "After phase-2 training", after, None),
+            ("phase2_lookahead", "Phase 2 + look-ahead", after, lookahead)]
+    prev = {st["key"]: st for st in (_load(RESULTS / "improvements.json") or {}).get("steps", [])}
+    steps = []
+    for key, label, ckpt, la in plan:
+        if ckpt is None:
+            continue
+        settings = {"checkpoint": ckpt, "requested_games": games, "seed": seed,
+                    "config": asdict(la) if la else None}
+        old = prev.get(key)
+        if old and all(old.get(k) == v for k, v in settings.items()):
+            print(f"{label:28s} reused: {100 * old['win_rate']:.2f}%")
+            steps.append({**old, "label": label})
+            continue
+        net = load_policy(ckpt, DEVICE)
+        r = evaluate(net, top, games=games, num_envs=512, device=DEVICE, lookahead=la, seed=seed)
+        print(f"{label:28s} {r.line()} ({r.seconds:.0f}s)")
+        steps.append({"key": key, "label": label, **settings, "games": r.games,
+                      "win_rate": r.win_rate, "ci_low": r.ci_low, "ci_high": r.ci_high, "avg_vp": r.avg_vp,
+                      "opponent_win_rate": r.opponent_win_rate, "seat_win_rate": r.seat_win_rate,
+                      "seconds": r.seconds, "lookahead": r.lookahead})
+    out = {"table": top, "steps": steps, "baseline": _baseline(top[0], top, games, seed), "seed": seed}
+    _dump(RESULTS / "improvements.json", out)
+    return out
+
+
+#: Look-ahead variants compared by `pipeline lookahead` (label, LookaheadConfig overrides; None = no look-ahead).
+LOOKAHEAD_VARIANTS: list[tuple[str, str, dict | None]] = [
+    ("none", "Policy alone", None),
+    ("decision", "Score at the next decision",
+     {"horizon": "decision", "k": 4, "sims": 16, "threshold": 0.9, "min_prior": 0.02}),
+    ("decision_48", "Next decision, 48 futures per move",
+     {"horizon": "decision", "k": 4, "sims": 48, "threshold": 0.9, "min_prior": 0.02}),
+    ("decision_margin", "Next decision, clear gains only",
+     {"horizon": "decision", "k": 4, "sims": 16, "threshold": 0.9, "min_prior": 0.02, "margin": 0.02}),
+    ("turn", "Score at the next turn (unsure moves only)",
+     {"horizon": "turn", "k": 4, "sims": 16, "threshold": 0.9, "min_prior": 0.02}),
+    ("turn_all", "Next turn, every plausible decision",
+     {"horizon": "turn", "k": 4, "sims": 16, "min_prior": 0.02}),
+    ("final", "Next turn, wider shortlist (final)", {}),
+]
+
+
+def lookahead_sweep(checkpoint: str, games: int) -> dict:
+    """Compare look-ahead variants for one checkpoint on the top-3 table (same seeds for all)."""
+    top = _top3()
+    net = load_policy(checkpoint, DEVICE)
+    rows = []
+    for key, label, overrides in LOOKAHEAD_VARIANTS:
+        la = LookaheadConfig(**overrides) if overrides is not None else None
+        r = evaluate(net, top, games=games, num_envs=512, device=DEVICE, lookahead=la)
+        print(f"{label:40s} {r.line()} ({r.seconds:.0f}s)")
+        rows.append({"key": key, "label": label, "games": r.games, "win_rate": r.win_rate, "ci_low": r.ci_low,
+                     "ci_high": r.ci_high, "seconds": r.seconds, "lookahead": r.lookahead})
+    out = {"checkpoint": checkpoint, "table": top, "variants": rows}
+    _dump(RESULTS / "lookahead.json", out)
+    return out
+
+
+def evaluate_checkpoint(checkpoint: str, games: int, lookahead: LookaheadConfig | None = None,
+                        seed: int = EVAL_SEED) -> list[dict]:
     net = load_policy(checkpoint, DEVICE)
     top = _top3()
     rows = []
     tables = [top] + [list(c) for c in itertools.combinations(STRATEGIES, 3) if list(c) != top]
+    # The improvements step may already have played the top-3 table with these exact settings.
+    settings = {"checkpoint": checkpoint, "requested_games": games, "seed": seed,
+                "config": asdict(lookahead) if lookahead else None}
+    done = next((st for st in (_load(RESULTS / "improvements.json") or {}).get("steps", [])
+                 if all(st.get(k) == v for k, v in settings.items()) and "seat_win_rate" in st), None)
     for i, table in enumerate(tables):
         n = games if i == 0 else max(500, games // 10)
-        r = evaluate(net, table, games=n, num_envs=512, device=DEVICE)
-        # Baseline: the strongest strategy bot in the learner's seat, same opponents, same seed count.
-        base_bot = top[0]
-        df = rotated([base_bot] + table, n // 4, base_seed=10_000_000)
-        # The baseline is lineup position 0. Game k is played in rotation k % 4,
-        # which puts lineup position 0 in seat (4 - rotation) % 4. (Matching by
-        # name would be ambiguous: the baseline bot can also sit at the table.)
-        rot = df["game_id"] % 4
-        base_seat = (4 - rot) % 4
-        base_rows = df.filter(df["seat"] == base_seat)
-        bw = int(base_rows["won"].sum())
-        bn = base_rows.height
-        blo, bhi = wilson(bw, bn)
-        row = {"table": table, "games": r.games, "win_rate": r.win_rate, "ci_low": r.ci_low, "ci_high": r.ci_high,
-               "avg_vp": r.avg_vp, "opponent_win_rate": r.opponent_win_rate, "seat_win_rate": r.seat_win_rate,
-               "baseline": {"bot": base_bot, "win_rate": bw / bn, "ci_low": blo, "ci_high": bhi, "games": bn}}
-        print(f"{r.line()}   | baseline {base_bot}: {100 * bw / bn:.2f}%")
-        rows.append(row)
+        base = _baseline(top[0], table, n, seed)
+        if i == 0 and done:
+            r = {k: done[k] for k in ("games", "win_rate", "ci_low", "ci_high", "avg_vp", "opponent_win_rate",
+                                      "seat_win_rate", "lookahead")}
+            print(f"{table}: reused from improvements.json: {100 * r['win_rate']:.2f}%")
+        else:
+            res = evaluate(net, table, games=n, num_envs=512, device=DEVICE, lookahead=lookahead, seed=seed)
+            print(f"{res.line()}   | baseline {base['bot']}: {100 * base['win_rate']:.2f}%")
+            r = {k: getattr(res, k) for k in ("games", "win_rate", "ci_low", "ci_high", "avg_vp",
+                                                "opponent_win_rate", "seat_win_rate", "lookahead")}
+        rows.append({"table": table, **r, "baseline": base, "checkpoint": checkpoint, "seed": seed})
     _dump(RESULTS / "evaluation.json", rows)
     return rows
 
 
 def _agent_games(checkpoint: str, opponents: list[str], games: int, record: int = 0,
-                 seed: int = 20_000_000) -> tuple[pl.DataFrame, list[dict]]:
+                 seed: int = 20_000_000, lookahead: LookaheadConfig | None = None,
+                 ) -> tuple[pl.DataFrame, list[dict]]:
     """Play the agent vs ``opponents``; return per-seat stats and (optionally) replays."""
     net = load_policy(checkpoint, DEVICE)
+    la = Lookahead(net, lookahead, DEVICE, seed=seed) if lookahead else None
     specs = sorted(set(opponents))
     idx = {n: i for i, n in enumerate(specs)}
     base = [policy_code(0)] + [idx[o] for o in opponents]
     n_env = min(256, games)
     lineups = [base[-(i % 4):] + base[:-(i % 4)] if i % 4 else list(base) for i in range(n_env)]
     env = CatanVecEnv(specs, lineups, seed=seed, record=record > 0)
+    all_envs = np.arange(n_env)
     rows: list[dict] = []
     replays: list[dict] = []
     step = env.reset()
@@ -202,8 +304,14 @@ def _agent_games(checkpoint: str, opponents: list[str], games: int, record: int 
     while (per_env < quota).any():
         obs = torch.from_numpy(step.obs).to(DEVICE)
         mask = torch.from_numpy(step.mask).to(DEVICE)
-        a, _, _ = net.act(obs, mask, deterministic=True)
-        step = env.step(a.cpu().numpy())
+        if la is None:
+            a, _, _ = net.act(obs, mask, deterministic=True)
+            a = a.cpu().numpy()
+        else:
+            with torch.no_grad():
+                logits, _ = net(obs, mask)
+            a = la.choose(env._env, all_envs, logits, step.obs)
+        step = env.step(a)
         for e in np.nonzero(step.done)[0]:
             if per_env[e] >= quota:
                 continue
@@ -261,24 +369,31 @@ def _style_rows(df: pl.DataFrame) -> pl.DataFrame:
     )
 
 
-def style(checkpoint: str, games: int) -> dict:
+def style(checkpoint: str, games: int, lookahead: LookaheadConfig | None = None) -> dict:
     top = _top3()
-    agent, _ = _agent_games(checkpoint, top, games)
+    agent, _ = _agent_games(checkpoint, top, games, lookahead=lookahead)
     RAW.mkdir(parents=True, exist_ok=True)
     agent.write_parquet(RAW / "agent_games.parquet")
+    return style_summary(agent, checkpoint, games, lookahead)
+
+
+def style_summary(agent: pl.DataFrame, checkpoint: str, games: int,
+                  lookahead: LookaheadConfig | None = None) -> dict:
+    """results/style.json from the agent's games (``results/raw/agent_games.parquet``)."""
     agent_style = _style_rows(agent.filter(pl.col("bot") == "learned"))
     bots_df = pl.read_parquet(RAW / "tournament.parquet")
     bot_style = _style_rows(bots_df)
     table = pl.concat([agent_style, bot_style.sort("win_rate", descending=True)], how="vertical_relaxed")
     print(table)
     out = {"metrics": [{"key": k, "label": l, "format": f} for k, l, f in STYLE_METRICS],
-           "rows": table.to_dicts(), "games": games, "opponents": top,
+           "rows": table.to_dicts(), "games": agent["game_id"].n_unique(), "opponents": _top3(),
+           "checkpoint": checkpoint, "lookahead": asdict(lookahead) if lookahead else None,
            "note": "Learned agent measured against the top-3 table; strategies measured in the main tournament."}
     _dump(RESULTS / "style.json", out)
     return out
 
 
-def replays(checkpoint: str | None) -> list[dict]:
+def replays(checkpoint: str | None, lookahead: LookaheadConfig | None = None) -> list[dict]:
     WEB_REPLAYS.mkdir(parents=True, exist_ok=True)
     for f in WEB_REPLAYS.glob("*.json"):
         f.unlink()
@@ -286,7 +401,7 @@ def replays(checkpoint: str | None) -> list[dict]:
 
     if checkpoint:
         top = _top3()
-        _, recs = _agent_games(checkpoint, top, games=96, record=96, seed=30_000_000)
+        _, recs = _agent_games(checkpoint, top, games=96, record=96, seed=30_000_000, lookahead=lookahead)
         wins = [r for r in recs if r["winner"] >= 0 and r["names"][r["winner"]] == "learned"]
         losses = [r for r in recs if r["winner"] >= 0 and r["names"][r["winner"]] != "learned"]
         # Prefer typical games: closest to the median length.
@@ -335,8 +450,12 @@ def _slim_metrics(text: str) -> str:
             by_update[m["update"]] = m
     out = []
     for k in sorted(by_update):
+        rec = by_update[k]
+        snaps = [v for key, v in rec.items() if key.startswith("beat/snap_")]
         m = {key: (float(f"{v:.5g}") if isinstance(v, float) else v)
-             for key, v in by_update[k].items() if not key.startswith("beat/snap")}
+             for key, v in rec.items() if not key.startswith("beat/snap")}
+        if snaps:
+            m["beat/snapshots_mean"] = float(f"{sum(snaps) / len(snaps):.5g}")
         out.append(json.dumps(m, separators=(",", ":")))
     return "\n".join(out) + "\n"
 
@@ -379,17 +498,48 @@ def export() -> dict:
     if sw:
         summary["sweeps"] = [{k: s[k] for k in ("preset", "param", "label", "default", "points")} for s in sw]
 
-    # Training metrics: refresh the committed copy from the run folder when present.
-    metrics_path = RESULTS / "training" / "main_metrics.jsonl"
-    run_metrics = Path("runs/main/metrics.jsonl")
-    if run_metrics.exists():
-        metrics_path.parent.mkdir(parents=True, exist_ok=True)
-        metrics_path.write_text(_slim_metrics(run_metrics.read_text()))
-    if metrics_path.exists():
+    # Training metrics: refresh the committed copies from the run folders when present.
+    # Phase 2 continues from phase 1's final weights, so its updates are appended.
+    recs = []
+    phases = []
+    for run in ("main", "phase2"):
+        metrics_path = RESULTS / "training" / f"{run}_metrics.jsonl"
+        run_metrics = Path(f"runs/{run}/metrics.jsonl")
+        if run_metrics.exists():
+            metrics_path.parent.mkdir(parents=True, exist_ok=True)
+            metrics_path.write_text(_slim_metrics(run_metrics.read_text()))
+        if not metrics_path.exists():
+            continue
         lines = [json.loads(x) for x in metrics_path.read_text().splitlines() if x.strip()]
         # Keep the last record per update (a resumed run may repeat updates).
         by_update = {m["update"]: m for m in lines}
-        recs = [by_update[k] for k in sorted(by_update)]
+        offset = {k: recs[-1][k] if recs else 0 for k in ("update", "decisions", "games", "elapsed_s")}
+        for k in sorted(by_update):
+            m = dict(by_update[k])
+            for key, off in offset.items():
+                m[key] = m.get(key, 0) + off
+            recs.append(m)
+        last = by_update[max(by_update)]
+        # Pairwise beat rates are measured on each update's finished games, so a single
+        # update is noisy: average the phase's last 100 updates.
+        tail = [by_update[k] for k in sorted(by_update)[-100:]]
+        beat_keys = sorted({k for m in tail for k in m if k.startswith("beat/")})
+        beat = {k.split("/", 1)[1]: sum(m[k] for m in tail if k in m) / sum(1 for m in tail if k in m)
+                for k in beat_keys}
+        cfg_path = Path("configs") / f"{run}.yaml"
+        cfg = yaml.safe_load(cfg_path.read_text()) if cfg_path.exists() else {}
+        final_stage = (cfg.get("stages") or [{}])[-1]
+        snap_p, self_p = final_stage.get("snapshot_prob", 0.0), final_stage.get("self_prob", 0.0)
+        phases.append({"run": run, "start_update": offset["update"], "updates": max(by_update),
+                       "config": {"batch": cfg.get("num_envs", 0) * cfg.get("rollout_steps", 0),
+                                  "lr": cfg.get("lr"), "lr_final": cfg.get("lr_final"),
+                                  "final_stage": final_stage.get("name"),
+                                  "opponent_mix": {"bots": 1 - snap_p - self_p, "snapshots": snap_p,
+                                                   "self": self_p}},
+                       "decisions": last["decisions"], "games": last["games"],
+                       "hours": last.get("elapsed_s", 0) / 3600,
+                       "beat": beat})
+    if recs:
         tables = sorted({k.split("/")[1] for m in recs for k in m if k.startswith("eval/")})
         curve = []
         for m in recs:
@@ -405,12 +555,24 @@ def export() -> dict:
         games += last["games"]
         summary["training"] = {"curve": curve, "decisions": last["decisions"], "games": last["games"],
                                "hours": last.get("elapsed_s", 0) / 3600,
-                               "eval_tables": [_split_table(t) for t in tables]}
+                               "eval_tables": [_split_table(t) for t in tables], "phases": phases}
+    las = _load(RESULTS / "lookahead.json")
+    if las:
+        games += sum(v["games"] for v in las["variants"])
+        summary["lookahead_variants"] = las
+    imp = _load(RESULTS / "improvements.json")
+    if imp:
+        games += sum(st["games"] for st in imp["steps"]) + imp["baseline"]["games"]
+        summary["improvements"] = imp
     if ev:
-        games += sum(e["games"] + e["baseline"]["games"] for e in ev)
+        # A table reused from improvements.json was only played once.
+        played = {(st["checkpoint"], st.get("seed"), st["games"], st["win_rate"]) for st in (imp or {}).get("steps", [])}
+        games += sum(e["baseline"]["games"] + (0 if (e.get("checkpoint"), e.get("seed"), e["games"], e["win_rate"])
+                                                  in played else e["games"]) for e in ev)
         summary["evaluation"] = []
         for e in ev:
             row = {k: e[k] for k in ("table", "games", "win_rate", "ci_low", "ci_high", "avg_vp", "baseline")}
+            row |= {k: e[k] for k in ("checkpoint", "lookahead") if e.get(k)}
             # Each opponent sits at every game, so its win rate has the same sample size.
             row["opponents"] = [{"bot": b, "win_rate": w, "ci_low": wilson(w * e["games"], e["games"])[0],
                                  "ci_high": wilson(w * e["games"], e["games"])[1]}
@@ -441,14 +603,23 @@ def _split_table(key: str) -> list[str]:
 
 
 def main() -> None:
+    # Tables printed by polars use box-drawing characters, which the Windows code page
+    # can't encode when output is redirected to a file.
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("step", choices=["bench", "tournament", "sweeps", "evaluate", "style", "replays", "export",
-                                     "agent"],
+                                     "agent", "improvements", "lookahead"],
                     help="'agent' = evaluate + style + replays + export for --checkpoint")
     ap.add_argument("--seeds", type=int, default=250_000)
     ap.add_argument("--games", type=int, default=40_000)
     ap.add_argument("--checkpoint")
+    ap.add_argument("--before", help="improvements: the checkpoint to compare against")
+    ap.add_argument("--seed", type=int, help="evaluation seed (default: 10,000,000; improvements: 50,000,000)")
+    ap.add_argument("--lookahead", nargs="?", const="{}", default=None, metavar="JSON",
+                    help="play the agent with look-ahead (optional JSON overrides of LookaheadConfig)")
     args = ap.parse_args()
+    la = LookaheadConfig(**json.loads(args.lookahead)) if args.lookahead is not None else None
     if args.step == "bench":
         bench()
     elif args.step == "tournament":
@@ -456,19 +627,25 @@ def main() -> None:
     elif args.step == "sweeps":
         sweeps()
     elif args.step == "evaluate":
-        evaluate_checkpoint(args.checkpoint, args.games)
+        evaluate_checkpoint(args.checkpoint, args.games, la, args.seed or EVAL_SEED)
     elif args.step == "style":
-        style(args.checkpoint, args.games)
+        style(args.checkpoint, args.games, la)
     elif args.step == "replays":
-        replays(args.checkpoint)
+        replays(args.checkpoint, la)
     elif args.step == "export":
         export()
+    elif args.step == "lookahead":
+        lookahead_sweep(args.checkpoint, args.games)
+    elif args.step == "improvements":
+        if not args.before:
+            raise SystemExit("--before is required (and --checkpoint for the phase-2 steps)")
+        improvements(args.before, args.checkpoint, args.games, la or LookaheadConfig(), args.seed or FRESH_SEED)
     elif args.step == "agent":
         if not args.checkpoint:
             raise SystemExit("--checkpoint is required")
-        evaluate_checkpoint(args.checkpoint, args.games)
-        style(args.checkpoint, max(2000, args.games // 5))
-        replays(args.checkpoint)
+        evaluate_checkpoint(args.checkpoint, args.games, la, args.seed or EVAL_SEED)
+        style(args.checkpoint, max(2000, args.games // 5), la)
+        replays(args.checkpoint, la)
         export()
 
 

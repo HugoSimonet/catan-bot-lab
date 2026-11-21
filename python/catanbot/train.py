@@ -2,6 +2,7 @@
 
     python -m catanbot.train --config configs/main.yaml
     python -m catanbot.train --config configs/main.yaml --resume
+    python -m catanbot.train --config configs/phase2.yaml   # continues from main's weights
 
 Data flow per update:
   1. Roll out ``rollout_steps`` decisions in ``num_envs`` parallel games. Each
@@ -79,6 +80,11 @@ class Config:
     eval_opponents: list[list[str]] = field(
         default_factory=lambda: [["balanced", "ows", "road_builder"]])
     checkpoint_every: int = 25
+    #: Keep update_XXXXX.pt only every this many updates (0 = keep all); latest.pt is always written.
+    checkpoint_keep_every: int = 0
+    #: Start from the weights of this checkpoint (a new phase continuing an earlier run).
+    #: Only the network is copied: optimizer, schedules and league start fresh.
+    init_from: str | None = None
 
 
 def load_config(path: str | os.PathLike) -> Config:
@@ -162,8 +168,16 @@ class Trainer:
         self.decisions = 0
         self.games = 0
         self.elapsed = 0.0
-        if resume:
-            self._load(self.dir / "checkpoints" / "latest.pt")
+        latest = self.dir / "checkpoints" / "latest.pt"
+        if resume and latest.exists():
+            self._load(latest)
+        elif resume and not cfg.init_from:
+            raise FileNotFoundError(f"nothing to resume: {latest} does not exist")
+        elif cfg.init_from:
+            # A fresh run, or --resume before the first checkpoint: start from init_from.
+            init = torch.load(cfg.init_from, map_location=self.device, weights_only=False)
+            self.net.load_state_dict(init["model"])
+            print(f"initialised from {cfg.init_from} (update {init.get('update', '?')})")
 
         lineups = [self.league.sample_lineup() for _ in range(cfg.num_envs)]
         self.env = CatanVecEnv(self.bot_names, lineups, seed=cfg.seed * 1_000_003 + self.update * 7919)
@@ -350,8 +364,9 @@ class Trainer:
             "config": asdict(self.cfg),
             "league": self.league.state(),
         }
-        path = self.dir / "checkpoints" / f"update_{self.update:05d}.pt"
-        torch.save(ckpt, path)
+        keep = self.cfg.checkpoint_keep_every
+        if keep <= 0 or self.update % keep == 0 or self.update == self.cfg.total_updates:
+            torch.save(ckpt, self.dir / "checkpoints" / f"update_{self.update:05d}.pt")
         # Write then rename, so an interruption mid-save can't leave a broken latest.pt.
         latest = self.dir / "checkpoints" / "latest.pt"
         tmp = latest.with_suffix(".tmp")

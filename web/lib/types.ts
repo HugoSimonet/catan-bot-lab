@@ -140,6 +140,9 @@ export interface EvalRow {
   baseline?: { bot: string; win_rate: number; ci_low: number; ci_high: number };
   /** Win rates of the three strategy bots in the same games. */
   opponents?: { bot: string; win_rate: number; ci_low: number; ci_high: number }[];
+  checkpoint?: string;
+  /** Present when the agent played with decision-time look-ahead. */
+  lookahead?: Partial<LookaheadStats>;
 }
 
 export interface StyleRow {
@@ -160,7 +163,82 @@ export interface Summary {
   };
   tuning?: TuningResult[];
   sweeps?: Sweep[];
-  training?: { curve: CurvePoint[]; decisions: number; games: number; hours: number; eval_tables: string[][] };
+  training?: {
+    curve: CurvePoint[];
+    decisions: number;
+    games: number;
+    hours: number;
+    eval_tables: string[][];
+    /** Training runs in order; later phases continue from the previous one's weights. */
+    phases?: TrainingPhase[];
+  };
   evaluation?: EvalRow[];
+  improvements?: Improvements;
+  lookahead_variants?: { checkpoint: string; table: string[]; variants: LookaheadVariant[] };
   style?: { metrics: { key: string; label: string; format?: "pct" | "num" }[]; rows: StyleRow[] };
+}
+
+export interface TrainingPhase {
+  run: string;
+  /** Global update number at which this phase starts. */
+  start_update: number;
+  updates: number;
+  decisions: number;
+  games: number;
+  hours: number;
+  /** Pairwise "beats" rate against each opponent type, averaged over the phase's last 100 updates (bot_*, snapshots_mean). */
+  beat: Record<string, number>;
+  config: {
+    batch: number;
+    lr: number;
+    lr_final: number;
+    final_stage: string;
+    /** Share of opponent seats in the final stage: strategy bots, frozen past copies, the agent itself. */
+    opponent_mix: { bots: number; snapshots: number; self: number };
+  };
+}
+
+export interface LookaheadStats {
+  k: number;
+  sims: number;
+  threshold: number;
+  margin: number;
+  opponent: string;
+  horizon: string;
+  min_prior: number;
+  decisions: number;
+  searched: number;
+  changed: number;
+  searched_frac: number;
+  changed_frac: number;
+}
+
+export interface ImprovementStep {
+  key: string;
+  label: string;
+  games: number;
+  win_rate: number;
+  ci_low: number;
+  ci_high: number;
+  avg_vp: number;
+  opponent_win_rate: Record<string, number>;
+  seconds: number;
+  lookahead: Partial<LookaheadStats>;
+}
+
+export interface Improvements {
+  table: string[];
+  steps: ImprovementStep[];
+  baseline: { bot: string; win_rate: number; ci_low: number; ci_high: number; games: number };
+}
+
+export interface LookaheadVariant {
+  key: string;
+  label: string;
+  games: number;
+  win_rate: number;
+  ci_low: number;
+  ci_high: number;
+  seconds: number;
+  lookahead: Partial<LookaheadStats>;
 }

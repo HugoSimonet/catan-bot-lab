@@ -8,6 +8,7 @@ pub mod env;
 pub mod obs;
 pub mod replay;
 pub mod rng;
+pub mod search;
 pub mod sim;
 pub mod state;
 

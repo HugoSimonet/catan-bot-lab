@@ -7,6 +7,7 @@ the same settings face exactly the same boards and dice.
 
     python -m catanbot.evaluate --checkpoint runs/main/checkpoints/latest.pt \\
         --opponents balanced,ows,road_builder --games 100000
+    python -m catanbot.evaluate --checkpoint ... --lookahead          # with look-ahead
 """
 
 from __future__ import annotations
@@ -22,6 +23,7 @@ import numpy as np
 import torch
 
 from catanbot.env import CatanVecEnv, policy_code
+from catanbot.lookahead import Lookahead, LookaheadConfig
 from catanbot.model import load_policy
 
 
@@ -50,6 +52,8 @@ class EvalResult:
     opponent_win_rate: dict[str, float] = field(default_factory=dict)
     seat_win_rate: list[float] = field(default_factory=list)
     seconds: float = 0.0
+    #: Look-ahead settings and statistics (empty without look-ahead).
+    lookahead: dict = field(default_factory=dict)
 
     def line(self) -> str:
         return (f"{self.games} games vs {'/'.join(self.opponents)}: win {100 * self.win_rate:.2f}% "
@@ -58,8 +62,12 @@ class EvalResult:
 
 def evaluate(net: torch.nn.Module, opponents: list[str], games: int = 1000, num_envs: int = 256,
              seed: int = 10_000_000, device: str | torch.device = "cuda",
-             deterministic: bool = True) -> EvalResult:
-    """Learner (policy 0) vs 3 bots. ``opponents`` is the 3 bot names (repeats allowed)."""
+             deterministic: bool = True, lookahead: LookaheadConfig | None = None) -> EvalResult:
+    """Learner (policy 0) vs 3 bots. ``opponents`` is the 3 bot names (repeats allowed).
+
+    With ``lookahead``, uncertain decisions are refined by imagined continuations
+    (see ``catanbot.lookahead``); otherwise the policy's own choice is played.
+    """
     assert len(opponents) == 3, "need exactly 3 opponents"
     specs = sorted(set(opponents))
     index = {n: i for i, n in enumerate(specs)}
@@ -82,12 +90,20 @@ def evaluate(net: torch.nn.Module, opponents: list[str], games: int = 1000, num_
     opp_games: dict[str, int] = defaultdict(int)
     opp_wins: dict[str, int] = defaultdict(int)
 
+    la = Lookahead(net, lookahead, device, seed=seed) if lookahead else None
+    all_envs = np.arange(num_envs)
     step = env.reset()
     while (done_count < per_env).any():
         obs = torch.from_numpy(step.obs).to(device)
         mask = torch.from_numpy(step.mask).to(device)
-        actions, _, _ = net.act(obs, mask, deterministic=deterministic)
-        step = env.step(actions.cpu().numpy())
+        if la is None:
+            actions, _, _ = net.act(obs, mask, deterministic=deterministic)
+            actions = actions.cpu().numpy()
+        else:
+            with torch.no_grad():
+                logits, _ = net(obs, mask)
+            actions = la.choose(env._env, all_envs, logits, step.obs)
+        step = env.step(actions)
         for e in np.nonzero(step.done)[0]:
             if done_count[e] >= per_env:
                 continue
@@ -126,6 +142,7 @@ def evaluate(net: torch.nn.Module, opponents: list[str], games: int = 1000, num_
         opponent_win_rate={k: opp_wins[k] / opp_games[k] for k in opp_games},
         seat_win_rate=(seat_wins / np.maximum(seat_games, 1)).tolist(),
         seconds=time.time() - t0,
+        lookahead={**asdict(lookahead), **la.stats()} if la else {},
     )
 
 
@@ -139,7 +156,16 @@ def main() -> None:
     ap.add_argument("--seed", type=int, default=10_000_000)
     ap.add_argument("--stochastic", action="store_true", help="sample actions instead of argmax")
     ap.add_argument("--out", help="write results JSON here")
+    ap.add_argument("--lookahead", action="store_true", help="refine uncertain decisions by look-ahead")
+    ap.add_argument("--k", type=int, default=LookaheadConfig.k)
+    ap.add_argument("--sims", type=int, default=LookaheadConfig.sims)
+    ap.add_argument("--threshold", type=float, default=LookaheadConfig.threshold)
+    ap.add_argument("--margin", type=float, default=LookaheadConfig.margin)
+    ap.add_argument("--stand-in", default=LookaheadConfig.opponent,
+                    help="bot that plays the opponents in imagined continuations")
     args = ap.parse_args()
+    la = LookaheadConfig(k=args.k, sims=args.sims, threshold=args.threshold, margin=args.margin,
+                         opponent=args.stand_in) if args.lookahead else None
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     net = load_policy(args.checkpoint, device)
@@ -147,8 +173,11 @@ def main() -> None:
     for table in args.opponents.split(";"):
         opps = [o.strip() for o in table.split(",")]
         r = evaluate(net, opps, games=args.games, num_envs=args.envs, seed=args.seed,
-                     device=device, deterministic=not args.stochastic)
+                     device=device, deterministic=not args.stochastic, lookahead=la)
         print(r.line(), f"({r.seconds:.0f}s)")
+        if r.lookahead:
+            print("   look-ahead:", {k: (round(v, 4) if isinstance(v, float) else v)
+                                    for k, v in r.lookahead.items()})
         print("   opponent win rates:", {k: round(v, 4) for k, v in r.opponent_win_rate.items()})
         print("   learner win rate by seat:", [round(x, 4) for x in r.seat_win_rate])
         results.append(asdict(r))

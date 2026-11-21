@@ -13,6 +13,7 @@ use catan_core::bots::{BotSpec, PRESET_NAMES};
 use catan_core::env::{OwnedBuffers, SeatSpec, VecEnv};
 use catan_core::obs::OBS_SIZE;
 use catan_core::replay::build_replay;
+use catan_core::search::{Rollouts, SearchBatch, SearchConfig, SearchRequest, search};
 use catan_core::sim::{self, GameResult, Table, TournamentGame};
 use catan_core::state::{GameState, NUM_PLAYERS};
 
@@ -58,9 +59,18 @@ fn layout<'py>(py: Python<'py>) -> PyResult<Bound<'py, PyDict>> {
     use catan_core::actions as a;
     use catan_core::obs as o;
     let d = PyDict::new(py);
-    d.set_item("tiles", (o::TILES_OFFSET, catan_core::board::NUM_TILES, o::TILE_FEATS))?;
-    d.set_item("nodes", (o::NODES_OFFSET, catan_core::board::NUM_NODES, o::NODE_FEATS))?;
-    d.set_item("edges", (o::EDGES_OFFSET, catan_core::board::NUM_EDGES, o::EDGE_FEATS))?;
+    d.set_item(
+        "tiles",
+        (o::TILES_OFFSET, catan_core::board::NUM_TILES, o::TILE_FEATS),
+    )?;
+    d.set_item(
+        "nodes",
+        (o::NODES_OFFSET, catan_core::board::NUM_NODES, o::NODE_FEATS),
+    )?;
+    d.set_item(
+        "edges",
+        (o::EDGES_OFFSET, catan_core::board::NUM_EDGES, o::EDGE_FEATS),
+    )?;
     d.set_item("players", (o::PLAYERS_OFFSET, NUM_PLAYERS, o::PLAYER_FEATS))?;
     d.set_item("self", (o::SELF_OFFSET, 1, o::SELF_FEATS))?;
     d.set_item("global", (o::GLOBAL_OFFSET, 1, o::GLOBAL_FEATS))?;
@@ -312,6 +322,75 @@ fn to_numpy<'py>(py: Python<'py>, b: OwnedBuffers, n: usize) -> PyResult<StepTup
     ))
 }
 
+/// (obs [M, OBS], mask [M, A], leaf_slot [M], terminal_sum [R*k], count [R*k])
+type SearchTuple<'py> = (
+    Bound<'py, PyAny>,
+    Bound<'py, PyAny>,
+    Bound<'py, PyAny>,
+    Bound<'py, PyAny>,
+    Bound<'py, PyAny>,
+);
+
+fn batch_to_numpy<'py>(py: Python<'py>, b: SearchBatch) -> PyResult<SearchTuple<'py>> {
+    let m = b.leaf_slot.len();
+    Ok((
+        PyArray1::from_vec(py, b.obs)
+            .reshape([m, OBS_SIZE])?
+            .into_any(),
+        PyArray1::from_vec(py, b.mask)
+            .reshape([m, NUM_ACTIONS])?
+            .into_any(),
+        PyArray1::from_vec(py, b.leaf_slot).into_any(),
+        PyArray1::from_vec(py, b.terminal_sum).into_any(),
+        PyArray1::from_vec(py, b.count).into_any(),
+    ))
+}
+
+/// Imagined continuations played to a common horizon (see `catan_core::search::Rollouts`).
+/// Loop: `pending()` -> choose actions with the policy -> `step(ids, actions)`,
+/// until `pending()` is empty; then `leaves()`.
+#[pyclass(name = "Rollouts", unsendable)]
+struct PyRollouts {
+    inner: Rollouts,
+}
+
+#[pymethods]
+impl PyRollouts {
+    #[getter]
+    fn num_jobs(&self) -> usize {
+        self.inner.num_jobs()
+    }
+
+    /// (job ids [n], obs [n, OBS], mask [n, A]) of continuations waiting for the policy.
+    fn pending<'py>(
+        &self,
+        py: Python<'py>,
+    ) -> PyResult<(Bound<'py, PyAny>, Bound<'py, PyAny>, Bound<'py, PyAny>)> {
+        let (ids, obs, mask) = self.inner.pending();
+        let n = ids.len();
+        Ok((
+            PyArray1::from_vec(py, ids).into_any(),
+            PyArray1::from_vec(py, obs)
+                .reshape([n, OBS_SIZE])?
+                .into_any(),
+            PyArray1::from_vec(py, mask)
+                .reshape([n, NUM_ACTIONS])?
+                .into_any(),
+        ))
+    }
+
+    /// Apply one action index per pending job and advance to the next decision or the horizon.
+    fn step(&mut self, py: Python<'_>, ids: Vec<i64>, actions: Vec<i64>) -> PyResult<()> {
+        let inner = &mut self.inner;
+        py.detach(|| inner.step(&ids, &actions)).map_err(err)
+    }
+
+    /// (obs [M, OBS], mask [M, A], leaf_slot [M], terminal_sum [R*k], count [R*k]).
+    fn leaves<'py>(&self, py: Python<'py>) -> PyResult<SearchTuple<'py>> {
+        batch_to_numpy(py, self.inner.leaves())
+    }
+}
+
 #[pymethods]
 impl PyVecEnv {
     #[new]
@@ -429,6 +508,95 @@ impl PyVecEnv {
         Ok(d)
     }
 
+    /// Look-ahead for the pending decisions of games `envs` (see `catan_core::search`).
+    ///
+    /// `candidates` is a flat list of `len(envs) * k` action indices (`-1` pads).
+    /// Returns `(obs [M, OBS], mask [M, A], leaf_slot [M], terminal_sum [R*k], count [R*k])`
+    /// where slot = request * k + candidate.
+    #[pyo3(signature = (envs, candidates, k, sims, opponent = "balanced".to_string(), seed = 0,
+                        win = 1.0, loss = -1.0 / 3.0))]
+    #[allow(clippy::too_many_arguments)]
+    fn search<'py>(
+        &self,
+        py: Python<'py>,
+        envs: Vec<usize>,
+        candidates: Vec<i64>,
+        k: usize,
+        sims: usize,
+        opponent: String,
+        seed: u64,
+        win: f32,
+        loss: f32,
+    ) -> PyResult<SearchTuple<'py>> {
+        let opp = BotSpec::parse(&opponent).map_err(err)?;
+        let cfg = SearchConfig {
+            sims: sims.max(1),
+            win,
+            loss,
+            seed,
+            max_steps: 20_000,
+        };
+        let owned = self
+            .inner
+            .search_requests(&envs, &candidates, k)
+            .map_err(err)?;
+        let b = py.detach(|| {
+            let requests: Vec<SearchRequest> = owned
+                .iter()
+                .map(|(s, c)| SearchRequest {
+                    state: s,
+                    candidates: c.clone(),
+                })
+                .collect();
+            search(&requests, k, &opp, &cfg)
+        });
+        batch_to_numpy(py, b)
+    }
+
+    /// Start common-horizon rollouts for the pending decisions of games `envs`
+    /// (same arguments as `search`, plus `max_own`: cap on the agent's own moves
+    /// per continuation before it is scored anyway).
+    #[pyo3(signature = (envs, candidates, k, sims, opponent = "balanced".to_string(), seed = 0,
+                        win = 1.0, loss = -1.0 / 3.0, max_own = 40))]
+    #[allow(clippy::too_many_arguments)]
+    fn rollouts(
+        &self,
+        py: Python<'_>,
+        envs: Vec<usize>,
+        candidates: Vec<i64>,
+        k: usize,
+        sims: usize,
+        opponent: String,
+        seed: u64,
+        win: f32,
+        loss: f32,
+        max_own: u32,
+    ) -> PyResult<PyRollouts> {
+        let opp = BotSpec::parse(&opponent).map_err(err)?;
+        let cfg = SearchConfig {
+            sims: sims.max(1),
+            win,
+            loss,
+            seed,
+            max_steps: 20_000,
+        };
+        let owned = self
+            .inner
+            .search_requests(&envs, &candidates, k)
+            .map_err(err)?;
+        let inner = py.detach(|| {
+            let requests: Vec<SearchRequest> = owned
+                .iter()
+                .map(|(s, c)| SearchRequest {
+                    state: s,
+                    candidates: c.clone(),
+                })
+                .collect();
+            Rollouts::new(&requests, k, opp, cfg, max_own)
+        });
+        Ok(PyRollouts { inner })
+    }
+
     /// (seed, seat codes) of the last finished game in env `i`.
     fn last_game(&self, i: usize) -> PyResult<(u64, Vec<i32>)> {
         let env = self
@@ -450,6 +618,7 @@ fn _engine(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add("NUM_PLAYERS", NUM_PLAYERS)?;
     m.add("PRESET_NAMES", PRESET_NAMES.to_vec())?;
     m.add_class::<PyVecEnv>()?;
+    m.add_class::<PyRollouts>()?;
     m.add_function(wrap_pyfunction!(presets, m)?)?;
     m.add_function(wrap_pyfunction!(spec_name, m)?)?;
     m.add_function(wrap_pyfunction!(layout, m)?)?;

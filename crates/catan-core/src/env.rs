@@ -22,6 +22,7 @@ use crate::actions::{Action, NUM_ACTIONS};
 use crate::board::NONE;
 use crate::bots::{Bot, BotSpec};
 use crate::obs::{OBS_SIZE, encode};
+use crate::search::{SearchBatch, SearchConfig, SearchRequest, search};
 use crate::sim::{GameResult, bot_seed};
 use crate::state::{GameState, NUM_PLAYERS};
 
@@ -407,6 +408,68 @@ impl VecEnv {
             Some(e) => Err(e),
             None => Ok(()),
         }
+    }
+}
+
+impl VecEnv {
+    /// Look-ahead for the decisions pending in games `envs` (see `crate::search`).
+    /// `candidates` holds `envs.len() * k_max` action indices; `-1` pads a row.
+    pub fn search(
+        &self,
+        envs: &[usize],
+        candidates: &[i64],
+        k_max: usize,
+        opp: &BotSpec,
+        cfg: &SearchConfig,
+    ) -> Result<SearchBatch, String> {
+        let owned = self.search_requests(envs, candidates, k_max)?;
+        let requests: Vec<SearchRequest> = owned
+            .iter()
+            .map(|(s, c)| SearchRequest {
+                state: s,
+                candidates: c.clone(),
+            })
+            .collect();
+        Ok(search(&requests, k_max, opp, cfg))
+    }
+
+    /// Copies of the pending states of games `envs` with their decoded,
+    /// legality-checked candidate actions (input to `crate::search::search`).
+    pub fn search_requests(
+        &self,
+        envs: &[usize],
+        candidates: &[i64],
+        k_max: usize,
+    ) -> Result<Vec<(GameState, Vec<Action>)>, String> {
+        if candidates.len() != envs.len() * k_max {
+            return Err(format!(
+                "expected {} candidates, got {}",
+                envs.len() * k_max,
+                candidates.len()
+            ));
+        }
+        let mut legal = Vec::with_capacity(64);
+        let mut requests = Vec::with_capacity(envs.len());
+        for (r, &e) in envs.iter().enumerate() {
+            let env = self
+                .envs
+                .get(e)
+                .ok_or_else(|| format!("game index {e} out of range"))?;
+            let s = &env.state;
+            s.legal_actions(&mut legal);
+            let mut cands = Vec::with_capacity(k_max);
+            for &idx in &candidates[r * k_max..(r + 1) * k_max] {
+                if idx < 0 {
+                    break;
+                }
+                let a = Action::from_index(idx as usize, s.acting)
+                    .filter(|a| legal.contains(a))
+                    .ok_or_else(|| format!("game {e}: candidate {idx} is not legal"))?;
+                cands.push(a);
+            }
+            requests.push((*s, cands));
+        }
+        Ok(requests)
     }
 }
 

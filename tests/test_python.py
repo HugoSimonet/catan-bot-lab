@@ -169,3 +169,25 @@ def test_league_lineups_and_stats():
         league.record_game(lineup, [10, 5, 6, 7], winner=0)
     assert league.recent_win_rate() == 1.0
     assert league.beat_rate[("bot", "ows")] > 0.5
+
+
+@pytest.mark.parametrize("horizon", ["decision", "turn"])
+def test_lookahead_plays_legal_moves(horizon):
+    from catanbot.lookahead import Lookahead, LookaheadConfig
+    from catanbot.model import GraphPolicyNet
+
+    torch.manual_seed(0)
+    net = GraphPolicyNet(hidden=64, blocks=1, ent=16, rounds=1).eval()
+    n = 8
+    env = CatanVecEnv(["balanced"], [[policy_code(0), 0, 0, 0]] * n, seed=11)
+    # threshold > 1: search every decision with at least two plausible moves.
+    la = Lookahead(net, LookaheadConfig(k=3, sims=2, threshold=1.01, horizon=horizon), "cpu", seed=1)
+    step = env.reset()
+    for _ in range(40):
+        obs, mask = torch.from_numpy(step.obs), torch.from_numpy(step.mask)
+        with torch.no_grad():
+            logits, _ = net(obs, mask)
+        actions = la.choose(env._env, np.arange(n), logits, step.obs)
+        assert step.mask[np.arange(n), actions].all()
+        step = env.step(actions)
+    assert la.searched > 0

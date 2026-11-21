@@ -122,11 +122,24 @@ export default function HowItWorks() {
         the more often an opponent outscores the agent, the more often it is picked. The agent never sees a
         hand-written strategy rule; whatever style it ends up with is its own.
       </p>
+      <h3>A second phase, and look-ahead at decision time</h3>
+      <p>
+        A second training phase then continued from the league&apos;s final weights, with most opponent seats given to
+        the strategy bots it was losing to. On top of the trained network, a look-ahead plays each plausible move
+        forward in imagined continuations before choosing. Hidden cards are re-dealt and the dice re-seeded, so
+        nothing is peeked at. The agent finishes its turn with its own policy, stand-in bots play the opponents, and
+        its value network scores the position at its next turn. The search runs in Rust (
+        <code>crates/catan-core/src/search.rs</code>); only the agent&apos;s own decisions and the final scoring go
+        through the GPU. The story of what worked and what didn&apos;t is on{" "}
+        <Link href="/improving/">Making it stronger</Link>.
+      </p>
       <h3>Evaluation</h3>
       <p>
         The trained agent plays tens of thousands of games against fixed tables of the strongest strategies, with
-        seats rotated and argmax (no sampling) actions. Every checkpoint is evaluated on the same seeds, so
-        checkpoints are compared on identical boards and dice. See the <Link href="/results/">results</Link>.
+        seats rotated and argmax (no sampling) actions, then again with look-ahead. Every version is evaluated on
+        the same seeds, so they are compared on identical boards and dice. The look-ahead settings were chosen on
+        separate games, so the headline results are not flattered by that tuning. See the{" "}
+        <Link href="/results/">results</Link>.
       </p>
 
       <h2>Limitations</h2>

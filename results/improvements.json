@@ -1,0 +1,171 @@
+{
+ "table": [
+  "balanced",
+  "ows",
+  "road_builder"
+ ],
+ "steps": [
+  {
+   "key": "phase1",
+   "label": "First agent (8,000 updates)",
+   "checkpoint": "runs/main/checkpoints/latest.pt",
+   "requested_games": 40000,
+   "seed": 50000000,
+   "config": null,
+   "games": 40448,
+   "win_rate": 0.23973991297468356,
+   "ci_low": 0.23560412602766947,
+   "ci_high": 0.24392513228921267,
+   "avg_vp": 7.261743473101266,
+   "opponent_win_rate": {
+    "balanced": 0.3061708860759494,
+    "ows": 0.24678599683544303,
+    "road_builder": 0.20730320411392406
+   },
+   "seconds": 61.00510215759277,
+   "lookahead": {}
+  },
+  {
+   "key": "phase1_lookahead",
+   "label": "First agent + look-ahead",
+   "checkpoint": "runs/main/checkpoints/latest.pt",
+   "requested_games": 40000,
+   "seed": 50000000,
+   "config": {
+    "k": 6,
+    "sims": 16,
+    "threshold": 1.01,
+    "min_prior": 0.005,
+    "margin": 0.0,
+    "opponent": "balanced",
+    "win": 1.0,
+    "loss": -0.3333333333333333,
+    "leaf_batch": 8192,
+    "phases": null,
+    "horizon": "turn",
+    "max_own": 40
+   },
+   "games": 40448,
+   "win_rate": 0.31373615506329117,
+   "ci_low": 0.30923197384811646,
+   "ci_high": 0.318275714207302,
+   "avg_vp": 7.5812153876582276,
+   "opponent_win_rate": {
+    "road_builder": 0.18809335443037975,
+    "balanced": 0.2751433939873418,
+    "ows": 0.22302709651898733
+   },
+   "seconds": 1986.1192803382874,
+   "lookahead": {
+    "k": 6,
+    "sims": 16,
+    "threshold": 1.01,
+    "min_prior": 0.005,
+    "margin": 0.0,
+    "opponent": "balanced",
+    "win": 1.0,
+    "loss": -0.3333333333333333,
+    "leaf_batch": 8192,
+    "phases": null,
+    "horizon": "turn",
+    "max_own": 40,
+    "decisions": 2498048,
+    "searched": 872475,
+    "changed": 378802,
+    "searched_frac": 0.3492627043195327,
+    "changed_frac": 0.15163919988727198
+   }
+  },
+  {
+   "key": "phase2",
+   "label": "After phase-2 training",
+   "checkpoint": "runs/phase2/checkpoints/latest.pt",
+   "requested_games": 40000,
+   "seed": 50000000,
+   "config": null,
+   "games": 40448,
+   "win_rate": 0.297987539556962,
+   "ci_low": 0.29354952118949745,
+   "ci_high": 0.30246392705855446,
+   "avg_vp": 7.6062846123417724,
+   "opponent_win_rate": {
+    "road_builder": 0.19081289556962025,
+    "balanced": 0.2770223496835443,
+    "ows": 0.23417721518987342
+   },
+   "seat_win_rate": [
+    0.3133900316455696,
+    0.3337618670886076,
+    0.28619462025316456,
+    0.25860363924050633
+   ],
+   "seconds": 65.43157005310059,
+   "lookahead": {}
+  },
+  {
+   "key": "phase2_lookahead",
+   "label": "Phase 2 + look-ahead",
+   "checkpoint": "runs/phase2/checkpoints/latest.pt",
+   "requested_games": 40000,
+   "seed": 50000000,
+   "config": {
+    "k": 6,
+    "sims": 16,
+    "threshold": 1.01,
+    "min_prior": 0.005,
+    "margin": 0.0,
+    "opponent": "balanced",
+    "win": 1.0,
+    "loss": -0.3333333333333333,
+    "leaf_batch": 8192,
+    "phases": null,
+    "horizon": "turn",
+    "max_own": 40
+   },
+   "games": 40448,
+   "win_rate": 0.36088310917721517,
+   "ci_low": 0.3562161458771515,
+   "ci_high": 0.3655764955733182,
+   "avg_vp": 7.857743275316456,
+   "opponent_win_rate": {
+    "balanced": 0.24819521360759494,
+    "ows": 0.21852749208860758,
+    "road_builder": 0.17239418512658228
+   },
+   "seat_win_rate": [
+    0.3783623417721519,
+    0.3935917721518987,
+    0.35314477848101267,
+    0.31843354430379744
+   ],
+   "seconds": 3509.838728427887,
+   "lookahead": {
+    "k": 6,
+    "sims": 16,
+    "threshold": 1.01,
+    "min_prior": 0.005,
+    "margin": 0.0,
+    "opponent": "balanced",
+    "win": 1.0,
+    "loss": -0.3333333333333333,
+    "leaf_batch": 8192,
+    "phases": null,
+    "horizon": "turn",
+    "max_own": 40,
+    "decisions": 2629120,
+    "searched": 905295,
+    "changed": 368380,
+    "searched_frac": 0.3443338455452775,
+    "changed_frac": 0.14011532375851996
+   }
+  }
+ ],
+ "baseline": {
+  "bot": "balanced",
+  "win_rate": 0.289075,
+  "ci_low": 0.28465276081448776,
+  "ci_high": 0.2935377497688758,
+  "games": 40000
+ },
+ "seed": 50000000
+}
